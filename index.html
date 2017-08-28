@@ -78,64 +78,182 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/pagefirst/" title="pagefirst" itemprop="url">pagefirst</a>
+      <a href="/2017/08/28/R-3/" title="浅谈R语言的简单的操作" itemprop="url">浅谈R语言的简单的操作</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T07:32:44.000Z" itemprop="datePublished"> 发表于 2017-08-28</time>
+    <time datetime="2017-08-28T12:01:27.000Z" itemprop="datePublished"> 发表于 2017-08-28</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        <p>  hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧<br>我是使用的hexo和GitHub搭建的</p>
-<p>第一步先到网络上下载<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a> 和<a href="https://git-scm.com/" target="_blank" rel="external">git</a>（使用GitHub必须链接在此）</p>
-<p>  其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文件夹，再在里面建一个nodejs的文件夹，然后把node.js放在那里面，以后那就是你博客的根据地了。<br>  下载完git之后打开git.exe可以先放在那里（以防找不到了）</p>
-<p>  然后就是把环境变量改一下具体如下</p>
+        <p><strong>对于其字符串进行操作</strong></p>
 <blockquote>
-<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&amp;bo=AgSAAgAAAAADAKE!&amp;rf=viewer_4" alt="enter image description here"><br>进入计算机的系统属性，先点更改设置再点环境变量<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/AHebJN8TGu08gOAq4Ac74YZjDio87nydRswXhbFU7NY!/b/dDwBAAAAAAAA&amp;bo=dgKuAnYCrgIDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/hL4IIXSamIdvfC*0frxF*83EwFa0KG0YXsPyjN6Ub3w!/b/dDwBAAAAAAAA&amp;bo=ugSAAgAAAAADABk!&amp;rf=viewer_4" alt="enter image description here"><br>然后就会看到左边的窗口弹出，找到PATH然后添加你的node.js的路径</p>
+<p>1、连接函数paste。</p>
 </blockquote>
-<p>  紧接着按win的键+R在其中输入cmd打开命令行</p>
+<p>输入命令行</p>
+<pre><code>a &lt;- &quot;Hello&quot;
+
+b &lt;- &apos;How&apos;
+
+c &lt;- &quot;are you? &quot;
+
+print(paste(a,b,c))
+
+print(paste(a,b,c, sep = &quot;-&quot;))
+
+print(paste(a,b,c, sep = &quot;&quot;, collapse = &quot;&quot;))
+</code></pre><p>输出结果：</p>
+<pre><code>[1] &quot;Hello How are you? &quot;
+
+[1] &quot;Hello-How-are you? &quot;
+
+[1] &quot;HelloHoware you? &quot;
+</code></pre><blockquote>
+<p>2、格式化数字和字符串 - format()函数</p>
+</blockquote>
+<p>format(x, digits, nsmall, scientific, width, justify = c(“left”, “right”, “centre”, “none”))</p>
+<pre><code>x是向量输入。
+
+digits是显示的总位数。
+
+nsmall是小数点右边的最小位数。
+
+科学设置为TRUE以显示科学记数法。
+
+width指示通过在开始处填充空白来显示的最小宽度。
+
+justify是字符串向左，右或中心的显示。
+</code></pre><p>输入命令行</p>
+<pre><code>result &lt;- format(23.123456789, digits = 9)
+
+print(result)
+
+result &lt;- format(c(6, 13.14521), scientific = TRUE)
+
+print(result)
+
+result &lt;- format(23.47, nsmall = 5)
+
+print(result)
+
+result &lt;- format(6)
+
+print(result)
+
+result &lt;- format(13.7, width = 6)
+
+print(result)
+
+result &lt;- format(&quot;Hello&quot;, width = 8, justify = &quot;l&quot;)
+
+print(result)
+
+result &lt;- format(&quot;Hello&quot;, width = 8, justify = &quot;c&quot;)
+
+print(result)
+</code></pre><p>输出结果</p>
+<pre><code>[1] &quot;23.1234568&quot;
+
+[1] &quot;6.000000e+00&quot; &quot;1.314521e+01&quot;
+
+[1] &quot;23.47000&quot;
+
+[1] &quot;6&quot;
+
+[1] &quot; 13.7&quot;
+
+[1] &quot;Hello &quot;
+
+[1] &quot; Hello &quot;
+</code></pre><blockquote>
+<p>3、计算字符串中字符的个数</p>
+</blockquote>
+<p>x &lt;-c(“R”, “Rstudio”, “Revolution R”)</p>
+<pre><code>返回3，向量x中共有3个元素
+</code></pre><p>length(x)</p>
+<pre><code>返回1 7 12，向量x中每个元素的字符个数
+</code></pre><p>nchar(x)</p>
+<pre><code>x代表向量
+</code></pre><p>输入</p>
+<pre><code>result &lt;- nchar(&quot;Count the number of characters&quot;)
+
+print(result)
+</code></pre><p>输出</p>
+<pre><code>[1] 30
+</code></pre><blockquote>
+<p>4、将字符串全部变成大写和小写</p>
+</blockquote>
+<pre><code>toupper(x)
+
+tolower(x)
+</code></pre><p>输入</p>
+<pre><code>result &lt;- toupper(&quot;Changing To Upper&quot;)
+
+print(result)
+
+result &lt;- tolower(&quot;Changing To Lower&quot;)
+
+print(result)
+</code></pre><p>输出</p>
+<pre><code>[1] &quot;CHANGING TO UPPER&quot;
+
+[1] &quot;changing to lower&quot;
+</code></pre><blockquote>
+<p>5、提取字符串的一部分 - substring()函数</p>
+</blockquote>
+<p>substring(x,first,last)</p>
+<pre><code>x是字符向量输入。
+
+首先是要提取的第一个字符的位置。
+
+last是要提取的最后一个字符的位置。
+</code></pre><p>输入</p>
+<pre><code>result &lt;- substring(&quot;Extract&quot;, 5, 7)
+
+print(result)
+</code></pre><p>结果</p>
+<pre><code>[1] &quot;act&quot;
+</code></pre><p>下面看对于向量的操作</p>
+<p><strong>向量的操作</strong></p>
+<p>向量是最基本的R语言数据对象，有六种类型的原子向量。 它们是逻辑，整数，双精度，复杂，字符和原始。</p>
 <blockquote>
-<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/0bu7eVjMwY.H*eFDTnDr6dlkWHAZTO2U4IIki5Sm1y8!/b/dD0BAAAAAAAA&amp;bo=9wH8APcB*AADACU!&amp;rf=viewer_4" alt="enter image description here"></p>
+<p>1、 对数值数据使用冒号运算符</p>
 </blockquote>
-<p>先进入你的blog文件夹再进入nodejs的文件夹</p>
-<pre><code>C:\Users\chenhw&gt;D:
-D:\&gt;cd blog
-D:\blog&gt;cd nodejs
-安装hexo
-D:\blog\nodejs&gt;npm install -g hexo
-紧接着创建一个文件夹
-D:\blog\nodejs&gt;mkdir blog
-然后进去
-D:\blog\nodejs&gt;cd blog
-初始化hexo（这一步我用了200多秒）
-D:\blog\nodejs\blog&gt;hexo init 
-紧接着安装依赖包
-D:\blog\nodejs\blog&gt;npm install
-再输入npm install hexo-deployer-git --save
-</code></pre><p>初始的工作我们就进行完了，然后我们现在本地进行部署</p>
-<pre><code>命令行输入
-hexo generate（hexo g也可以）
-hexo server（hexo s也可以）这里是本地部署，部署完别把cdm命令行关掉
-</code></pre><p>紧接着我们就要把网页部署到GitHub上，我们去<a href="https://github.com/" target="_blank" rel="external">GitHub的官网</a>（GitHub那个猫的标超级萌有木有）申请一个账号，</p>
-<blockquote>
-<p><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/A1B.aAhMQFSDcEkwKanvEOz6fliXsjo5WDvRHI2nCxg!/b/dDwBAAAAAAAA&amp;bo=MAWAAq8FvQIDAIc!&amp;rf=viewer_4" alt="Blockquote"><br>新建一个仓库，然后写入名字<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/C55D83YKHkdywlal62S7eyRYHqZUq3oydDpGhsW3wtg!/b/dG0BAAAAAAAA&amp;bo=iAQfA4gEHwMDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/Tv44CQ3.7odcGCZZJddJPnPUn6qRG*JVpsj2DvC1DMM!/b/dOgAAAAAAAAA&amp;bo=8wEuAPMBLgADACU!&amp;rf=viewer_4" alt="enter image description here"><br>紧接着我们create完之后回到主页找到setting<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/qytckYWxBVvhU9s*nb0hxNSSgC2xMRcDPe94rtfHLq0!/b/dD0BAAAAAAAA&amp;bo=UgVRA1IFUQMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>向下翻翻到GitHub pages的地方选择主题<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/IjEMV4cjGoSNnPien63MNTn47Mw7u2lDmhg2fb2rCKQ!/b/dDwBAAAAAAAA&amp;bo=dwTTAncE0wIDACU!&amp;rf=viewer_4" alt="enter image description here"><br>然后紧接着我们再在GitHub里把ssh设置好，这里现在GitHub中进行操作，<a href="http://jingyan.baidu.com/article/dca1fa6f756777f1a44052e3.html" target="_blank" rel="external">具体操作在这</a></p>
-<p>紧接着我们打开没有关掉的git的命令行进行操作就可以了</p>
-<p><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/sJy9X8oMlXhenPYPQ9YjcQGxBNCJhEauywJYR1bad4I!/b/dOcAAAAAAAAA&amp;bo=AgMqAwIDKgMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>这边创建ssh的部分就算完成了</p>
+<p>输入</p>
+<pre><code>Creating a sequence from 5 to 13.
+
+v &lt;- 5:13
+
+print(v)
+
+Creating a sequence from 6.6 to 12.6.
+
+v &lt;- 6.6:12.6
+
+print(v)
+</code></pre><p> If the final element specified does not belong to the sequence then it is discarded.</p>
+<pre><code>v &lt;- 3.8:11.4
+
+print(v)
+</code></pre><p>输出</p>
+<pre><code>[1] 5 6 7 8 9 10 11 12 13
+
+[1] 6.6 7.6 8.6 9.6 10.6 11.6 12.6
+
+[1] 3.8 4.8 5.8 6.8 7.8 8.8 9.8 10.8
+</code></pre><blockquote>
+<p>2、sequence (Seq.)序列运算符</p>
 </blockquote>
-<p>接下来要配置Deployment<br>在_config.yml文件中，找到Deployment，然后按照如下修改（因为yml文件对于格式的要求特别高，所以要在deploy下面的每个属性前加两个空格，冒号后加一个空格）：</p>
-<pre><code>deploy:
-type: git
-repo: git@github.com:Williamlalalala/Williamlalalala.github.io.git
-branch: master
-</code></pre><p>我们再回到cmd命令行，输入</p>
-<pre><code>hexo g
-hexo d
-</code></pre><p>就可以部署成功了</p>
+<p>输入</p>
+<pre><code>print(seq(5, 9, by = 0.4))
+</code></pre><p>输出</p>
+<pre><code>[1] 5.0 5.4 5.8 6.2 6.6 7.0 7.4 7.8 8.2 8.6 9.0
+</code></pre><p>as.data.frame()把table类型转化成data.frame类型</p>
 
         
         
@@ -149,7 +267,331 @@ hexo d
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/大数据/">大数据</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/08/28/R-2/" title="R-2" itemprop="url">R-2</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-08-28T11:58:40.000Z" itemprop="datePublished"> 发表于 2017-08-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <blockquote>
+<p>条形图（括号中的内容为属性，只要在正常调用的时候加上属性等于什么什么就可以了）</p>
+</blockquote>
+<pre><code>barplot(H, xlab, ylab, main, names.arg, col)
+
+H是包含在条形图中使用的数值的向量或矩阵。
+
+xlab是x轴的标签。
+
+ylab是y轴的标签。
+
+main是条形图的标题。
+
+names.arg是在每个条下出现的名称的向量。
+
+col用于向图中的条形提供颜色。
+
+H是必须的，其余可以不写
+</code></pre><blockquote>
+<p>箱线图</p>
+</blockquote>
+<pre><code>boxplot(x, data, notch, varwidth, names, main)
+
+x是向量或公式。
+
+数据是数据帧。
+
+notch是逻辑值。 设置为TRUE以绘制凹口。
+
+varwidth是一个逻辑值。 设置为true以绘制与样本大小成比例的框的宽度。
+
+names是将打印在每个箱线图下的组标签。
+
+main用于给图表标题。
+</code></pre><blockquote>
+<p>直方图</p>
+</blockquote>
+<pre><code>hist(v,main,xlab,xlim,ylim,breaks,col,border)
+
+v是包含直方图中使用的数值的向量。
+
+main表示图表的标题。
+
+col用于设置条的颜色。
+
+border用于设置每个条的边框颜色。
+
+xlab用于给出x轴的描述。
+
+xlim用于指定x轴上的值的范围。
+
+ylim用于指定y轴上的值的范围。
+
+break用于提及每个条的宽度
+</code></pre><blockquote>
+<p>折线图</p>
+</blockquote>
+<pre><code>plot(v,type,col,xlab,ylab)
+
+v是包含数值的向量。
+
+类型采用值“p”仅绘制点，“l”仅绘制线和“o”绘制点和线。
+
+xlab是x轴的标签。
+
+ylab是y轴的标签。
+
+main是图表的标题。
+
+col用于给点和线的颜色
+
+/*通过使用lines(里面加向量)函数，可以在同一个图表上绘制多条线*/
+</code></pre><blockquote>
+<p>散点图</p>
+</blockquote>
+<pre><code>plot(x, y, main, xlab, ylab, xlim, ylim, axes)
+
+x是其值为水平坐标的数据集。
+
+y是其值是垂直坐标的数据集。
+
+main要是图形的图块。
+
+xlab是水平轴上的标签。
+
+ylab是垂直轴上的标签。
+
+xlim是用于绘图的x的值的极限。
+
+ylim是用于绘图的y的值的极限。
+
+axes指示是否应在绘图上绘制两个轴
+</code></pre><blockquote>
+<p>饼状图</p>
+</blockquote>
+<pre><code>pie(x, labels, radius, main, col, clockwise)
+
+x是包含饼图中使用的数值的向量。
+
+labels用于给出切片的描述。数组，分别对应每一个块的名称
+
+radius表示饼图圆的半径（值-1和+1之间）。
+
+main表示图表的标题。
+
+col表示调色板。
+
+clockwise是指示片段是顺时针还是逆时针绘制的逻辑值。 
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/大数据/">大数据</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/08/28/R-1/" title="R-1" itemprop="url">R-1</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-08-28T11:51:32.000Z" itemprop="datePublished"> 发表于 2017-08-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <blockquote>
+<p>一、创建数据表的sql语句模型</p>
+</blockquote>
+<pre><code>DDL
+
+create table[IF NOT EXISTS]表名称（
+
+字段名1 列属性 【属性】【索引】
+
+字段名2 列属性 【属性】【索引】
+
+.。。。。
+
+字段名n 列属性 【属性】【索引】
+
+）【表类型】【表字符集】
+
+表的名称和字段名 需要我们自己定义名称
+</code></pre><p>SQL不区分大小写（命名）但是表名就是文件名，windows不区分大小写，linux区分</p>
+<pre><code>1、一定要有意义（英文或英文的组合和多个单词的缩写）
+
+2、自己定的名称最好都小写
+
+3、sql语句都大写
+</code></pre><blockquote>
+<p>二、数据值和列类型</p>
+</blockquote>
+<p>1、数值型</p>
+<pre><code>整型（整数）/*细分都是按照空间大小来分的可以放的下就可以了*/
+
+非常小的整型 1字节
+
+较小的整型 2字节
+
+中等大小的整型 3字节
+
+标准整型 4字节
+
+大整数型 8字节
+
+浮点型（小数）
+
+float(H,D) 4字节(H和D都可被指定
+
+double(H,D) 8字节
+
+定点数
+
+decimal（H,D） H+2字节
+</code></pre><p>2、字符型</p>
+<pre><code>小的：char 255（固定长度字符串）即以4个字节为单位存，处理速度比varchar快的多
+
+varchar 255（可变长度字符串）即可以变，单永远是内容加1个字节，像文章标题之类不确定长度的使用varchar（更多的被使用）
+
+大的：text处理文本 2^16-1
+
+blob处理相片 2^16-1
+
+ENUH 枚举 1或2个字节 一次只能存一个值
+
+set集合 1，2，4，8个字节一次可以存多个值，用“，”隔开
+</code></pre><p>3、日期型</p>
+<pre><code>DATE YYYY-MM-DD
+
+TIME hh-mm-ss
+
+DATETIME YYYY-HH-DD hh-mm-ss
+
+TIMESTAMP YYYYHHDDhhmmss
+
+YEAR YYYY
+</code></pre><p>4、NULL</p>
+<blockquote>
+<p>三、具体操作</p>
+</blockquote>
+<pre><code>1、创建库：create database +名字
+
+2、展示库：show databases
+
+3、创建表：create table +名字
+
+4、查看表的。。。DESC + 表名
+
+5、创建表的列名：create table +表名（
+
+id int（10），
+
+name char（100），
+
+qq int（10））；
+
+6、信息的插入：insert into 表名（id，name，qq。。。）value（1，大明，1206095865）；
+
+7、信息的检索： select * from 表名；（此处返回所有表的内容，但是对于大部分的情况来说需要具体的查找）
+
+select * from 表名 where name=&quot;小明&quot;；（返回小明所有的信息）
+
+select name from 表名；（返回那一列）
+
+select *from 表名 where name like &quot;大%&quot;；（模糊匹配，后面的百分号代表任意值）
+
+同理 select name, id from 表名 where name like &quot;%大%&quot;；（即为返回带“大”字的name和id)
+
+select 中同时可以包含语句，比如if之类的，但是如果不改名，则把整个的语句当作列名，如在语句后加一个as stuhhhh,则stuhhhh就是它那个列的名字（别名）
+
+select *from 表名 where name like &quot;大%&quot; and id=&quot;1&quot;；（其中加入了逻辑运算符and，同理“or”）
+
+select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) as stuinformation from stu;(把字符串串联起来) 
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/数据库/">数据库</a>
   </div>
 
 </div>
@@ -277,28 +719,64 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2017/08/28/pagefirst/" title="pagefirst" itemprop="url">pagefirst</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T02:51:18.722Z" itemprop="datePublished"> 发表于 2017-08-28</time>
+    <time datetime="2017-08-28T07:32:44.000Z" itemprop="datePublished"> 发表于 2017-08-28</time>
     
   </p>
 </header>
     <div class="article-content">
         
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>  hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧<br>我是使用的hexo和GitHub搭建的</p>
+<p>第一步先到网络上下载<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a> 和<a href="https://git-scm.com/" target="_blank" rel="external">git</a>（使用GitHub必须链接在此）</p>
+<p>  其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文件夹，再在里面建一个nodejs的文件夹，然后把node.js放在那里面，以后那就是你博客的根据地了。<br>  下载完git之后打开git.exe可以先放在那里（以防找不到了）</p>
+<p>  然后就是把环境变量改一下具体如下</p>
+<blockquote>
+<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&amp;bo=AgSAAgAAAAADAKE!&amp;rf=viewer_4" alt="enter image description here"><br>进入计算机的系统属性，先点更改设置再点环境变量<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/AHebJN8TGu08gOAq4Ac74YZjDio87nydRswXhbFU7NY!/b/dDwBAAAAAAAA&amp;bo=dgKuAnYCrgIDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/hL4IIXSamIdvfC*0frxF*83EwFa0KG0YXsPyjN6Ub3w!/b/dDwBAAAAAAAA&amp;bo=ugSAAgAAAAADABk!&amp;rf=viewer_4" alt="enter image description here"><br>然后就会看到左边的窗口弹出，找到PATH然后添加你的node.js的路径</p>
+</blockquote>
+<p>  紧接着按win的键+R在其中输入cmd打开命令行</p>
+<blockquote>
+<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/0bu7eVjMwY.H*eFDTnDr6dlkWHAZTO2U4IIki5Sm1y8!/b/dD0BAAAAAAAA&amp;bo=9wH8APcB*AADACU!&amp;rf=viewer_4" alt="enter image description here"></p>
+</blockquote>
+<p>先进入你的blog文件夹再进入nodejs的文件夹</p>
+<pre><code>C:\Users\chenhw&gt;D:
+D:\&gt;cd blog
+D:\blog&gt;cd nodejs
+安装hexo
+D:\blog\nodejs&gt;npm install -g hexo
+紧接着创建一个文件夹
+D:\blog\nodejs&gt;mkdir blog
+然后进去
+D:\blog\nodejs&gt;cd blog
+初始化hexo（这一步我用了200多秒）
+D:\blog\nodejs\blog&gt;hexo init 
+紧接着安装依赖包
+D:\blog\nodejs\blog&gt;npm install
+再输入npm install hexo-deployer-git --save
+</code></pre><p>初始的工作我们就进行完了，然后我们现在本地进行部署</p>
+<pre><code>命令行输入
+hexo generate（hexo g也可以）
+hexo server（hexo s也可以）这里是本地部署，部署完别把cdm命令行关掉
+</code></pre><p>紧接着我们就要把网页部署到GitHub上，我们去<a href="https://github.com/" target="_blank" rel="external">GitHub的官网</a>（GitHub那个猫的标超级萌有木有）申请一个账号，</p>
+<blockquote>
+<p><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/A1B.aAhMQFSDcEkwKanvEOz6fliXsjo5WDvRHI2nCxg!/b/dDwBAAAAAAAA&amp;bo=MAWAAq8FvQIDAIc!&amp;rf=viewer_4" alt="Blockquote"><br>新建一个仓库，然后写入名字<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/C55D83YKHkdywlal62S7eyRYHqZUq3oydDpGhsW3wtg!/b/dG0BAAAAAAAA&amp;bo=iAQfA4gEHwMDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/Tv44CQ3.7odcGCZZJddJPnPUn6qRG*JVpsj2DvC1DMM!/b/dOgAAAAAAAAA&amp;bo=8wEuAPMBLgADACU!&amp;rf=viewer_4" alt="enter image description here"><br>紧接着我们create完之后回到主页找到setting<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/qytckYWxBVvhU9s*nb0hxNSSgC2xMRcDPe94rtfHLq0!/b/dD0BAAAAAAAA&amp;bo=UgVRA1IFUQMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>向下翻翻到GitHub pages的地方选择主题<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/IjEMV4cjGoSNnPien63MNTn47Mw7u2lDmhg2fb2rCKQ!/b/dDwBAAAAAAAA&amp;bo=dwTTAncE0wIDACU!&amp;rf=viewer_4" alt="enter image description here"><br>然后紧接着我们再在GitHub里把ssh设置好，这里现在GitHub中进行操作，<a href="http://jingyan.baidu.com/article/dca1fa6f756777f1a44052e3.html" target="_blank" rel="external">具体操作在这</a></p>
+<p>紧接着我们打开没有关掉的git的命令行进行操作就可以了</p>
+<p><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/sJy9X8oMlXhenPYPQ9YjcQGxBNCJhEauywJYR1bad4I!/b/dOcAAAAAAAAA&amp;bo=AgMqAwIDKgMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>这边创建ssh的部分就算完成了</p>
+</blockquote>
+<p>接下来要配置Deployment<br>在_config.yml文件中，找到Deployment，然后按照如下修改（因为yml文件对于格式的要求特别高，所以要在deploy下面的每个属性前加两个空格，冒号后加一个空格）：</p>
+<pre><code>deploy:
+type: git
+repo: git@github.com:Williamlalalala/Williamlalalala.github.io.git
+branch: master
+</code></pre><p>我们再回到cmd命令行，输入</p>
+<pre><code>hexo g
+hexo d
+</code></pre><p>就可以部署成功了</p>
 
         
         
@@ -309,6 +787,11 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
     <footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/blog/">blog</a>
+  </div>
 
 </div>
 
@@ -348,11 +831,19 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+				<li><a href="/tags/大数据/" title="大数据">大数据<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/前端/" title="前端">前端<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 		</ul>
