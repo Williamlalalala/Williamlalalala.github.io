@@ -78,6 +78,258 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/09/17/js-add/" title="js对于增加节点的操作" itemprop="url">js对于增加节点的操作</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-09-17T08:35:28.000Z" itemprop="datePublished"> Published 2017-09-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="JS的增加节点的操作"><a href="#JS的增加节点的操作" class="headerlink" title="JS的增加节点的操作"></a>JS的增加节点的操作</h1><p>我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新</p>
+<hr>
+<p>我先做了一个非常简单的框加几个文本，这样一会会看的很清楚</p>
+<pre><code>&lt;input type=&quot;button&quot; id=&quot;chenhw&quot; name=&quot;&quot;&gt;
+&lt;p id=&quot;in&quot;&gt;hhhhh&lt;/p&gt;
+&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
+&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
+</code></pre><p>然后js代码如下</p>
+<pre><code>window.onload=function(){//在这里我觉得加不加这个都差不多
+    var one=document.getElementById(&apos;chenhw&apos;);//获取节点
+    one.onclick=function(){//节点被click的时候触发
+        insert();//调用这个函数
+    }
+}
+function insert(){
+    var start=document.getElementById(&apos;in&apos;);//获取想操作的节点位置
+    var add=document.createElement(&apos;create&apos;);//create一个节点
+    add.innerHTML=&quot;lalal&quot;;//改变这个节点的内容
+    start.insertBefore(add, null);//插入
+}
+</code></pre><p>这样就可以看到我们在click之后整个页面会做出相应的操作</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/09/17/JS的增加节点的操作/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-09-17T08:26:41.689Z" itemprop="datePublished"> Published 2017-09-17</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="JS的增加节点的操作"><a href="#JS的增加节点的操作" class="headerlink" title="JS的增加节点的操作"></a>JS的增加节点的操作</h1><p>我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新</p>
+<hr>
+<p>我先做了一个非常简单的框加几个文本，这样一会会看的很清楚</p>
+<pre><code>&lt;input type=&quot;button&quot; id=&quot;chenhw&quot; name=&quot;&quot;&gt;
+&lt;p id=&quot;in&quot;&gt;hhhhh&lt;/p&gt;
+&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
+&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
+</code></pre><p>然后js代码如下</p>
+<pre><code>window.onload=function(){//在这里我觉得加不加这个都差不多
+    var one=document.getElementById(&apos;chenhw&apos;);//获取节点
+    one.onclick=function(){//节点被click的时候触发
+        insert();//调用这个函数
+    }
+}
+function insert(){
+    var start=document.getElementById(&apos;in&apos;);//获取想操作的节点位置
+    var add=document.createElement(&apos;create&apos;);//create一个节点
+    add.innerHTML=&quot;lalal&quot;;//改变这个节点的内容
+    start.insertBefore(add, null);//插入
+}
+</code></pre><p>这样就可以看到我们在click之后整个页面会做出相应的操作</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/09/16/Java语言基础知识/" title="" itemprop="url"></a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-09-17T07:09:58.367Z" itemprop="datePublished"> Published 2017-09-16</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="Java语言基础知识"><a href="#Java语言基础知识" class="headerlink" title="Java语言基础知识"></a>Java语言基础知识</h1><hr>
+<h2 id="1、JAVA语言使用的是哪一种字符集？"><a href="#1、JAVA语言使用的是哪一种字符集？" class="headerlink" title="1、JAVA语言使用的是哪一种字符集？"></a>1、JAVA语言使用的是哪一种字符集？</h2><blockquote>
+<ul>
+<li>Java语言所使用的字符集是16位Unicode编码。</li>
+</ul>
+</blockquote>
+<h2 id="2、在JAVA语言中数据类型分为两大类，具体的类型有哪些？"><a href="#2、在JAVA语言中数据类型分为两大类，具体的类型有哪些？" class="headerlink" title="2、在JAVA语言中数据类型分为两大类，具体的类型有哪些？"></a>2、在JAVA语言中数据类型分为两大类，具体的类型有哪些？</h2><blockquote>
+<p>内置数据类型（：</p>
+</blockquote>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2017/09/01/date小计/" title="date小计" itemprop="url">date小计</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-09-02T06:23:47.000Z" itemprop="datePublished"> Published 2017-09-01</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/08/28/hhhhh/" title="表白啦~~" itemprop="url">表白啦~~</a>
   </h1>
   <p class="article-author">By
@@ -85,7 +337,7 @@
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T12:16:43.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-08-29T04:16:43.000Z" itemprop="datePublished"> Published 2017-08-28</time>
     
   </p>
 </header>
@@ -140,7 +392,7 @@
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T12:01:27.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-08-29T04:01:27.000Z" itemprop="datePublished"> Published 2017-08-28</time>
     
   </p>
 </header>
@@ -357,7 +609,7 @@ print(v)
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T11:58:40.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-08-29T03:58:40.000Z" itemprop="datePublished"> Published 2017-08-28</time>
     
   </p>
 </header>
@@ -519,7 +771,7 @@ clockwise是指示片段是顺时针还是逆时针绘制的逻辑值。
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T11:51:32.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-08-29T03:51:32.000Z" itemprop="datePublished"> Published 2017-08-28</time>
     
   </p>
 </header>
@@ -674,6 +926,105 @@ select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) a
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/08/28/pagefirst/" title="简单的hexo和GitHub搭建自己的博客" itemprop="url">简单的hexo和GitHub搭建自己的博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-08-28T23:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>  hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧<br>我是使用的hexo和GitHub搭建的</p>
+<p>第一步先到网络上下载<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a> 和<a href="https://git-scm.com/" target="_blank" rel="external">git</a>（使用GitHub必须链接在此）</p>
+<p>  其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文件夹，再在里面建一个nodejs的文件夹，然后把node.js放在那里面，以后那就是你博客的根据地了。<br>  下载完git之后打开git.exe可以先放在那里（以防找不到了）</p>
+<p>  然后就是把环境变量改一下具体如下</p>
+<blockquote>
+<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&amp;bo=AgSAAgAAAAADAKE!&amp;rf=viewer_4" alt="enter image description here"><br>进入计算机的系统属性，先点更改设置再点环境变量<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/AHebJN8TGu08gOAq4Ac74YZjDio87nydRswXhbFU7NY!/b/dDwBAAAAAAAA&amp;bo=dgKuAnYCrgIDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/hL4IIXSamIdvfC*0frxF*83EwFa0KG0YXsPyjN6Ub3w!/b/dDwBAAAAAAAA&amp;bo=ugSAAgAAAAADABk!&amp;rf=viewer_4" alt="enter image description here"><br>然后就会看到左边的窗口弹出，找到PATH然后添加你的node.js的路径</p>
+</blockquote>
+<p>  紧接着按win的键+R在其中输入cmd打开命令行</p>
+<blockquote>
+<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/0bu7eVjMwY.H*eFDTnDr6dlkWHAZTO2U4IIki5Sm1y8!/b/dD0BAAAAAAAA&amp;bo=9wH8APcB*AADACU!&amp;rf=viewer_4" alt="enter image description here"></p>
+</blockquote>
+<p>先进入你的blog文件夹再进入nodejs的文件夹</p>
+<pre><code>C:\Users\chenhw&gt;D:
+D:\&gt;cd blog
+D:\blog&gt;cd nodejs
+安装hexo
+D:\blog\nodejs&gt;npm install -g hexo
+紧接着创建一个文件夹
+D:\blog\nodejs&gt;mkdir blog
+然后进去
+D:\blog\nodejs&gt;cd blog
+初始化hexo（这一步我用了200多秒）
+D:\blog\nodejs\blog&gt;hexo init 
+紧接着安装依赖包
+D:\blog\nodejs\blog&gt;npm install
+再输入npm install hexo-deployer-git --save
+</code></pre><p>初始的工作我们就进行完了，然后我们现在本地进行部署</p>
+<pre><code>命令行输入
+hexo generate（hexo g也可以）
+hexo server（hexo s也可以）这里是本地部署，部署完别把cdm命令行关掉
+</code></pre><p>紧接着我们就要把网页部署到GitHub上，我们去<a href="https://github.com/" target="_blank" rel="external">GitHub的官网</a>（GitHub那个猫的标超级萌有木有）申请一个账号，</p>
+<blockquote>
+<p><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/A1B.aAhMQFSDcEkwKanvEOz6fliXsjo5WDvRHI2nCxg!/b/dDwBAAAAAAAA&amp;bo=MAWAAq8FvQIDAIc!&amp;rf=viewer_4" alt="Blockquote"><br>新建一个仓库，然后写入名字<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/C55D83YKHkdywlal62S7eyRYHqZUq3oydDpGhsW3wtg!/b/dG0BAAAAAAAA&amp;bo=iAQfA4gEHwMDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/Tv44CQ3.7odcGCZZJddJPnPUn6qRG*JVpsj2DvC1DMM!/b/dOgAAAAAAAAA&amp;bo=8wEuAPMBLgADACU!&amp;rf=viewer_4" alt="enter image description here"><br>紧接着我们create完之后回到主页找到setting<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/qytckYWxBVvhU9s*nb0hxNSSgC2xMRcDPe94rtfHLq0!/b/dD0BAAAAAAAA&amp;bo=UgVRA1IFUQMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>向下翻翻到GitHub pages的地方选择主题<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/IjEMV4cjGoSNnPien63MNTn47Mw7u2lDmhg2fb2rCKQ!/b/dDwBAAAAAAAA&amp;bo=dwTTAncE0wIDACU!&amp;rf=viewer_4" alt="enter image description here"><br>然后紧接着我们再在GitHub里把ssh设置好，这里现在GitHub中进行操作，<a href="http://jingyan.baidu.com/article/dca1fa6f756777f1a44052e3.html" target="_blank" rel="external">具体操作在这</a></p>
+<p>紧接着我们打开没有关掉的git的命令行进行操作就可以了</p>
+<p><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/sJy9X8oMlXhenPYPQ9YjcQGxBNCJhEauywJYR1bad4I!/b/dOcAAAAAAAAA&amp;bo=AgMqAwIDKgMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>这边创建ssh的部分就算完成了</p>
+</blockquote>
+<p>接下来要配置Deployment<br>在_config.yml文件中，找到Deployment，然后按照如下修改（因为yml文件对于格式的要求特别高，所以要在deploy下面的每个属性前加两个空格，冒号后加一个空格）：</p>
+<pre><code>deploy:
+type: git
+repo: git@github.com:Williamlalalala/Williamlalalala.github.io.git
+branch: master
+</code></pre><p>我们再回到cmd命令行，输入</p>
+<pre><code>hexo g
+hexo d
+</code></pre><p>就可以部署成功了</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/blog/">blog</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/08/28/js-dom/" title="JavaScript对于dom节点的基本操作" itemprop="url">JavaScript对于dom节点的基本操作</a>
   </h1>
   <p class="article-author">By
@@ -681,7 +1032,7 @@ select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) a
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T07:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-08-28T23:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
     
   </p>
 </header>
@@ -768,105 +1119,6 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/08/28/pagefirst/" title="简单的hexo和GitHub搭建自己的博客" itemprop="url">简单的hexo和GitHub搭建自己的博客</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
-		
-  <p class="article-time">
-    <time datetime="2017-08-28T07:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>  hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧<br>我是使用的hexo和GitHub搭建的</p>
-<p>第一步先到网络上下载<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a> 和<a href="https://git-scm.com/" target="_blank" rel="external">git</a>（使用GitHub必须链接在此）</p>
-<p>  其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文件夹，再在里面建一个nodejs的文件夹，然后把node.js放在那里面，以后那就是你博客的根据地了。<br>  下载完git之后打开git.exe可以先放在那里（以防找不到了）</p>
-<p>  然后就是把环境变量改一下具体如下</p>
-<blockquote>
-<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&amp;bo=AgSAAgAAAAADAKE!&amp;rf=viewer_4" alt="enter image description here"><br>进入计算机的系统属性，先点更改设置再点环境变量<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/AHebJN8TGu08gOAq4Ac74YZjDio87nydRswXhbFU7NY!/b/dDwBAAAAAAAA&amp;bo=dgKuAnYCrgIDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/hL4IIXSamIdvfC*0frxF*83EwFa0KG0YXsPyjN6Ub3w!/b/dDwBAAAAAAAA&amp;bo=ugSAAgAAAAADABk!&amp;rf=viewer_4" alt="enter image description here"><br>然后就会看到左边的窗口弹出，找到PATH然后添加你的node.js的路径</p>
-</blockquote>
-<p>  紧接着按win的键+R在其中输入cmd打开命令行</p>
-<blockquote>
-<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/0bu7eVjMwY.H*eFDTnDr6dlkWHAZTO2U4IIki5Sm1y8!/b/dD0BAAAAAAAA&amp;bo=9wH8APcB*AADACU!&amp;rf=viewer_4" alt="enter image description here"></p>
-</blockquote>
-<p>先进入你的blog文件夹再进入nodejs的文件夹</p>
-<pre><code>C:\Users\chenhw&gt;D:
-D:\&gt;cd blog
-D:\blog&gt;cd nodejs
-安装hexo
-D:\blog\nodejs&gt;npm install -g hexo
-紧接着创建一个文件夹
-D:\blog\nodejs&gt;mkdir blog
-然后进去
-D:\blog\nodejs&gt;cd blog
-初始化hexo（这一步我用了200多秒）
-D:\blog\nodejs\blog&gt;hexo init 
-紧接着安装依赖包
-D:\blog\nodejs\blog&gt;npm install
-再输入npm install hexo-deployer-git --save
-</code></pre><p>初始的工作我们就进行完了，然后我们现在本地进行部署</p>
-<pre><code>命令行输入
-hexo generate（hexo g也可以）
-hexo server（hexo s也可以）这里是本地部署，部署完别把cdm命令行关掉
-</code></pre><p>紧接着我们就要把网页部署到GitHub上，我们去<a href="https://github.com/" target="_blank" rel="external">GitHub的官网</a>（GitHub那个猫的标超级萌有木有）申请一个账号，</p>
-<blockquote>
-<p><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/A1B.aAhMQFSDcEkwKanvEOz6fliXsjo5WDvRHI2nCxg!/b/dDwBAAAAAAAA&amp;bo=MAWAAq8FvQIDAIc!&amp;rf=viewer_4" alt="Blockquote"><br>新建一个仓库，然后写入名字<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/C55D83YKHkdywlal62S7eyRYHqZUq3oydDpGhsW3wtg!/b/dG0BAAAAAAAA&amp;bo=iAQfA4gEHwMDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/Tv44CQ3.7odcGCZZJddJPnPUn6qRG*JVpsj2DvC1DMM!/b/dOgAAAAAAAAA&amp;bo=8wEuAPMBLgADACU!&amp;rf=viewer_4" alt="enter image description here"><br>紧接着我们create完之后回到主页找到setting<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/qytckYWxBVvhU9s*nb0hxNSSgC2xMRcDPe94rtfHLq0!/b/dD0BAAAAAAAA&amp;bo=UgVRA1IFUQMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>向下翻翻到GitHub pages的地方选择主题<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/IjEMV4cjGoSNnPien63MNTn47Mw7u2lDmhg2fb2rCKQ!/b/dDwBAAAAAAAA&amp;bo=dwTTAncE0wIDACU!&amp;rf=viewer_4" alt="enter image description here"><br>然后紧接着我们再在GitHub里把ssh设置好，这里现在GitHub中进行操作，<a href="http://jingyan.baidu.com/article/dca1fa6f756777f1a44052e3.html" target="_blank" rel="external">具体操作在这</a></p>
-<p>紧接着我们打开没有关掉的git的命令行进行操作就可以了</p>
-<p><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/sJy9X8oMlXhenPYPQ9YjcQGxBNCJhEauywJYR1bad4I!/b/dOcAAAAAAAAA&amp;bo=AgMqAwIDKgMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>这边创建ssh的部分就算完成了</p>
-</blockquote>
-<p>接下来要配置Deployment<br>在_config.yml文件中，找到Deployment，然后按照如下修改（因为yml文件对于格式的要求特别高，所以要在deploy下面的每个属性前加两个空格，冒号后加一个空格）：</p>
-<pre><code>deploy:
-type: git
-repo: git@github.com:Williamlalalala/Williamlalalala.github.io.git
-branch: master
-</code></pre><p>我们再回到cmd命令行，输入</p>
-<pre><code>hexo g
-hexo d
-</code></pre><p>就可以部署成功了</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/blog/">blog</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
@@ -894,15 +1146,19 @@ hexo d
 			
 		
 			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/表白/" title="表白">表白<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/前端/" title="前端">前端<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>1</sup></a></li>
 			
 		
 		</ul>

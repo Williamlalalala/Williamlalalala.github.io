@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>表白啦~~ | Chenhw&#39;sBlog</title>
+    <title>js对于增加节点的操作 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="表白郑宇航！！！！！！表白能看到的所有人哦~~~送上一朵滑稽">
-<meta name="keywords" content="表白">
+    <meta name="description" content="JS的增加节点的操作我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新  我先做了一个非常简单的框加几个文本，这样一会会看的很清楚 &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;chenhw&amp;quot; name=&amp;quot;&amp;quot;&amp;gt; &amp;l">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="表白啦~~">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/hhhhh/index.html">
+<meta property="og:title" content="js对于增加节点的操作">
+<meta property="og:url" content="http://yoursite.com/2017/09/17/js-add/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="表白郑宇航！！！！！！表白能看到的所有人哦~~~送上一朵滑稽">
-<meta property="og:updated_time" content="2017-08-28T12:55:37.451Z">
+<meta property="og:description" content="JS的增加节点的操作我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新  我先做了一个非常简单的框加几个文本，这样一会会看的很清楚 &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;chenhw&amp;quot; name=&amp;quot;&amp;quot;&amp;gt; &amp;l">
+<meta property="og:updated_time" content="2017-09-17T08:36:29.830Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="表白啦~~">
-<meta name="twitter:description" content="表白郑宇航！！！！！！表白能看到的所有人哦~~~送上一朵滑稽">
+<meta name="twitter:title" content="js对于增加节点的操作">
+<meta name="twitter:description" content="JS的增加节点的操作我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新  我先做了一个非常简单的框加几个文本，这样一会会看的很清楚 &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;chenhw&amp;quot; name=&amp;quot;&amp;quot;&amp;gt; &amp;l">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/hhhhh/" title="表白啦~~" itemprop="url">表白啦~~</a>
+      <a href="/2017/09/17/js-add/" title="js对于增加节点的操作" itemprop="url">js对于增加节点的操作</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-29T04:16:43.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-09-17T08:35:28.000Z" itemprop="datePublished"> Published 2017-09-17</time>
     
   </p>
 </header>
@@ -97,11 +97,31 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS的增加节点的操作"><span class="toc-number">1.</span> <span class="toc-text">JS的增加节点的操作</span></a></li></ol>
 		
 		</div>
 		
-		<p>表白郑宇航！！！！！！<br>表白能看到的所有人哦~~~送上一朵滑稽</p>
+		<h1 id="JS的增加节点的操作"><a href="#JS的增加节点的操作" class="headerlink" title="JS的增加节点的操作"></a>JS的增加节点的操作</h1><p>我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新</p>
+<hr>
+<p>我先做了一个非常简单的框加几个文本，这样一会会看的很清楚</p>
+<pre><code>&lt;input type=&quot;button&quot; id=&quot;chenhw&quot; name=&quot;&quot;&gt;
+&lt;p id=&quot;in&quot;&gt;hhhhh&lt;/p&gt;
+&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
+&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
+</code></pre><p>然后js代码如下</p>
+<pre><code>window.onload=function(){//在这里我觉得加不加这个都差不多
+    var one=document.getElementById(&apos;chenhw&apos;);//获取节点
+    one.onclick=function(){//节点被click的时候触发
+        insert();//调用这个函数
+    }
+}
+function insert(){
+    var start=document.getElementById(&apos;in&apos;);//获取想操作的节点位置
+    var add=document.createElement(&apos;create&apos;);//create一个节点
+    add.innerHTML=&quot;lalal&quot;;//改变这个节点的内容
+    start.insertBefore(add, null);//插入
+}
+</code></pre><p>这样就可以看到我们在click之后整个页面会做出相应的操作</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -110,7 +130,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/表白/">表白</a>
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
   </div>
 
 </div>
@@ -119,7 +139,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/08/28/hhhhh/" data-title="表白啦~~ | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/09/17/js-add/" data-title="js对于增加节点的操作 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -132,19 +152,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/09/01/date小计/" title="date小计">
-  <strong>上一篇：</strong><br/>
-  <span>
-  date小计</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/08/28/R-3/"  title="浅谈R语言的简单的操作">
+<a href="/2017/09/17/JS的增加节点的操作/"  title="">
  <strong>下一篇：</strong><br/> 
- <span>浅谈R语言的简单的操作
+ <span>(no title)
 </span>
 </a>
 </div>
@@ -160,7 +172,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS的增加节点的操作"><span class="toc-number">1.</span> <span class="toc-text">JS的增加节点的操作</span></a></li></ol>
  
   </div>
 
