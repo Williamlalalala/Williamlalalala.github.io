@@ -153,76 +153,6 @@ function insert(){
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/09/17/JS的增加节点的操作/" title="" itemprop="url"></a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
-		
-  <p class="article-time">
-    <time datetime="2017-09-17T08:26:41.689Z" itemprop="datePublished"> Published 2017-09-17</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h1 id="JS的增加节点的操作"><a href="#JS的增加节点的操作" class="headerlink" title="JS的增加节点的操作"></a>JS的增加节点的操作</h1><p>我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新</p>
-<hr>
-<p>我先做了一个非常简单的框加几个文本，这样一会会看的很清楚</p>
-<pre><code>&lt;input type=&quot;button&quot; id=&quot;chenhw&quot; name=&quot;&quot;&gt;
-&lt;p id=&quot;in&quot;&gt;hhhhh&lt;/p&gt;
-&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
-&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
-</code></pre><p>然后js代码如下</p>
-<pre><code>window.onload=function(){//在这里我觉得加不加这个都差不多
-    var one=document.getElementById(&apos;chenhw&apos;);//获取节点
-    one.onclick=function(){//节点被click的时候触发
-        insert();//调用这个函数
-    }
-}
-function insert(){
-    var start=document.getElementById(&apos;in&apos;);//获取想操作的节点位置
-    var add=document.createElement(&apos;create&apos;);//create一个节点
-    add.innerHTML=&quot;lalal&quot;;//改变这个节点的内容
-    start.insertBefore(add, null);//插入
-}
-</code></pre><p>这样就可以看到我们在click之后整个页面会做出相应的操作</p>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
       <a href="/2017/09/16/Java语言基础知识/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
@@ -926,6 +856,106 @@ select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) a
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2017/08/28/js-dom/" title="JavaScript对于dom节点的基本操作" itemprop="url">JavaScript对于dom节点的基本操作</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2017-08-28T23:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：</p>
+<blockquote>
+<p>更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容；</p>
+<p>遍历：遍历该DOM节点下的子节点，以便进行进一步操作；</p>
+<p>添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点；</p>
+<p>删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。<br>在操作一个DOM节点前，我们需要通过各种方式先拿到这个DOM节点</p>
+</blockquote>
+<pre><code>最常用的方法是document.getElementById()【返回一个节点】和document.getElementsByTagName()【返回一组节点】， 以及CSS选择器document.getElementsByClassName()【返回一组节点】
+</code></pre><p>可以先对于节点进行取，然后再通过class或tagname去取其中的节点组</p>
+<p>二：更新DOM 通过修改innerHTML属性，这个方式非常强大，不但可以修改一个DOM节点的文本内容 ，还可以直接通过HTML片段修改DOM节点内部的子树。内部要改字符串的可以使用单引号括起来。 可以使用</p>
+<pre><code>var p = document.getElementById(&apos;p-id&apos;); p.style.color = &apos;#ff0000&apos;;来改变当前节点的CSS值。
+</code></pre><p>ps：如果有连接符则把连接符后的第一个字母大写</p>
+<p>三：插入DOM 静态插入节点：</p>
+<pre><code>var js = document.getElementById(&apos;js&apos;);
+
+list = document.getElementById(&apos;list&apos;);
+
+list.appendChild(js); 此操作会把id为js的位置换到list这个节点后的最后一个 动态插入节点：
+
+var list = document.getElementById(&apos;list&apos;); new= document.createElement(&apos;p&apos;);/*创造一个新的节点*/
+
+new.id = &apos;hhhhh&apos;;/*给这个节点赋值*/
+
+new.innerText = &apos;hhhh&apos;;/*给这个节点它的内部text*/
+
+list.appendChild(new);/*同样的操作把此id的节点放入list的最后*/
+</code></pre><p>同样的可以动态加入新的CSS类：</p>
+<pre><code>var d = document.createElement(&apos;style&apos;);
+
+d.setAttribute(&apos;type&apos;, &apos;text/css&apos;);
+
+d.innerHTML = &apos;p { color: red }&apos;;
+
+document.getElementsByTagName(&apos;head&apos;)[0].appendChild(d);/*会把这个节点放入head的最后的地方*/
+
+如果想要在指定的地方进行操作则有：
+
+ref = document.getElementById(&apos;front&apos;)； list.insertBefore(new, ref);/*此操作会把new节点放入ref的前面*/
+</code></pre><p>四：删除DOM 要删除一个节点，首先要获得该节点本身以及它的父节点，然后，调用父节点的removeChild把自己删掉 // 拿到待删除节点:</p>
+<pre><code>var self = document.getElementById(&apos;to-be-removed&apos;); // 拿到父节点:
+
+var parent = self.parentElement; // 删除:
+
+var removed = parent.removeChild(self);
+
+removed === self; // true 个人建议删除节点从后向前删除，因为删除之后数组会向前进位，所以会改变其位置 
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2017/08/28/pagefirst/" title="简单的hexo和GitHub搭建自己的博客" itemprop="url">简单的hexo和GitHub搭建自己的博客</a>
   </h1>
   <p class="article-author">By
@@ -1019,106 +1049,6 @@ hexo d
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2017/08/28/js-dom/" title="JavaScript对于dom节点的基本操作" itemprop="url">JavaScript对于dom节点的基本操作</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
-		
-  <p class="article-time">
-    <time datetime="2017-08-28T23:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：</p>
-<blockquote>
-<p>更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容；</p>
-<p>遍历：遍历该DOM节点下的子节点，以便进行进一步操作；</p>
-<p>添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点；</p>
-<p>删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。<br>在操作一个DOM节点前，我们需要通过各种方式先拿到这个DOM节点</p>
-</blockquote>
-<pre><code>最常用的方法是document.getElementById()【返回一个节点】和document.getElementsByTagName()【返回一组节点】， 以及CSS选择器document.getElementsByClassName()【返回一组节点】
-</code></pre><p>可以先对于节点进行取，然后再通过class或tagname去取其中的节点组</p>
-<p>二：更新DOM 通过修改innerHTML属性，这个方式非常强大，不但可以修改一个DOM节点的文本内容 ，还可以直接通过HTML片段修改DOM节点内部的子树。内部要改字符串的可以使用单引号括起来。 可以使用</p>
-<pre><code>var p = document.getElementById(&apos;p-id&apos;); p.style.color = &apos;#ff0000&apos;;来改变当前节点的CSS值。
-</code></pre><p>ps：如果有连接符则把连接符后的第一个字母大写</p>
-<p>三：插入DOM 静态插入节点：</p>
-<pre><code>var js = document.getElementById(&apos;js&apos;);
-
-list = document.getElementById(&apos;list&apos;);
-
-list.appendChild(js); 此操作会把id为js的位置换到list这个节点后的最后一个 动态插入节点：
-
-var list = document.getElementById(&apos;list&apos;); new= document.createElement(&apos;p&apos;);/*创造一个新的节点*/
-
-new.id = &apos;hhhhh&apos;;/*给这个节点赋值*/
-
-new.innerText = &apos;hhhh&apos;;/*给这个节点它的内部text*/
-
-list.appendChild(new);/*同样的操作把此id的节点放入list的最后*/
-</code></pre><p>同样的可以动态加入新的CSS类：</p>
-<pre><code>var d = document.createElement(&apos;style&apos;);
-
-d.setAttribute(&apos;type&apos;, &apos;text/css&apos;);
-
-d.innerHTML = &apos;p { color: red }&apos;;
-
-document.getElementsByTagName(&apos;head&apos;)[0].appendChild(d);/*会把这个节点放入head的最后的地方*/
-
-如果想要在指定的地方进行操作则有：
-
-ref = document.getElementById(&apos;front&apos;)； list.insertBefore(new, ref);/*此操作会把new节点放入ref的前面*/
-</code></pre><p>四：删除DOM 要删除一个节点，首先要获得该节点本身以及它的父节点，然后，调用父节点的removeChild把自己删掉 // 拿到待删除节点:</p>
-<pre><code>var self = document.getElementById(&apos;to-be-removed&apos;); // 拿到父节点:
-
-var parent = self.parentElement; // 删除:
-
-var removed = parent.removeChild(self);
-
-removed === self; // true 个人建议删除节点从后向前删除，因为删除之后数组会向前进位，所以会改变其位置 
-</code></pre>
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/前端/">前端</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
@@ -1142,11 +1072,11 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 			
 		
 			
-				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
+				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
 			
 		
 			
@@ -1155,10 +1085,6 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 		
 			
 				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/前端/" title="前端">前端<sup>1</sup></a></li>
 			
 		
 		</ul>
