@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JavaScript对于dom节点的基本操作 | Chenhw&#39;sBlog</title>
+    <title>ubuntu中root用户的设置 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
-<meta name="keywords" content="JavaScript">
+    <meta name="description" content="Ubuntu把root用户设置成默认###1、设置root密码 sudo -s   sudo passwd root   ###2、设置config文件如果lightdm.conf文件存在可编辑/etc/lightdm/目录下的lightdm.conf文件，如没有此文件，直接创建    [SeatDefaults]   autologin-user=root    user-session=ubu">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对于dom节点的基本操作">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/js-dom/index.html">
+<meta property="og:title" content="ubuntu中root用户的设置">
+<meta property="og:url" content="http://yoursite.com/2017/09/29/ubuntu中root用户的设置/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
-<meta property="og:updated_time" content="2017-09-17T08:38:54.407Z">
+<meta property="og:description" content="Ubuntu把root用户设置成默认###1、设置root密码 sudo -s   sudo passwd root   ###2、设置config文件如果lightdm.conf文件存在可编辑/etc/lightdm/目录下的lightdm.conf文件，如没有此文件，直接创建    [SeatDefaults]   autologin-user=root    user-session=ubu">
+<meta property="og:updated_time" content="2017-09-29T16:08:03.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对于dom节点的基本操作">
-<meta name="twitter:description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
+<meta name="twitter:title" content="ubuntu中root用户的设置">
+<meta name="twitter:description" content="Ubuntu把root用户设置成默认###1、设置root密码 sudo -s   sudo passwd root   ###2、设置config文件如果lightdm.conf文件存在可编辑/etc/lightdm/目录下的lightdm.conf文件，如没有此文件，直接创建    [SeatDefaults]   autologin-user=root    user-session=ubu">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/js-dom/" title="JavaScript对于dom节点的基本操作" itemprop="url">JavaScript对于dom节点的基本操作</a>
+      <a href="/2017/09/29/ubuntu中root用户的设置/" title="ubuntu中root用户的设置" itemprop="url">ubuntu中root用户的设置</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T15:32:44.000Z" itemprop="datePublished"> 发表于 2017-08-28</time>
+    <time datetime="2017-09-29T16:07:28.000Z" itemprop="datePublished"> 发表于 2017-09-29</time>
     
   </p>
 </header>
@@ -97,56 +97,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu把root用户设置成默认"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu把root用户设置成默认</span></a></li></ol>
 		
 		</div>
 		
-		<p>一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：</p>
-<blockquote>
-<p>更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容；</p>
-<p>遍历：遍历该DOM节点下的子节点，以便进行进一步操作；</p>
-<p>添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点；</p>
-<p>删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。<br>在操作一个DOM节点前，我们需要通过各种方式先拿到这个DOM节点</p>
-</blockquote>
-<pre><code>最常用的方法是document.getElementById()【返回一个节点】和document.getElementsByTagName()【返回一组节点】， 以及CSS选择器document.getElementsByClassName()【返回一组节点】
-</code></pre><p>可以先对于节点进行取，然后再通过class或tagname去取其中的节点组</p>
-<p>二：更新DOM 通过修改innerHTML属性，这个方式非常强大，不但可以修改一个DOM节点的文本内容 ，还可以直接通过HTML片段修改DOM节点内部的子树。内部要改字符串的可以使用单引号括起来。 可以使用</p>
-<pre><code>var p = document.getElementById(&apos;p-id&apos;); p.style.color = &apos;#ff0000&apos;;来改变当前节点的CSS值。
-</code></pre><p>ps：如果有连接符则把连接符后的第一个字母大写</p>
-<p>三：插入DOM 静态插入节点：</p>
-<pre><code>var js = document.getElementById(&apos;js&apos;);
+		<h1 id="Ubuntu把root用户设置成默认"><a href="#Ubuntu把root用户设置成默认" class="headerlink" title="Ubuntu把root用户设置成默认"></a>Ubuntu把root用户设置成默认</h1><p>###1、设置root密码</p>
+<pre><code>sudo -s  
+sudo passwd root  
+</code></pre><p>###2、设置config文件<br>如果lightdm.conf文件存在<br>可编辑/etc/lightdm/目录下的lightdm.conf文件，如没有此文件，直接创建<br>    [SeatDefaults]  </p>
+<pre><code>autologin-user=root  
 
-list = document.getElementById(&apos;list&apos;);
+user-session=ubuntu  
 
-list.appendChild(js); 此操作会把id为js的位置换到list这个节点后的最后一个 动态插入节点：
-
-var list = document.getElementById(&apos;list&apos;); new= document.createElement(&apos;p&apos;);/*创造一个新的节点*/
-
-new.id = &apos;hhhhh&apos;;/*给这个节点赋值*/
-
-new.innerText = &apos;hhhh&apos;;/*给这个节点它的内部text*/
-
-list.appendChild(new);/*同样的操作把此id的节点放入list的最后*/
-</code></pre><p>同样的可以动态加入新的CSS类：</p>
-<pre><code>var d = document.createElement(&apos;style&apos;);
-
-d.setAttribute(&apos;type&apos;, &apos;text/css&apos;);
-
-d.innerHTML = &apos;p { color: red }&apos;;
-
-document.getElementsByTagName(&apos;head&apos;)[0].appendChild(d);/*会把这个节点放入head的最后的地方*/
-
-如果想要在指定的地方进行操作则有：
-
-ref = document.getElementById(&apos;front&apos;)； list.insertBefore(new, ref);/*此操作会把new节点放入ref的前面*/
-</code></pre><p>四：删除DOM 要删除一个节点，首先要获得该节点本身以及它的父节点，然后，调用父节点的removeChild把自己删掉 // 拿到待删除节点:</p>
-<pre><code>var self = document.getElementById(&apos;to-be-removed&apos;); // 拿到父节点:
-
-var parent = self.parentElement; // 删除:
-
-var removed = parent.removeChild(self);
-
-removed === self; // true 个人建议删除节点从后向前删除，因为删除之后数组会向前进位，所以会改变其位置 
+greeter-show-manual-login=true  
 </code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
@@ -155,7 +118,7 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
+  <span></span> <a href="/tags/Linux/">Linux</a>
   </div>
 
 </div>
@@ -164,7 +127,7 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/08/28/js-dom/" data-title="JavaScript对于dom节点的基本操作 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/09/29/ubuntu中root用户的设置/" data-title="ubuntu中root用户的设置 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -177,19 +140,11 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/08/28/R-1/" title="新手操作MySQL">
-  <strong>上一篇：</strong><br/>
-  <span>
-  新手操作MySQL</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/08/28/pagefirst/"  title="简单的hexo和GitHub搭建自己的博客">
+<a href="/2017/09/17/js-add/"  title="js对于增加节点的操作">
  <strong>下一篇：</strong><br/> 
- <span>简单的hexo和GitHub搭建自己的博客
+ <span>js对于增加节点的操作
 </span>
 </a>
 </div>
@@ -198,7 +153,7 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/08/28/js-dom/" data-title="JavaScript对于dom节点的基本操作" data-url="http://yoursite.com/2017/08/28/js-dom/"></div>
+	<div class="ds-thread" data-thread-key="2017/09/29/ubuntu中root用户的设置/" data-title="ubuntu中root用户的设置" data-url="http://yoursite.com/2017/09/29/ubuntu中root用户的设置/"></div>
 </section>
 
 
@@ -209,7 +164,7 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ubuntu把root用户设置成默认"><span class="toc-number">1.</span> <span class="toc-text">Ubuntu把root用户设置成默认</span></a></li></ol>
  
   </div>
 
