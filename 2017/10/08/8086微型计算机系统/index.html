@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
 <meta property="og:description" content="8086微型计算机系统 ##1、名次解释（1）  物理地址：一个唯一的地址，也叫绝对地址 逻辑地址：是指由程序产生的与段相关的偏移地址部分 段地址：每个分段之后每一个段的段首地址偏移地址：也成为偏移量，因为8086中的ALU只能进行16位运算，而地址线有20位，所以20位物理地址是由段地址和偏移地址组成  （2）  时钟周期：是一个时间的量，是计算机中最小的 总线周期：总线周期通常指的是CPU完成">
 <meta property="og:image" content="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0=baike272,5,5,272,90/sign=180ed33f9f22720e6fc3eaa81aa26123/14ce36d3d539b6002b0a79eaee50352ac75cb7a2.jpg">
-<meta property="og:updated_time" content="2017-10-08T20:28:44.436Z">
+<meta property="og:updated_time" content="2017-10-08T20:32:37.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8086微型计算机系统">
 <meta name="twitter:description" content="8086微型计算机系统 ##1、名次解释（1）  物理地址：一个唯一的地址，也叫绝对地址 逻辑地址：是指由程序产生的与段相关的偏移地址部分 段地址：每个分段之后每一个段的段首地址偏移地址：也成为偏移量，因为8086中的ALU只能进行16位运算，而地址线有20位，所以20位物理地址是由段地址和偏移地址组成  （2）  时钟周期：是一个时间的量，是计算机中最小的 总线周期：总线周期通常指的是CPU完成">
@@ -51,7 +51,7 @@
 				<h1 class="site-name"><a href="/" title="Chenhw&#39;sBlog">Chenhw&#39;sBlog</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -67,7 +67,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
@@ -90,14 +90,14 @@
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-10-08T20:27:33.000Z" itemprop="datePublished"> Published 2017-10-08</time>
+    <time datetime="2017-10-08T20:27:33.000Z" itemprop="datePublished"> 发表于 2017-10-08</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086微型计算机系统"><span class="toc-number">1.</span> <span class="toc-text">8086微型计算机系统</span></a></li></ol>
 		
@@ -138,8 +138,8 @@ MOV DX，206H
 OUT DX，AL
 </code></pre></blockquote>
 <p>##4、若8086CPU工作于最小模式，试指出当CPU完成将AH的内容送到存储单元的操作过程中，以下信号为低电平还是高电平：M/ <span style="TEXT-DECORATION: overline">IO</span>、<span style="TEXT-DECORATION: overline">WR</span>、<span style="TEXT-DECORATION: overline">RD</span>、DT/<span style="TEXT-DECORATION: overline">R</span>。若CPU完成的是将I/O端口的数据送到AL的操作，则上述信号应为什么电平。</p>
-<p>：M/ <span style="TEXT-DECORATION: overline">IO</span>在T1阶段就变为有效，因为要先判断是向存储器存或者是向I/O设备存，即为高电平然后一直到T4、<span style="TEXT-DECORATION: overline">WR</span>因为是写操作，所以在T2的时候变为有效即为低电平、<span style="TEXT-DECORATION: overline">RD</span>因为是写操作，所以一直无效即为高电平、DT/<span style="TEXT-DECORATION: overline">R</span>一直为低电平</p>
-<p>##5、简述8086系统最小模式读周期和写周期时序的不同之处<br>T1状态和T2状态不一样。<br>在T1状态，DT/<span style="TEXT-DECORATION: overline">R</span>应输出高电平，即表示为读周期。<br>在T2状态，读信号<span style="TEXT-DECORATION: overline">RD</span>变为无效,而写信号<span style="TEXT-DECORATION: overline">WR</span>变为有效；AD15~AD0不变为高阻态，而是再地址撤销之后立即送出要写入存储器或外设端口的数据。</p>
+<pre><code>M/ &lt;SPAN style=&quot;TEXT-DECORATION: overline&quot;&gt;IO&lt;/SPAN&gt;在T1阶段就变为有效，因为要先判断是向存储器存或者是向I/O设备存，即为高电平然后一直到T4、&lt;SPAN style=&quot;TEXT-DECORATION: overline&quot;&gt;WR&lt;/SPAN&gt;因为是写操作，所以在T2的时候变为有效即为低电平、&lt;SPAN style=&quot;TEXT-DECORATION: overline&quot;&gt;RD&lt;/SPAN&gt;因为是写操作，所以一直无效即为高电平、DT/&lt;SPAN style=&quot;TEXT-DECORATION: overline&quot;&gt;R&lt;/SPAN&gt;一直为低电平
+</code></pre><p>##5、简述8086系统最小模式读周期和写周期时序的不同之处<br>T1状态和T2状态不一样。<br>在T1状态，DT/<span style="TEXT-DECORATION: overline">R</span>应输出高电平，即表示为读周期。<br>在T2状态，读信号<span style="TEXT-DECORATION: overline">RD</span>变为无效,而写信号<span style="TEXT-DECORATION: overline">WR</span>变为有效；AD15~AD0不变为高阻态，而是再地址撤销之后立即送出要写入存储器或外设端口的数据。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -189,22 +189,22 @@ OUT DX，AL
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
  
  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086微型计算机系统"><span class="toc-number">1.</span> <span class="toc-text">8086微型计算机系统</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 
   
 <div class="github-card">
-<p class="asidetitle">Github Card</p>
+<p class="asidetitle">Github 名片</p>
 <div class="github-card" data-github="Williamlalalala" data-theme="medium"></div>
 <script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
 </div>
@@ -215,7 +215,7 @@ OUT DX，AL
 
   
 <div class="tagslist">
-	<p class="asidetitle">Tags</p>
+	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
 			
@@ -247,7 +247,7 @@ OUT DX，AL
 
 
   <div class="linkslist">
-  <p class="asidetitle">Links</p>
+  <p class="asidetitle">友情链接</p>
     <ul>
         
           <li>
@@ -263,11 +263,11 @@ OUT DX，AL
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
   <div class="weiboshow">
-  <p class="asidetitle">Weibo</p>
+  <p class="asidetitle">新浪微博</p>
     <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=b3593ceb&dpc=1"></iframe>
 </div>
 
@@ -512,7 +512,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
