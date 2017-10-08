@@ -4,35 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>简单的hexo和GitHub搭建自己的博客 | Chenhw&#39;sBlog</title>
+    <title>8086微型计算机系统 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧我是使用的hexo和GitHub搭建的 第一步先到网络上下载node.js 和git（使用GitHub必须链接在此）   其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文">
-<meta name="keywords" content="blog">
+    <meta name="description" content="8086微型计算机系统 ##1、名次解释（1）  物理地址：一个唯一的地址，也叫绝对地址 逻辑地址：是指由程序产生的与段相关的偏移地址部分 段地址：每个分段之后每一个段的段首地址偏移地址：也成为偏移量，因为8086中的ALU只能进行16位运算，而地址线有20位，所以20位物理地址是由段地址和偏移地址组成  （2）  时钟周期：是一个时间的量，是计算机中最小的 总线周期：总线周期通常指的是CPU完成">
+<meta name="keywords" content="微机原理与接口技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单的hexo和GitHub搭建自己的博客">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/pagefirst/index.html">
+<meta property="og:title" content="8086微型计算机系统">
+<meta property="og:url" content="http://yoursite.com/2017/10/08/8086微型计算机系统/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧我是使用的hexo和GitHub搭建的 第一步先到网络上下载node.js 和git（使用GitHub必须链接在此）   其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&bo=AgSAAgAAAAADAKE!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/AHebJN8TGu08gOAq4Ac74YZjDio87nydRswXhbFU7NY!/b/dDwBAAAAAAAA&bo=dgKuAnYCrgIDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/hL4IIXSamIdvfC*0frxF*83EwFa0KG0YXsPyjN6Ub3w!/b/dDwBAAAAAAAA&bo=ugSAAgAAAAADABk!&rf=viewer_4">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/0bu7eVjMwY.H*eFDTnDr6dlkWHAZTO2U4IIki5Sm1y8!/b/dD0BAAAAAAAA&bo=9wH8APcB*AADACU!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/A1B.aAhMQFSDcEkwKanvEOz6fliXsjo5WDvRHI2nCxg!/b/dDwBAAAAAAAA&bo=MAWAAq8FvQIDAIc!&rf=viewer_4">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/C55D83YKHkdywlal62S7eyRYHqZUq3oydDpGhsW3wtg!/b/dG0BAAAAAAAA&bo=iAQfA4gEHwMDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/Tv44CQ3.7odcGCZZJddJPnPUn6qRG*JVpsj2DvC1DMM!/b/dOgAAAAAAAAA&bo=8wEuAPMBLgADACU!&rf=viewer_4">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/qytckYWxBVvhU9s*nb0hxNSSgC2xMRcDPe94rtfHLq0!/b/dD0BAAAAAAAA&bo=UgVRA1IFUQMDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/IjEMV4cjGoSNnPien63MNTn47Mw7u2lDmhg2fb2rCKQ!/b/dDwBAAAAAAAA&bo=dwTTAncE0wIDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a1.qpic.cn/psb?/V12td2HV2olXaC/sJy9X8oMlXhenPYPQ9YjcQGxBNCJhEauywJYR1bad4I!/b/dOcAAAAAAAAA&bo=AgMqAwIDKgMDACU!&rf=viewer_4">
-<meta property="og:updated_time" content="2017-08-28T12:55:15.683Z">
+<meta property="og:description" content="8086微型计算机系统 ##1、名次解释（1）  物理地址：一个唯一的地址，也叫绝对地址 逻辑地址：是指由程序产生的与段相关的偏移地址部分 段地址：每个分段之后每一个段的段首地址偏移地址：也成为偏移量，因为8086中的ALU只能进行16位运算，而地址线有20位，所以20位物理地址是由段地址和偏移地址组成  （2）  时钟周期：是一个时间的量，是计算机中最小的 总线周期：总线周期通常指的是CPU完成">
+<meta property="og:image" content="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0=baike272,5,5,272,90/sign=180ed33f9f22720e6fc3eaa81aa26123/14ce36d3d539b6002b0a79eaee50352ac75cb7a2.jpg">
+<meta property="og:updated_time" content="2017-10-08T20:28:44.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单的hexo和GitHub搭建自己的博客">
-<meta name="twitter:description" content="hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧我是使用的hexo和GitHub搭建的 第一步先到网络上下载node.js 和git（使用GitHub必须链接在此）   其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文">
-<meta name="twitter:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&bo=AgSAAgAAAAADAKE!&rf=viewer_4">
+<meta name="twitter:title" content="8086微型计算机系统">
+<meta name="twitter:description" content="8086微型计算机系统 ##1、名次解释（1）  物理地址：一个唯一的地址，也叫绝对地址 逻辑地址：是指由程序产生的与段相关的偏移地址部分 段地址：每个分段之后每一个段的段首地址偏移地址：也成为偏移量，因为8086中的ALU只能进行16位运算，而地址线有20位，所以20位物理地址是由段地址和偏移地址组成  （2）  时钟周期：是一个时间的量，是计算机中最小的 总线周期：总线周期通常指的是CPU完成">
+<meta name="twitter:image" content="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0=baike272,5,5,272,90/sign=180ed33f9f22720e6fc3eaa81aa26123/14ce36d3d539b6002b0a79eaee50352ac75cb7a2.jpg">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -92,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/pagefirst/" title="简单的hexo和GitHub搭建自己的博客" itemprop="url">简单的hexo和GitHub搭建自己的博客</a>
+      <a href="/2017/10/08/8086微型计算机系统/" title="8086微型计算机系统" itemprop="url">8086微型计算机系统</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T15:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-10-08T20:27:33.000Z" itemprop="datePublished"> Published 2017-10-08</time>
     
   </p>
 </header>
@@ -108,55 +99,47 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086微型计算机系统"><span class="toc-number">1.</span> <span class="toc-text">8086微型计算机系统</span></a></li></ol>
 		
 		</div>
 		
-		<p>  hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧<br>我是使用的hexo和GitHub搭建的</p>
-<p>第一步先到网络上下载<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a> 和<a href="https://git-scm.com/" target="_blank" rel="external">git</a>（使用GitHub必须链接在此）</p>
-<p>  其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文件夹，再在里面建一个nodejs的文件夹，然后把node.js放在那里面，以后那就是你博客的根据地了。<br>  下载完git之后打开git.exe可以先放在那里（以防找不到了）</p>
-<p>  然后就是把环境变量改一下具体如下</p>
+		<h1 id="8086微型计算机系统"><a href="#8086微型计算机系统" class="headerlink" title="8086微型计算机系统"></a>8086微型计算机系统</h1><hr>
+<p>##1、名次解释<br>（1）</p>
 <blockquote>
-<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&amp;bo=AgSAAgAAAAADAKE!&amp;rf=viewer_4" alt="enter image description here"><br>进入计算机的系统属性，先点更改设置再点环境变量<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/AHebJN8TGu08gOAq4Ac74YZjDio87nydRswXhbFU7NY!/b/dDwBAAAAAAAA&amp;bo=dgKuAnYCrgIDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/hL4IIXSamIdvfC*0frxF*83EwFa0KG0YXsPyjN6Ub3w!/b/dDwBAAAAAAAA&amp;bo=ugSAAgAAAAADABk!&amp;rf=viewer_4" alt="enter image description here"><br>然后就会看到左边的窗口弹出，找到PATH然后添加你的node.js的路径</p>
+<p>物理地址：一个唯一的地址，也叫绝对地址 逻辑地址：是指由程序产生的与段相关的偏移地址部分 段地址：每个分段之后每一个段的段首地址<br>偏移地址：也成为偏移量，因为8086中的ALU只能进行16位运算，而地址线有20位，所以20位物理地址是由段地址和偏移地址组成<img src="https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0=baike272,5,5,272,90/sign=180ed33f9f22720e6fc3eaa81aa26123/14ce36d3d539b6002b0a79eaee50352ac75cb7a2.jpg" alt="偏移地址"></p>
 </blockquote>
-<p>  紧接着按win的键+R在其中输入cmd打开命令行</p>
+<p>（2）</p>
 <blockquote>
-<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/0bu7eVjMwY.H*eFDTnDr6dlkWHAZTO2U4IIki5Sm1y8!/b/dD0BAAAAAAAA&amp;bo=9wH8APcB*AADACU!&amp;rf=viewer_4" alt="enter image description here"></p>
+<p>时钟周期：是一个时间的量，是计算机中最小的 总线周期：总线周期通常指的是CPU完成一次访问MEM或I/O端口操作所需要的时间<br>指令周期：执行一条指令需要的时间，每条指令包括取指令（fetch），译码（Decode），执行(Execute)3个阶段</p>
 </blockquote>
-<p>先进入你的blog文件夹再进入nodejs的文件夹</p>
-<pre><code>C:\Users\chenhw&gt;D:
-D:\&gt;cd blog
-D:\blog&gt;cd nodejs
-安装hexo
-D:\blog\nodejs&gt;npm install -g hexo
-紧接着创建一个文件夹
-D:\blog\nodejs&gt;mkdir blog
-然后进去
-D:\blog\nodejs&gt;cd blog
-初始化hexo（这一步我用了200多秒）
-D:\blog\nodejs\blog&gt;hexo init 
-紧接着安装依赖包
-D:\blog\nodejs\blog&gt;npm install
-再输入npm install hexo-deployer-git --save
-</code></pre><p>初始的工作我们就进行完了，然后我们现在本地进行部署</p>
-<pre><code>命令行输入
-hexo generate（hexo g也可以）
-hexo server（hexo s也可以）这里是本地部署，部署完别把cdm命令行关掉
-</code></pre><p>紧接着我们就要把网页部署到GitHub上，我们去<a href="https://github.com/" target="_blank" rel="external">GitHub的官网</a>（GitHub那个猫的标超级萌有木有）申请一个账号，</p>
+<p>（3）</p>
 <blockquote>
-<p><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/A1B.aAhMQFSDcEkwKanvEOz6fliXsjo5WDvRHI2nCxg!/b/dDwBAAAAAAAA&amp;bo=MAWAAq8FvQIDAIc!&amp;rf=viewer_4" alt="Blockquote"><br>新建一个仓库，然后写入名字<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/C55D83YKHkdywlal62S7eyRYHqZUq3oydDpGhsW3wtg!/b/dG0BAAAAAAAA&amp;bo=iAQfA4gEHwMDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/Tv44CQ3.7odcGCZZJddJPnPUn6qRG*JVpsj2DvC1DMM!/b/dOgAAAAAAAAA&amp;bo=8wEuAPMBLgADACU!&amp;rf=viewer_4" alt="enter image description here"><br>紧接着我们create完之后回到主页找到setting<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/qytckYWxBVvhU9s*nb0hxNSSgC2xMRcDPe94rtfHLq0!/b/dD0BAAAAAAAA&amp;bo=UgVRA1IFUQMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>向下翻翻到GitHub pages的地方选择主题<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/IjEMV4cjGoSNnPien63MNTn47Mw7u2lDmhg2fb2rCKQ!/b/dDwBAAAAAAAA&amp;bo=dwTTAncE0wIDACU!&amp;rf=viewer_4" alt="enter image description here"><br>然后紧接着我们再在GitHub里把ssh设置好，这里现在GitHub中进行操作，<a href="http://jingyan.baidu.com/article/dca1fa6f756777f1a44052e3.html" target="_blank" rel="external">具体操作在这</a></p>
-<p>紧接着我们打开没有关掉的git的命令行进行操作就可以了</p>
-<p><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/sJy9X8oMlXhenPYPQ9YjcQGxBNCJhEauywJYR1bad4I!/b/dOcAAAAAAAAA&amp;bo=AgMqAwIDKgMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>这边创建ssh的部分就算完成了</p>
+<p>最小模式：即系统中只有8086（或8088）一个微处理器。最小模式是单处理器系统。系统中所需要的控制信号全部由8086（或8088）CPU本身直接提供。<br>最大模式：系统中有两个或两个以上的微处理器，即除了主处理器8086（或8088）以外，还有协处理器（8087算术协处理器或8089 输入/输出协处理器）。最大模式可构成多处理器系统，系统中所需要的控制信号由总线控制器8288提供。</p>
 </blockquote>
-<p>接下来要配置Deployment<br>在_config.yml文件中，找到Deployment，然后按照如下修改（因为yml文件对于格式的要求特别高，所以要在deploy下面的每个属性前加两个空格，冒号后加一个空格）：</p>
-<pre><code>deploy:
-type: git
-repo: git@github.com:Williamlalalala/Williamlalalala.github.io.git
-branch: master
-</code></pre><p>我们再回到cmd命令行，输入</p>
-<pre><code>hexo g
-hexo d
-</code></pre><p>就可以部署成功了</p>
+<p>##2、8086CPU中EU和BIU的功能是什么？它们是如何工作的</p>
+<blockquote>
+<p>EU(Execution Unit)由算术逻辑单元（ALU）、8个通用寄存器、标志寄存器和控制电路组成。ALU可完成8位或16位数的算术或逻辑运算。<br>EU负责指令的执行，即从总线接口部件BIU的指令队列去指令，指令执行后想BIU送回运算结果，同时把运算结果的状态特征保存到标志寄存器中。<br>EU不直接与外部系统相连。当需要与主存储器或I/O设备交换数据时，EU向BIU发出命令，并向BIU提供16位的有效地址及所需要传送的数据。</p>
+</blockquote>
+<hr>
+<p>总线接口部件（BIU）</p>
+<blockquote>
+<p>BIU</p>
+<p>有段寄存器、指令指针寄存器（IP）、地址加法器、内部暂存器、字节指令队列缓冲器和总线控制逻辑组成，负责CPU与储存器、I/O设备之间的数据传送。<br>BIU完成以下操作：取指令送给指令队列-&gt;配和指令部件从指定的内存单元或者外设端口中去数据-&gt;将数据传送给执行部件或者把执行部件的操作结果传送到指定的内存单元或外设端口中。</p>
+</blockquote>
+<p>EU负责处理BIU中给其的指令，然后BIU把指令放到类似队列里的地方，EU有时候会要求BIU进行总线访问，如果BIU在进行取指令的操作，那么BIU会先把指令取出来，然后再响应访问总线的要求，如果空闲则直接响应。</p>
+<p>##3、8086CPU可寻址的储存器地址范围是多少？可寻址的I/O端口地址范围是多少</p>
+<blockquote>
+<p>8086有20位地址，可以寻址1MB的空间<br>利用AD15~AD0这16条地址线做端口地址，可访问最多达65536个8位I/O端口或32768个16位I/O端口  例如：</p>
+<pre><code>IN AL,40H
+</code></pre><p>从端口地址为40H的端口中取出字节送给寄存AL 但是如果大于258则不能直接赋值需要使用DX 例如：</p>
+<pre><code>MOV DX， 309H
+IN AL，DX 从端口地址为309H的端口中取出字节给AL
+MOV DX，206H
+OUT DX，AL
+</code></pre></blockquote>
+<p>##4、若8086CPU工作于最小模式，试指出当CPU完成将AH的内容送到存储单元的操作过程中，以下信号为低电平还是高电平：M/ <span style="TEXT-DECORATION: overline">IO</span>、<span style="TEXT-DECORATION: overline">WR</span>、<span style="TEXT-DECORATION: overline">RD</span>、DT/<span style="TEXT-DECORATION: overline">R</span>。若CPU完成的是将I/O端口的数据送到AL的操作，则上述信号应为什么电平。</p>
+<p>：M/ <span style="TEXT-DECORATION: overline">IO</span>在T1阶段就变为有效，因为要先判断是向存储器存或者是向I/O设备存，即为高电平然后一直到T4、<span style="TEXT-DECORATION: overline">WR</span>因为是写操作，所以在T2的时候变为有效即为低电平、<span style="TEXT-DECORATION: overline">RD</span>因为是写操作，所以一直无效即为高电平、DT/<span style="TEXT-DECORATION: overline">R</span>一直为低电平</p>
+<p>##5、简述8086系统最小模式读周期和写周期时序的不同之处<br>T1状态和T2状态不一样。<br>在T1状态，DT/<span style="TEXT-DECORATION: overline">R</span>应输出高电平，即表示为读周期。<br>在T2状态，读信号<span style="TEXT-DECORATION: overline">RD</span>变为无效,而写信号<span style="TEXT-DECORATION: overline">WR</span>变为有效；AD15~AD0不变为高阻态，而是再地址撤销之后立即送出要写入存储器或外设端口的数据。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -165,7 +148,7 @@ hexo d
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/微机原理与接口技术/">微机原理与接口技术</a>
   </div>
 
 </div>
@@ -174,7 +157,7 @@ hexo d
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/08/28/pagefirst/" data-title="简单的hexo和GitHub搭建自己的博客 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/10/08/8086微型计算机系统/" data-title="8086微型计算机系统 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -187,20 +170,20 @@ hexo d
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/08/28/js-dom/" title="JavaScript对于dom节点的基本操作">
-  <strong>上一篇：</strong><br/>
-  <span>
-  JavaScript对于dom节点的基本操作</span>
+
+<div class="next">
+<a href="/2017/09/29/ubuntu中root用户的设置/"  title="ubuntu中root用户的设置">
+ <strong>下一篇：</strong><br/> 
+ <span>ubuntu中root用户的设置
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/08/28/pagefirst/" data-title="简单的hexo和GitHub搭建自己的博客" data-url="http://yoursite.com/2017/08/28/pagefirst/"></div>
+	<div class="ds-thread" data-thread-key="2017/10/08/8086微型计算机系统/" data-title="8086微型计算机系统" data-url="http://yoursite.com/2017/10/08/8086微型计算机系统/"></div>
 </section>
 
 
@@ -211,7 +194,7 @@ hexo d
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086微型计算机系统"><span class="toc-number">1.</span> <span class="toc-text">8086微型计算机系统</span></a></li></ol>
  
   </div>
 
