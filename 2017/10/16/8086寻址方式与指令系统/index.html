@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JavaScript对于dom节点的基本操作 | Chenhw&#39;sBlog</title>
+    <title>8086寻址方式与指令系统 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
-<meta name="keywords" content="JavaScript">
+    <meta name="description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
+<meta name="keywords" content="微机原理与接口技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对于dom节点的基本操作">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/js-dom/index.html">
+<meta property="og:title" content="8086寻址方式与指令系统">
+<meta property="og:url" content="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
-<meta property="og:updated_time" content="2017-09-17T08:38:54.407Z">
+<meta property="og:description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
+<meta property="og:updated_time" content="2017-10-16T15:36:12.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对于dom节点的基本操作">
-<meta name="twitter:description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
+<meta name="twitter:title" content="8086寻址方式与指令系统">
+<meta name="twitter:description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/js-dom/" title="JavaScript对于dom节点的基本操作" itemprop="url">JavaScript对于dom节点的基本操作</a>
+      <a href="/2017/10/16/8086寻址方式与指令系统/" title="8086寻址方式与指令系统" itemprop="url">8086寻址方式与指令系统</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T15:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-10-16T15:34:48.000Z" itemprop="datePublished"> Published 2017-10-16</time>
     
   </p>
 </header>
@@ -97,57 +97,75 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086寻址方式与指令系统"><span class="toc-number">1.</span> <span class="toc-text">8086寻址方式与指令系统</span></a></li></ol>
 		
 		</div>
 		
-		<p>一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：</p>
+		<h1 id="8086寻址方式与指令系统"><a href="#8086寻址方式与指令系统" class="headerlink" title="8086寻址方式与指令系统"></a>8086寻址方式与指令系统</h1><hr>
+<ol>
+<li>什么叫寻址方式 ？8086CPU支持哪几种寻址方式？<br><strong>立即寻址</strong></li>
+</ol>
 <blockquote>
-<p>更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容；</p>
-<p>遍历：遍历该DOM节点下的子节点，以便进行进一步操作；</p>
-<p>添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点；</p>
-<p>删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。<br>在操作一个DOM节点前，我们需要通过各种方式先拿到这个DOM节点</p>
+<p>MOV AX,2010H</p>
 </blockquote>
-<pre><code>最常用的方法是document.getElementById()【返回一个节点】和document.getElementsByTagName()【返回一组节点】， 以及CSS选择器document.getElementsByClassName()【返回一组节点】
-</code></pre><p>可以先对于节点进行取，然后再通过class或tagname去取其中的节点组</p>
-<p>二：更新DOM 通过修改innerHTML属性，这个方式非常强大，不但可以修改一个DOM节点的文本内容 ，还可以直接通过HTML片段修改DOM节点内部的子树。内部要改字符串的可以使用单引号括起来。 可以使用</p>
-<pre><code>var p = document.getElementById(&apos;p-id&apos;); p.style.color = &apos;#ff0000&apos;;来改变当前节点的CSS值。
-</code></pre><p>ps：如果有连接符则把连接符后的第一个字母大写</p>
-<p>三：插入DOM 静态插入节点：</p>
-<pre><code>var js = document.getElementById(&apos;js&apos;);
-
-list = document.getElementById(&apos;list&apos;);
-
-list.appendChild(js); 此操作会把id为js的位置换到list这个节点后的最后一个 动态插入节点：
-
-var list = document.getElementById(&apos;list&apos;); new= document.createElement(&apos;p&apos;);/*创造一个新的节点*/
-
-new.id = &apos;hhhhh&apos;;/*给这个节点赋值*/
-
-new.innerText = &apos;hhhh&apos;;/*给这个节点它的内部text*/
-
-list.appendChild(new);/*同样的操作把此id的节点放入list的最后*/
-</code></pre><p>同样的可以动态加入新的CSS类：</p>
-<pre><code>var d = document.createElement(&apos;style&apos;);
-
-d.setAttribute(&apos;type&apos;, &apos;text/css&apos;);
-
-d.innerHTML = &apos;p { color: red }&apos;;
-
-document.getElementsByTagName(&apos;head&apos;)[0].appendChild(d);/*会把这个节点放入head的最后的地方*/
-
-如果想要在指定的地方进行操作则有：
-
-ref = document.getElementById(&apos;front&apos;)； list.insertBefore(new, ref);/*此操作会把new节点放入ref的前面*/
-</code></pre><p>四：删除DOM 要删除一个节点，首先要获得该节点本身以及它的父节点，然后，调用父节点的removeChild把自己删掉 // 拿到待删除节点:</p>
-<pre><code>var self = document.getElementById(&apos;to-be-removed&apos;); // 拿到父节点:
-
-var parent = self.parentElement; // 删除:
-
-var removed = parent.removeChild(self);
-
-removed === self; // true 个人建议删除节点从后向前删除，因为删除之后数组会向前进位，所以会改变其位置 
-</code></pre>  
+<p><strong>寄存器寻址</strong></p>
+<blockquote>
+<p>MOV AX,2010H</p>
+</blockquote>
+<p><strong>直接寻址</strong></p>
+<blockquote>
+<p>MOV AX,[2010H]/<em>这里为了和立即数进行区分有效地址必须用【】括起</em>/ MOV ES:[1225H]，AX<br>/<em>操作数放在由ES指示的附加段中，其物理地址=ES</em>10H+1225H*/</p>
+</blockquote>
+<p><strong>寄存器间接寻址</strong></p>
+<blockquote>
+<p>MOV AX,[SI]即为取物理地址（ DS<em>10H+SI/DI/BX | SS</em>10H+BP ）里的数据</p>
+<p>寄存器相对寻址 MOV AX,8[BX]<br>/<em>物理地址=DS</em>10H+SI/DI/BX+8位或16位位移量;物理地址=SS<em>10H+BP+8位或16位位移量</em>/<br>就相当于间接寻址之前加上一个地址的数（十六进制） 等效的代码：</p>
+<pre><code>MOV AX,8[BX]
+MOV AX,[BX]+8
+MOV AX,[BX+8]
+</code></pre><p>这三行代码等价</p>
+</blockquote>
+<p><strong>基址变址寻址</strong><br>MOV AX,[BX]+[SI]<br>物理地址（数据段）=DS<em>10H+SI/DI+BX;物理地址（堆栈段）=SS</em>10H+SI/DI+BP</p>
+<p><strong>相对基址变址寻址</strong><br>MOV AX,3[BX][SI]<br>物理地址（数据段）=DS<em>10H+SI/DI+BX+8位或16位位移量;物理地址（堆栈段）=SS</em>10H+SI/DI+BP+8位或16位位移量</p>
+<p>2、 内存寻址方式中，一般只指出操作数的偏移地址，那么，段地址如何确定？如果要用某个段寄存器指出段地址，指令中应如何表示？</p>
+<blockquote>
+<p>在指令中使用SI/DI/BX寄存器时，操作数（段地址）默认存放在数据段中（DS），使用BP寄存器的时候，操作数默认存放在堆栈段（SS）中。</p>
+</blockquote>
+<p> 3、 在8086系统中，设DS=1000H,ES=2000H,SS=1200H,BX=0100H,SI=0200H,BP=0100H,VAR的偏移量为0060H，请指出下列指令的目标操作数的寻址方式，若目标操作数为存储器操作数，请计算它们的物理地址是多少？</p>
+<blockquote>
+<ul>
+<li>MOV BX,12    解：立即寻址；物理地址为12</li>
+<li>MOV [BX],12  解：寄存器间接寻址，物理地址为12+1000H*10H=10012H</li>
+<li>MOV ES:[SI],AX 解：基址变址寻址，物理地址为2000H*10H+200H=20200H</li>
+<li>MOV VAR,8 解：立即寻址；物理地址为8</li>
+<li>MOV [BX][SI],AX 解：基址变址寻址，物理地址1000H*10H+100H+200H=10300H</li>
+<li>MOV 6[BP][SI],AL 解：相对基址变址寻址，物理地址为1000H*10H+100H+200H+6H=10306H</li>
+<li>MOV [1000H],DX 解：直接寻址，物理地址为1000H*10H+1000H=11000H</li>
+<li>MOV 6[BX],CX 解：寄存器相对寻址，物理地址为1000H*10H+100H+6H=10106H</li>
+<li>MOV VAR+5，AX 解：寄存器相对寻址，物理地址为60H+5H=65H</li>
+</ul>
+</blockquote>
+<p>4、判断指令对错。如果是错的请指出。</p>
+<blockquote>
+<ol>
+<li>XCHG CS,AX 错，段操作数不能作为源操作数或目标操作数</li>
+<li>MOV [BX]，[1000] 正确</li>
+<li>XCHG BX,IP 错，寄存器IP不能作为源操作数</li>
+<li>PUSH CS 错，目标操作数不能是CS寄存器</li>
+<li>POP CS  错，目标操作数不能是CS寄存器</li>
+<li>IN BX,DX 正确</li>
+<li>MOV BYTE[BX],1000 正确</li>
+<li>MOV CS,[1000] 错误，cs不能是目标操作数</li>
+<li>MOV BX,OFFSET VAR[SI] /<em>不懂</em>/ </li>
+<li>MOV AX,[SI][DI] 错误，操作数类型不一样</li>
+<li>MOV COUNT[BX][SI],ES:AX /<em>COUNT是啥子</em>/</li>
+</ol>
+</blockquote>
+<p>5、设AX和BX是符号数，CX和DX是无符号数，若转移目标是NEXT，请分别为下列各项确定CMP和条件转移指令。</p>
+<blockquote>
+<p>（1）CX值超过DX转移<br>    CMP CX,DX<br>    JA NEXT （2）AX值未超过BX转移<br>    CMP AX,BX<br>    JB NEXT （3）DX为0转移<br>    CMP DX,0<br>    JZ NEXT （4）CX值等于小于DX转移<br>    CMP CX,DX<br>    JBE NEXT</p>
+</blockquote>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -155,7 +173,7 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
+  <span></span> <a href="/tags/微机原理与接口技术/">微机原理与接口技术</a>
   </div>
 
 </div>
@@ -164,7 +182,7 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/08/28/js-dom/" data-title="JavaScript对于dom节点的基本操作 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/" data-title="8086寻址方式与指令系统 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -177,20 +195,20 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/08/28/pagefirst/" title="简单的hexo和GitHub搭建自己的博客">
-  <strong>上一篇：</strong><br/>
-  <span>
-  简单的hexo和GitHub搭建自己的博客</span>
+
+<div class="next">
+<a href="/2017/10/08/8086微型计算机系统/"  title="8086微型计算机系统">
+ <strong>下一篇：</strong><br/> 
+ <span>8086微型计算机系统
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/08/28/js-dom/" data-title="JavaScript对于dom节点的基本操作" data-url="http://yoursite.com/2017/08/28/js-dom/"></div>
+	<div class="ds-thread" data-thread-key="2017/10/16/8086寻址方式与指令系统/" data-title="8086寻址方式与指令系统" data-url="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/"></div>
 </section>
 
 
@@ -201,7 +219,7 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086寻址方式与指令系统"><span class="toc-number">1.</span> <span class="toc-text">8086寻址方式与指令系统</span></a></li></ol>
  
   </div>
 
