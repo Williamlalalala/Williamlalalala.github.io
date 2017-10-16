@@ -18,7 +18,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
 <meta property="og:description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
-<meta property="og:updated_time" content="2017-10-16T15:36:12.136Z">
+<meta property="og:updated_time" content="2017-10-16T15:39:42.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8086寻址方式与指令系统">
 <meta name="twitter:description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
@@ -163,7 +163,7 @@ MOV AX,[BX+8]
 </blockquote>
 <p>5、设AX和BX是符号数，CX和DX是无符号数，若转移目标是NEXT，请分别为下列各项确定CMP和条件转移指令。</p>
 <blockquote>
-<p>（1）CX值超过DX转移<br>    CMP CX,DX<br>    JA NEXT （2）AX值未超过BX转移<br>    CMP AX,BX<br>    JB NEXT （3）DX为0转移<br>    CMP DX,0<br>    JZ NEXT （4）CX值等于小于DX转移<br>    CMP CX,DX<br>    JBE NEXT</p>
+<p>（1）CX值超过DX转移<br>    CMP CX,DX<br>    JA NEXT<br>（2）AX值未超过BX转移<br>    CMP AX,BX<br>    JB NEXT<br>（3）DX为0转移<br>    CMP DX,0<br>    JZ NEXT<br>（4）CX值等于小于DX转移<br>    CMP CX,DX<br>    JBE NEXT</p>
 </blockquote>
   
 	</div>
