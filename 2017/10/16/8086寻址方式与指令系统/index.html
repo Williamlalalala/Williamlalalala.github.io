@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>8086寻址方式与指令系统 | Chenhw&#39;sBlog</title>
+    <title>Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
@@ -12,15 +12,14 @@
 
     
     <meta name="description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
-<meta name="keywords" content="微机原理与接口技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8086寻址方式与指令系统">
+<meta property="og:title" content="Chenhw&#39;sBlog">
 <meta property="og:url" content="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
 <meta property="og:description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
-<meta property="og:updated_time" content="2017-10-16T15:39:42.596Z">
+<meta property="og:updated_time" content="2017-10-22T14:27:54.164Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8086寻址方式与指令系统">
+<meta name="twitter:title" content="Chenhw&#39;sBlog">
 <meta name="twitter:description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
 
     
@@ -81,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/10/16/8086寻址方式与指令系统/" title="8086寻址方式与指令系统" itemprop="url">8086寻址方式与指令系统</a>
+      <a href="/2017/10/16/8086寻址方式与指令系统/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-10-16T15:34:48.000Z" itemprop="datePublished"> Published 2017-10-16</time>
+    <time datetime="2017-10-16T15:34:48.303Z" itemprop="datePublished"> Published 2017-10-16</time>
     
   </p>
 </header>
@@ -154,16 +153,16 @@ MOV AX,[BX+8]
 <li>PUSH CS 错，目标操作数不能是CS寄存器</li>
 <li>POP CS  错，目标操作数不能是CS寄存器</li>
 <li>IN BX,DX 正确</li>
-<li>MOV BYTE[BX],1000 正确</li>
+<li>MOV BYTE[BX],1000 错误，超过8位</li>
 <li>MOV CS,[1000] 错误，cs不能是目标操作数</li>
-<li>MOV BX,OFFSET VAR[SI] /<em>不懂</em>/ </li>
+<li>MOV BX,OFFSET VAR[SI] 正确</li>
 <li>MOV AX,[SI][DI] 错误，操作数类型不一样</li>
-<li>MOV COUNT[BX][SI],ES:AX /<em>COUNT是啥子</em>/</li>
+<li>MOV COUNT[BX][SI],ES:AX 正确</li>
 </ol>
 </blockquote>
 <p>5、设AX和BX是符号数，CX和DX是无符号数，若转移目标是NEXT，请分别为下列各项确定CMP和条件转移指令。</p>
 <blockquote>
-<p>（1）CX值超过DX转移<br>    CMP CX,DX<br>    JA NEXT<br>（2）AX值未超过BX转移<br>    CMP AX,BX<br>    JB NEXT<br>（3）DX为0转移<br>    CMP DX,0<br>    JZ NEXT<br>（4）CX值等于小于DX转移<br>    CMP CX,DX<br>    JBE NEXT</p>
+<p>（1）CX值超过DX转移<br>    CMP CX,DX<br>    JA NEXT （2）AX值未超过BX转移<br>    CMP AX,BX<br>    JB NEXT （3）DX为0转移<br>    CMP DX,0<br>    JZ NEXT （4）CX值等于小于DX转移<br>    CMP CX,DX<br>    JBE NEXT</p>
 </blockquote>
   
 	</div>
@@ -171,18 +170,13 @@ MOV AX,[BX+8]
 <div class="article-catetags">
 
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/微机原理与接口技术/">微机原理与接口技术</a>
-  </div>
-
 </div>
 
 
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/" data-title="8086寻址方式与指令系统 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/" data-title="Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -195,6 +189,14 @@ MOV AX,[BX+8]
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2017/10/22/Ubuntu把root用户设置成默认/" title="Ubuntu把root用户设置成默认">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Ubuntu把root用户设置成默认</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2017/10/08/8086微型计算机系统/"  title="8086微型计算机系统">
@@ -208,7 +210,7 @@ MOV AX,[BX+8]
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/10/16/8086寻址方式与指令系统/" data-title="8086寻址方式与指令系统" data-url="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/"></div>
+	<div class="ds-thread" data-thread-key="2017/10/16/8086寻址方式与指令系统/" data-title="" data-url="http://yoursite.com/2017/10/16/8086寻址方式与指令系统/"></div>
 </section>
 
 
@@ -248,6 +250,10 @@ MOV AX,[BX+8]
 			
 		
 			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/大数据/" title="大数据">大数据<sup>2</sup></a></li>
 			
 		
@@ -261,10 +267,6 @@ MOV AX,[BX+8]
 		
 			
 				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Linux/" title="Linux">Linux<sup>1</sup></a></li>
 			
 		
 		</ul>
