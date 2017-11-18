@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>js对于增加节点的操作 | Chenhw&#39;sBlog</title>
+    <title>8086寻址方式与指令系统 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="JS的增加节点的操作我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新  我先做了一个非常简单的框加几个文本，这样一会会看的很清楚 &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;chenhw&amp;quot; name=&amp;quot;&amp;quot;&amp;gt; &amp;l">
-<meta name="keywords" content="JavaScript">
+    <meta name="description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
+<meta name="keywords" content="微机原理与接口技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js对于增加节点的操作">
-<meta property="og:url" content="http://yoursite.com/2017/09/17/js-add/index.html">
+<meta property="og:title" content="8086寻址方式与指令系统">
+<meta property="og:url" content="http://yoursite.com/2017/10/11/8086寻址方式与指令系统/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="JS的增加节点的操作我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新  我先做了一个非常简单的框加几个文本，这样一会会看的很清楚 &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;chenhw&amp;quot; name=&amp;quot;&amp;quot;&amp;gt; &amp;l">
-<meta property="og:updated_time" content="2017-09-17T08:36:29.830Z">
+<meta property="og:description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
+<meta property="og:updated_time" content="2017-11-18T21:00:21.749Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js对于增加节点的操作">
-<meta name="twitter:description" content="JS的增加节点的操作我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新  我先做了一个非常简单的框加几个文本，这样一会会看的很清楚 &amp;lt;input type=&amp;quot;button&amp;quot; id=&amp;quot;chenhw&amp;quot; name=&amp;quot;&amp;quot;&amp;gt; &amp;l">
+<meta name="twitter:title" content="8086寻址方式与指令系统">
+<meta name="twitter:description" content="8086寻址方式与指令系统  什么叫寻址方式 ？8086CPU支持哪几种寻址方式？立即寻址   MOV AX,2010H  寄存器寻址  MOV AX,2010H  直接寻址  MOV AX,[2010H]/这里为了和立即数进行区分有效地址必须用【】括起/ MOV ES:[1225H]，AX/操作数放在由ES指示的附加段中，其物理地址=ES10H+1225H*/  寄存器间接寻址  MOV AX,">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/09/17/js-add/" title="js对于增加节点的操作" itemprop="url">js对于增加节点的操作</a>
+      <a href="/2017/10/11/8086寻址方式与指令系统/" title="8086寻址方式与指令系统" itemprop="url">8086寻址方式与指令系统</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-09-17T08:35:28.000Z" itemprop="datePublished"> Published 2017-09-17</time>
+    <time datetime="2017-10-12T04:27:33.000Z" itemprop="datePublished"> Published 2017-10-11</time>
     
   </p>
 </header>
@@ -97,31 +97,74 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS的增加节点的操作"><span class="toc-number">1.</span> <span class="toc-text">JS的增加节点的操作</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086寻址方式与指令系统"><span class="toc-number">1.</span> <span class="toc-text">8086寻址方式与指令系统</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="JS的增加节点的操作"><a href="#JS的增加节点的操作" class="headerlink" title="JS的增加节点的操作"></a>JS的增加节点的操作</h1><p>我们在进行前后端交互的时候经常需要实现一些功能，而为了不使整个页面需要再次刷新，我们需要使用js来增加节点，并在触发事件的时候进行增加相应的东西，实现异步刷新</p>
-<hr>
-<p>我先做了一个非常简单的框加几个文本，这样一会会看的很清楚</p>
-<pre><code>&lt;input type=&quot;button&quot; id=&quot;chenhw&quot; name=&quot;&quot;&gt;
-&lt;p id=&quot;in&quot;&gt;hhhhh&lt;/p&gt;
-&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
-&lt;p id=&quot;&quot;&gt;hhhhh&lt;/p&gt;
-</code></pre><p>然后js代码如下</p>
-<pre><code>window.onload=function(){//在这里我觉得加不加这个都差不多
-    var one=document.getElementById(&apos;chenhw&apos;);//获取节点
-    one.onclick=function(){//节点被click的时候触发
-        insert();//调用这个函数
-    }
-}
-function insert(){
-    var start=document.getElementById(&apos;in&apos;);//获取想操作的节点位置
-    var add=document.createElement(&apos;create&apos;);//create一个节点
-    add.innerHTML=&quot;lalal&quot;;//改变这个节点的内容
-    start.insertBefore(add, null);//插入
-}
-</code></pre><p>这样就可以看到我们在click之后整个页面会做出相应的操作</p>
+		<h1 id="8086寻址方式与指令系统"><a href="#8086寻址方式与指令系统" class="headerlink" title="8086寻址方式与指令系统"></a>8086寻址方式与指令系统</h1><hr>
+<ol>
+<li>什么叫寻址方式 ？8086CPU支持哪几种寻址方式？<br><strong>立即寻址</strong></li>
+</ol>
+<blockquote>
+<p>MOV AX,2010H</p>
+</blockquote>
+<p><strong>寄存器寻址</strong></p>
+<blockquote>
+<p>MOV AX,2010H</p>
+</blockquote>
+<p><strong>直接寻址</strong></p>
+<blockquote>
+<p>MOV AX,[2010H]/<em>这里为了和立即数进行区分有效地址必须用【】括起</em>/ MOV ES:[1225H]，AX<br>/<em>操作数放在由ES指示的附加段中，其物理地址=ES</em>10H+1225H*/</p>
+</blockquote>
+<p><strong>寄存器间接寻址</strong></p>
+<blockquote>
+<p>MOV AX,[SI]即为取物理地址（ DS<em>10H+SI/DI/BX | SS</em>10H+BP ）里的数据</p>
+<p>寄存器相对寻址 MOV AX,8[BX]<br>/<em>物理地址=DS</em>10H+SI/DI/BX+8位或16位位移量;物理地址=SS<em>10H+BP+8位或16位位移量</em>/<br>就相当于间接寻址之前加上一个地址的数（十六进制） 等效的代码：</p>
+<pre><code>MOV AX,8[BX]
+MOV AX,[BX]+8
+MOV AX,[BX+8]
+</code></pre><p>这三行代码等价</p>
+</blockquote>
+<p><strong>基址变址寻址</strong><br>MOV AX,[BX]+[SI]<br>物理地址（数据段）=DS<em>10H+SI/DI+BX;物理地址（堆栈段）=SS</em>10H+SI/DI+BP</p>
+<p><strong>相对基址变址寻址</strong><br>MOV AX,3[BX][SI]<br>物理地址（数据段）=DS<em>10H+SI/DI+BX+8位或16位位移量;物理地址（堆栈段）=SS</em>10H+SI/DI+BP+8位或16位位移量</p>
+<p>2、 内存寻址方式中，一般只指出操作数的偏移地址，那么，段地址如何确定？如果要用某个段寄存器指出段地址，指令中应如何表示？</p>
+<blockquote>
+<p>在指令中使用SI/DI/BX寄存器时，操作数（段地址）默认存放在数据段中（DS），使用BP寄存器的时候，操作数默认存放在堆栈段（SS）中。</p>
+</blockquote>
+<p> 3、 在8086系统中，设DS=1000H,ES=2000H,SS=1200H,BX=0100H,SI=0200H,BP=0100H,VAR的偏移量为0060H，请指出下列指令的目标操作数的寻址方式，若目标操作数为存储器操作数，请计算它们的物理地址是多少？</p>
+<blockquote>
+<ul>
+<li>MOV BX,12    解：立即寻址；物理地址为12</li>
+<li>MOV [BX],12  解：寄存器间接寻址，物理地址为12+1000H*10H=10012H</li>
+<li>MOV ES:[SI],AX 解：基址变址寻址，物理地址为2000H*10H+200H=20200H</li>
+<li>MOV VAR,8 解：立即寻址；物理地址为8</li>
+<li>MOV [BX][SI],AX 解：基址变址寻址，物理地址1000H*10H+100H+200H=10300H</li>
+<li>MOV 6[BP][SI],AL 解：相对基址变址寻址，物理地址为1000H*10H+100H+200H+6H=10306H</li>
+<li>MOV [1000H],DX 解：直接寻址，物理地址为1000H*10H+1000H=11000H</li>
+<li>MOV 6[BX],CX 解：寄存器相对寻址，物理地址为1000H*10H+100H+6H=10106H</li>
+<li>MOV VAR+5，AX 解：寄存器相对寻址，物理地址为60H+5H=65H</li>
+</ul>
+</blockquote>
+<p>4、判断指令对错。如果是错的请指出。</p>
+<blockquote>
+<ol>
+<li>XCHG CS,AX 错，段操作数不能作为源操作数或目标操作数</li>
+<li>MOV [BX]，[1000] 正确</li>
+<li>XCHG BX,IP 错，寄存器IP不能作为源操作数</li>
+<li>PUSH CS 错，目标操作数不能是CS寄存器</li>
+<li>POP CS  错，目标操作数不能是CS寄存器</li>
+<li>IN BX,DX 正确</li>
+<li>MOV BYTE[BX],1000 错误，超过8位</li>
+<li>MOV CS,[1000] 错误，cs不能是目标操作数</li>
+<li>MOV BX,OFFSET VAR[SI] 正确</li>
+<li>MOV AX,[SI][DI] 错误，操作数类型不一样</li>
+<li>MOV COUNT[BX][SI],ES:AX 正确</li>
+</ol>
+</blockquote>
+<p>5、设AX和BX是符号数，CX和DX是无符号数，若转移目标是NEXT，请分别为下列各项确定CMP和条件转移指令。</p>
+<blockquote>
+<p>（1）CX值超过DX转移<br>    CMP CX,DX<br>    JA NEXT （2）AX值未超过BX转移<br>    CMP AX,BX<br>    JB NEXT （3）DX为0转移<br>    CMP DX,0<br>    JZ NEXT （4）CX值等于小于DX转移<br>    CMP CX,DX<br>    JBE NEXT</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -130,7 +173,7 @@ function insert(){
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
+  <span></span> <a href="/tags/微机原理与接口技术/">微机原理与接口技术</a>
   </div>
 
 </div>
@@ -139,7 +182,7 @@ function insert(){
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/09/17/js-add/" data-title="js对于增加节点的操作 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/10/11/8086寻址方式与指令系统/" data-title="8086寻址方式与指令系统 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -153,18 +196,18 @@ function insert(){
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/09/29/ubuntu中root用户的设置/" title="ubuntu中root用户的设置">
+ <a href="/2017/10/22/Ubuntu把root用户设置成默认/" title="Ubuntu把root用户设置成默认">
   <strong>上一篇：</strong><br/>
   <span>
-  ubuntu中root用户的设置</span>
+  Ubuntu把root用户设置成默认</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2017/08/28/R-3/"  title="浅谈R语言的简单的操作">
+<a href="/2017/10/08/8086微型计算机系统/"  title="8086微型计算机系统">
  <strong>下一篇：</strong><br/> 
- <span>浅谈R语言的简单的操作
+ <span>8086微型计算机系统
 </span>
 </a>
 </div>
@@ -173,7 +216,7 @@ function insert(){
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/09/17/js-add/" data-title="js对于增加节点的操作" data-url="http://yoursite.com/2017/09/17/js-add/"></div>
+	<div class="ds-thread" data-thread-key="2017/10/11/8086寻址方式与指令系统/" data-title="8086寻址方式与指令系统" data-url="http://yoursite.com/2017/10/11/8086寻址方式与指令系统/"></div>
 </section>
 
 
@@ -184,7 +227,7 @@ function insert(){
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JS的增加节点的操作"><span class="toc-number">1.</span> <span class="toc-text">JS的增加节点的操作</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#8086寻址方式与指令系统"><span class="toc-number">1.</span> <span class="toc-text">8086寻址方式与指令系统</span></a></li></ol>
  
   </div>
 
