@@ -20,7 +20,7 @@
 <meta property="og:description" content="&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;     function getCookie(c_name)     {             if(document.cookie.length&amp;gt;0)             {                 var c_start=doc">
 <meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&bo=gAcABIAHAAQDACU!&rf=viewer_4">
 <meta property="og:image" content="http://a1.qpic.cn/psb?/V12td2HV2olXaC/OEvYsvyaxrv*BfB2MrLF2kU2cpB.fMNqkUOsuQjKcv4!/b/dPMAAAAAAAAA&bo=gAfMA4AHzAMDACU!&rf=viewer_4">
-<meta property="og:updated_time" content="2017-11-18T20:44:07.718Z">
+<meta property="og:updated_time" content="2017-11-18T20:56:33.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用js来修改和控制cookie的内容">
 <meta name="twitter:description" content="&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;     function getCookie(c_name)     {             if(document.cookie.length&amp;gt;0)             {                 var c_start=doc">
@@ -155,9 +155,7 @@
 &lt;body&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre><p>##这里解释一波，开始的那个function中我使用的checkcookie函数在开始就调用了getcookie函数，如果返回的是空值，那么直接会调用prompt()函数，这个函数和alert是差不多的一个弹出框，但是这里会有一个框和一个提交按钮，在这里输入的值会返回到我们的js中，然后我们把这个值记录下来到下面用到。然后就是setCookie这个函数，我们在这里使用了js自带的一个new Date（）函数，用来获取时间，是为了设置expire的值然后我们把这个时间设为在本地获取的时间加上了356，即为传进来的值，然后整个cookie里的值通过document.cookie进行设置最终的字符串为：<br>     c_name+”=”+escape(value)+((expiredays==null)?””:”;expires=”+exdate.toGMTString());<br>     /<em>即为</em>/username=’chenhw’;expires=’Sat Nov 18 2018 12:39:11 GMT-0800 (太平洋标准时间)’</p>
-<p>####((expiredays==null)?””:”;expires=”这里的语法是如果刚才设置的expiredays（就是你设置的cookie的存在时间）不为空，就执行字符串”;expires”。</p>
-<p>####escape(value)就是把value这个字符串给转换成十六进制的转义序列<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&amp;bo=gAcABIAHAAQDACU!&amp;rf=viewer_4" alt="输入cookie"><br><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/OEvYsvyaxrv*BfB2MrLF2kU2cpB.fMNqkUOsuQjKcv4!/b/dPMAAAAAAAAA&amp;bo=gAfMA4AHzAMDACU!&amp;rf=viewer_4" alt="查看cookie"></p>
+</code></pre><p>这里解释一波，开始的那个function中我使用的checkcookie函数在开始就调用了getcookie函数，如果返回的是空值，那么直接会调用prompt()函数，这个函数和alert是差不多的一个弹出框，但是这里会有一个框和一个提交按钮，在这里输入的值会返回到我们的js中，然后我们把这个值记录下来到下面用到。然后就是setCookie这个函数，我们在这里使用了js自带的一个new Date（）函数，用来获取时间，是为了设置expire的值然后我们把这个时间设为在本地获取的时间加上了356，即为传进来的值，然后整个cookie里的值通过document.cookie进行设置最终的字符串为：<br>     c_name+”=”+escape(value)+((expiredays==null)?””:”;expires=”+exdate.toGMTString());<br>     /<em>即为</em>/username=’chenhw’;expires=’Sat Nov 18 2018 12:39:11 GMT-0800 (太平洋标准时间)’<br>((expiredays==null)?””:”;expires=”这里的语法是如果刚才设置的expiredays（就是你设置的cookie的存在时间）不为空，就执行字符串”;expires”。<br>escape(value)就是把value这个字符串给转换成十六进制的转义序列<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&amp;bo=gAcABIAHAAQDACU!&amp;rf=viewer_4" alt="输入cookie"><br><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/OEvYsvyaxrv*BfB2MrLF2kU2cpB.fMNqkUOsuQjKcv4!/b/dPMAAAAAAAAA&amp;bo=gAfMA4AHzAMDACU!&amp;rf=viewer_4" alt="查看cookie"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
