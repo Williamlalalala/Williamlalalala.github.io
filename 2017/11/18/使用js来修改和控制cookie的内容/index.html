@@ -4,24 +4,27 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>新手操作MySQL | Chenhw&#39;sBlog</title>
+    <title>使用js来修改和控制cookie的内容 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="一、创建数据表的sql语句模型  DDL  create table[IF NOT EXISTS]表名称（  字段名1 列属性 【属性】【索引】  字段名2 列属性 【属性】【索引】  .。。。。  字段名n 列属性 【属性】【索引】  ）【表类型】【表字符集】  表的名称和字段名 需要我们自己定义名称 SQL不区分大小写（命名）但是表名就是文件名，windows不区分大小写，linux区分 1">
-<meta name="keywords" content="数据库">
+    <meta name="description" content="&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;     function getCookie(c_name)     {             if(document.cookie.length&amp;gt;0)             {                 var c_start=doc">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新手操作MySQL">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/R-1/index.html">
+<meta property="og:title" content="使用js来修改和控制cookie的内容">
+<meta property="og:url" content="http://yoursite.com/2017/11/18/使用js来修改和控制cookie的内容/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="一、创建数据表的sql语句模型  DDL  create table[IF NOT EXISTS]表名称（  字段名1 列属性 【属性】【索引】  字段名2 列属性 【属性】【索引】  .。。。。  字段名n 列属性 【属性】【索引】  ）【表类型】【表字符集】  表的名称和字段名 需要我们自己定义名称 SQL不区分大小写（命名）但是表名就是文件名，windows不区分大小写，linux区分 1">
-<meta property="og:updated_time" content="2017-08-28T12:54:25.634Z">
+<meta property="og:description" content="&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;     function getCookie(c_name)     {             if(document.cookie.length&amp;gt;0)             {                 var c_start=doc">
+<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&bo=gAcABIAHAAQDACU!&rf=viewer_4">
+<meta property="og:image" content="http://a1.qpic.cn/psb?/V12td2HV2olXaC/OEvYsvyaxrv*BfB2MrLF2kU2cpB.fMNqkUOsuQjKcv4!/b/dPMAAAAAAAAA&bo=gAfMA4AHzAMDACU!&rf=viewer_4">
+<meta property="og:updated_time" content="2017-11-18T20:44:07.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新手操作MySQL">
-<meta name="twitter:description" content="一、创建数据表的sql语句模型  DDL  create table[IF NOT EXISTS]表名称（  字段名1 列属性 【属性】【索引】  字段名2 列属性 【属性】【索引】  .。。。。  字段名n 列属性 【属性】【索引】  ）【表类型】【表字符集】  表的名称和字段名 需要我们自己定义名称 SQL不区分大小写（命名）但是表名就是文件名，windows不区分大小写，linux区分 1">
+<meta name="twitter:title" content="使用js来修改和控制cookie的内容">
+<meta name="twitter:description" content="&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;     function getCookie(c_name)     {             if(document.cookie.length&amp;gt;0)             {                 var c_start=doc">
+<meta name="twitter:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&bo=gAcABIAHAAQDACU!&rf=viewer_4">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +84,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/R-1/" title="新手操作MySQL" itemprop="url">新手操作MySQL</a>
+      <a href="/2017/11/18/使用js来修改和控制cookie的内容/" title="使用js来修改和控制cookie的内容" itemprop="url">使用js来修改和控制cookie的内容</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-29T03:51:32.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2017-11-18T20:42:19.000Z" itemprop="datePublished"> Published 2017-11-18</time>
     
   </p>
 </header>
@@ -101,115 +104,61 @@
 		
 		</div>
 		
-		<blockquote>
-<p>一、创建数据表的sql语句模型</p>
-</blockquote>
-<pre><code>DDL
-
-create table[IF NOT EXISTS]表名称（
-
-字段名1 列属性 【属性】【索引】
-
-字段名2 列属性 【属性】【索引】
-
-.。。。。
-
-字段名n 列属性 【属性】【索引】
-
-）【表类型】【表字符集】
-
-表的名称和字段名 需要我们自己定义名称
-</code></pre><p>SQL不区分大小写（命名）但是表名就是文件名，windows不区分大小写，linux区分</p>
-<pre><code>1、一定要有意义（英文或英文的组合和多个单词的缩写）
-
-2、自己定的名称最好都小写
-
-3、sql语句都大写
-</code></pre><blockquote>
-<p>二、数据值和列类型</p>
-</blockquote>
-<p>1、数值型</p>
-<pre><code>整型（整数）/*细分都是按照空间大小来分的可以放的下就可以了*/
-
-非常小的整型 1字节
-
-较小的整型 2字节
-
-中等大小的整型 3字节
-
-标准整型 4字节
-
-大整数型 8字节
-
-浮点型（小数）
-
-float(H,D) 4字节(H和D都可被指定
-
-double(H,D) 8字节
-
-定点数
-
-decimal（H,D） H+2字节
-</code></pre><p>2、字符型</p>
-<pre><code>小的：char 255（固定长度字符串）即以4个字节为单位存，处理速度比varchar快的多
-
-varchar 255（可变长度字符串）即可以变，单永远是内容加1个字节，像文章标题之类不确定长度的使用varchar（更多的被使用）
-
-大的：text处理文本 2^16-1
-
-blob处理相片 2^16-1
-
-ENUH 枚举 1或2个字节 一次只能存一个值
-
-set集合 1，2，4，8个字节一次可以存多个值，用“，”隔开
-</code></pre><p>3、日期型</p>
-<pre><code>DATE YYYY-MM-DD
-
-TIME hh-mm-ss
-
-DATETIME YYYY-HH-DD hh-mm-ss
-
-TIMESTAMP YYYYHHDDhhmmss
-
-YEAR YYYY
-</code></pre><p>4、NULL</p>
-<blockquote>
-<p>三、具体操作</p>
-</blockquote>
-<pre><code>1、创建库：create database +名字
-
-2、展示库：show databases
-
-3、创建表：create table +名字
-
-4、查看表的。。。DESC + 表名
-
-5、创建表的列名：create table +表名（
-
-id int（10），
-
-name char（100），
-
-qq int（10））；
-
-6、信息的插入：insert into 表名（id，name，qq。。。）value（1，大明，1206095865）；
-
-7、信息的检索： select * from 表名；（此处返回所有表的内容，但是对于大部分的情况来说需要具体的查找）
-
-select * from 表名 where name=&quot;小明&quot;；（返回小明所有的信息）
-
-select name from 表名；（返回那一列）
-
-select *from 表名 where name like &quot;大%&quot;；（模糊匹配，后面的百分号代表任意值）
-
-同理 select name, id from 表名 where name like &quot;%大%&quot;；（即为返回带“大”字的name和id)
-
-select 中同时可以包含语句，比如if之类的，但是如果不改名，则把整个的语句当作列名，如在语句后加一个as stuhhhh,则stuhhhh就是它那个列的名字（别名）
-
-select *from 表名 where name like &quot;大%&quot; and id=&quot;1&quot;；（其中加入了逻辑运算符and，同理“or”）
-
-select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) as stuinformation from stu;(把字符串串联起来) 
-</code></pre>  
+		<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    function getCookie(c_name)
+    {
+            if(document.cookie.length&gt;0)
+            {
+                var c_start=document.cookie.indexOf(c_name+&quot;=&quot;);
+                var c_end;
+                if(c_start!=-1)
+                {
+                    c_start=c_start+c_name.length+1;
+                    c_end=document.cookie.indexOf(&quot;;&quot;,c_start);
+                if(c_end==-1){
+                    c_end=document.cookie.length;
+                }
+                return unescape(document.cookie.substring(c_start,c_end));
+                }
+            }
+            return &quot;&quot;;
+    }
+    function setCookie(c_name,value,expiredays)
+    {
+        var exdate=new Date();
+        exdate.setDate(exdate.getDate()+expiredays);
+        document.cookie=c_name+&quot;=&quot;+escape(value)+((expiredays==null)?&quot;&quot;:&quot;;expires=&quot;+exdate.toGMTString());
+    }
+    function checkCookie()
+    {
+        var username=getCookie(&apos;username&apos;);
+        if(username!=null&amp;&amp;username!=&quot;&quot;)
+        {
+            alert(&apos;Welcome again&apos;+username+&apos;!&apos;);
+        }
+        else
+        {
+            username=prompt(&apos;Please enter yourname:&apos;,&quot;&quot;);
+            if(username!=null&amp;&amp;username!=&quot;&quot;)
+            {
+                setCookie(&apos;username&apos;,username,365);
+            }
+        }
+    }
+    window.onload=function(){
+        checkCookie();
+    }
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>##这里解释一波，开始的那个function中我使用的checkcookie函数在开始就调用了getcookie函数，如果返回的是空值，那么直接会调用prompt()函数，这个函数和alert是差不多的一个弹出框，但是这里会有一个框和一个提交按钮，在这里输入的值会返回到我们的js中，然后我们把这个值记录下来到下面用到。然后就是setCookie这个函数，我们在这里使用了js自带的一个new Date（）函数，用来获取时间，是为了设置expire的值然后我们把这个时间设为在本地获取的时间加上了356，即为传进来的值，然后整个cookie里的值通过document.cookie进行设置最终的字符串为：<br>     c_name+”=”+escape(value)+((expiredays==null)?””:”;expires=”+exdate.toGMTString());<br>     /<em>即为</em>/username=’chenhw’;expires=’Sat Nov 18 2018 12:39:11 GMT-0800 (太平洋标准时间)’</p>
+<p>####((expiredays==null)?””:”;expires=”这里的语法是如果刚才设置的expiredays（就是你设置的cookie的存在时间）不为空，就执行字符串”;expires”。</p>
+<p>####escape(value)就是把value这个字符串给转换成十六进制的转义序列<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&amp;bo=gAcABIAHAAQDACU!&amp;rf=viewer_4" alt="输入cookie"><br><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/OEvYsvyaxrv*BfB2MrLF2kU2cpB.fMNqkUOsuQjKcv4!/b/dPMAAAAAAAAA&amp;bo=gAfMA4AHzAMDACU!&amp;rf=viewer_4" alt="查看cookie"></p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -217,7 +166,7 @@ select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) a
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/数据库/">数据库</a>
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
   </div>
 
 </div>
@@ -226,7 +175,7 @@ select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) a
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/08/28/R-1/" data-title="新手操作MySQL | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2017/11/18/使用js来修改和控制cookie的内容/" data-title="使用js来修改和控制cookie的内容 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -239,19 +188,11 @@ select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) a
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/08/28/R-2/" title="R语言的图形处理">
-  <strong>上一篇：</strong><br/>
-  <span>
-  R语言的图形处理</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/08/28/js-dom/"  title="JavaScript对于dom节点的基本操作">
+<a href="/2017/10/22/8086汇编语言程序设计/"  title="8086汇编语言程序设计">
  <strong>下一篇：</strong><br/> 
- <span>JavaScript对于dom节点的基本操作
+ <span>8086汇编语言程序设计
 </span>
 </a>
 </div>
@@ -260,7 +201,7 @@ select concat(&quot;姓名&quot;+name+&quot;序号&quot;+id+&quot;QQ&quot;+qq) a
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/08/28/R-1/" data-title="新手操作MySQL" data-url="http://yoursite.com/2017/08/28/R-1/"></div>
+	<div class="ds-thread" data-thread-key="2017/11/18/使用js来修改和控制cookie的内容/" data-title="使用js来修改和控制cookie的内容" data-url="http://yoursite.com/2017/11/18/使用js来修改和控制cookie的内容/"></div>
 </section>
 
 
