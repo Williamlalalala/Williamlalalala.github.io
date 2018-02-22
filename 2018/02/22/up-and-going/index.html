@@ -1,0 +1,565 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>up and going | Chenhw&#39;sBlog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Chenhw">
+    
+
+    
+    <meta name="description" content="JavaScript通常被断言为是解释型的，因为你的JavaScript源代码在它每次运行时都被处理。但这并不是完全准确的。JavaScript引擎实际上在即时地 编译 程序然后立即运行编译好的代码。 ###输出 a = 21; b = a * 2; console.log( b ); alert( b ); ###输入有一个获取输入的简单的方法。使用prompt(..)函数： age = pro">
+<meta name="keywords" content="you not know js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="up and going">
+<meta property="og:url" content="http://yoursite.com/2018/02/22/up-and-going/index.html">
+<meta property="og:site_name" content="Chenhw&#39;sBlog">
+<meta property="og:description" content="JavaScript通常被断言为是解释型的，因为你的JavaScript源代码在它每次运行时都被处理。但这并不是完全准确的。JavaScript引擎实际上在即时地 编译 程序然后立即运行编译好的代码。 ###输出 a = 21; b = a * 2; console.log( b ); alert( b ); ###输入有一个获取输入的简单的方法。使用prompt(..)函数： age = pro">
+<meta property="og:updated_time" content="2018-02-22T14:20:44.756Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="up and going">
+<meta name="twitter:description" content="JavaScript通常被断言为是解释型的，因为你的JavaScript源代码在它每次运行时都被处理。但这并不是完全准确的。JavaScript引擎实际上在即时地 编译 程序然后立即运行编译好的代码。 ###输出 a = 21; b = a * 2; console.log( b ); alert( b ); ###输入有一个获取输入的简单的方法。使用prompt(..)函数： age = pro">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Chenhw&#39;sBlog" title="Chenhw&#39;sBlog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Chenhw&#39;sBlog">Chenhw&#39;sBlog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页|Home</a></li>
+					
+						<li><a href="/archives">归档|Archives</a></li>
+					
+						<li><a href="/about">关于|About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/02/22/up-and-going/" title="up and going" itemprop="url">up and going</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2018-02-22T14:19:35.000Z" itemprop="datePublished"> Published 2018-02-22</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			
+		
+		</div>
+		
+		<p>JavaScript通常被断言为是解释型的，因为你的JavaScript源代码在它每次运行时都被处理。但这并不是完全准确的。JavaScript引擎实际上在即时地 编译 程序然后立即运行编译好的代码。</p>
+<p>###输出</p>
+<pre><code>a = 21;
+b = a * 2;
+console.log( b );
+alert( b );
+</code></pre><p>###输入<br>有一个获取输入的简单的方法。使用prompt(..)函数：</p>
+<pre><code>age = prompt( &quot;Please tell me your age:&quot; );
+console.log( age );
+</code></pre><p>###操作符<br>*操作符实施数学乘法。</p>
+<p>=操作符用于 赋值 —— 我们首先计算= 右手边 的值（源值）然后将它放进我们在 左手边 指定的变量中（目标变量）。</p>
+<p>警告： 对于指定赋值，这看起来像是一种奇怪的倒置。与a = 42不同，一些人喜欢把顺序反转过来，于是源值在左而目标变量在右，就像42 -&gt; a（这不是合法的JavaScript！）。不幸的是，a = 42顺序的形式，和与其相似的变种，在现代编程语言中是十分流行的。如果它让你觉得不自然，那么就花些时间在脑中演练这个顺序并习惯它。</p>
+<p>###类型间转换<br>如果你有一个number但需要将它打印在屏幕上，那么你就需要将这个值转换为一个string，在JavaScript中这种转换称为“强制转换”。类似地，如果某些人在一个电商网页的form中输入一系列数字，那么它是一个string，但是如果你需要使用这个值去做数学运算，那么你就需要将它 强制转换 为一个number。</p>
+<p>为了在 类型 之间强制转换，JavaScript提供了几种不同的工具。例如：</p>
+<pre><code>var a = &quot;42&quot;;
+var b = Number( a );
+
+console.log( a );    // &quot;42&quot;
+console.log( b );    // 42
+</code></pre><p>使用上面展示的Number(..)（一个内建函数）是一种从任意其他类型到number类型的 明确的 强制转换。这应当是相当直白的。</p>
+<p>但是一个具有争议的话题是，当你试着比较两个还不是相同类型的值时发生的事情，它需要 隐含的 强制转换。</p>
+<p>当比较字符串”99.99”和数字99.99时，大多数人同意它们是等价的。但是他们不完全相同，不是吗？它们是相同的值的两种不同表现形式，两个不同的 类型。你可以说它们是“宽松地等价”的，不是吗？</p>
+<p>为了在这些常见情况下帮助你，JavaScript有时会启动 隐含的 强制转换来把值转换为匹配的类型。</p>
+<p>所以如果你使用==宽松等价操作符来进行”99.99” == 99.99比较，JavaScript会将左手边的”99.99”转换为它的number等价物99.99。所以比较就变成了99.99 == 99.99，这当然是成立的。</p>
+<p>虽然隐含强制转换是为了帮助你而设计，但是它也可能把你搞糊涂，如果你没有花时间去学习控制它行为的规则。大多数开发者从没有这么做，所以常见的感觉是隐含的强制转换是令人困惑的，并且会产生意外的bug危害程序，因此应当避免使用。有时它甚至被称为这种语言中的设计缺陷。</p>
+<p>然而，隐含强制转换是一种 可以被学习 的机制，而且是一种 应当 被所有想要认真对待JavaScript编程的人学习的机制。一旦你学习了这些规则，它不仅是消除了困惑，而且它实际上是你的程序变得更好！这种努力是值得的。</p>
+<p>注意： 关于强制转换的更多信息，参见本书第二章和本系列 类型与文法 的第四章。</p>
+<p>###变量<br>在某些编程语言中，你可以声明一个变量（容器）来持有特定类型的值，比如number或string。因为防止了意外的类型转换，静态类型，也被称为 类型强制，通常被认为是对程序正确性有好处的。</p>
+<p>另一些语言在值上强调类型而非在变量上。弱类型，也被称为 动态类型，允许变量在任意时刻持有任意类型的值。因为它允许一个变量在程序逻辑流程中代表一个值，而不论这个值在任意给定的时刻是什么类型，所以它被认为是对程序灵活性有好处的。</p>
+<p>JavaScript使用的是后者，动态类型，这意味着变量可以持有任意 类型 的值而没有任何 类型 强制约束。</p>
+<p>正如我们刚才提到的，我们使用var语句来声明一个变量 —— 注意在这种声明中没有其他的 类型 信息。考虑这段简单的代码：</p>
+<p>var amount = 99.99;</p>
+<p>amount = amount * 2;</p>
+<p>console.log( amount );        // 199.98</p>
+<p>// 将 <code>amount</code> 转换为一个字符串，<br>// 并在开头加一个 “$”<br>amount = “$” + String( amount );</p>
+<p>console.log( amount );        // “$199.98”<br>变量amount开始时持有数字99.99，然后持有amount * 2的number结果，也就是199.98。</p>
+<p>第一个console.log(..)命令不得不 隐含地 将这个number值强制转换为一个string才能够打印出来。</p>
+<p>然后语句amount = “$” + String(amount) 明确地 将值199.98强制转换为一个string并且在开头加入一个”$”字符。这时，amount现在就持有这个string值$199.98，所以第二个console.log(..)语句无需强制转换就可以把它打印出来。</p>
+<p>JavaScript开发者将会注意到为值99.99，199.98，和”$199.98”都使用变量amount的灵活性。静态类型的拥护者们将偏好于使用一个分离的变量，比如amountStr来持有这个值最后的”$199.98”表达形式，因为它是一个不同的类型。</p>
+<p>不管哪种方式，你将会注意到amount持有一个在程序运行过程中不断变化的值，这展示了变量的主要目地：管理程序 状态。</p>
+<p>换句话说，在你程序运行的过程中 状态 追踪着值的改变。</p>
+<p>变量的另一种常见用法是将值的设定集中化。当你为一个在程序中通篇不打算改变的值声明了一个变量时，它更一般地被称为 常量。</p>
+<p>你经常会在程序的顶部声明这些 常量，这样提供了一种方便：如果你需要改变一个值时你可以到唯一的地方去寻找。根据惯例，用做常量的JavaScript变量通常是大写的，在多个单词之间使用下划线_连接。</p>
+<p>这里是一个呆萌的例子：</p>
+<pre><code>var TAX_RATE = 0.08;    // 8% sales tax
+var amount = 99.99;
+amount = amount * 2;
+amount = amount + (amount * TAX_RATE);
+console.log( amount );                // 215.9784
+console.log( amount.toFixed( 2 ) );    // &quot;215.98&quot;
+</code></pre><p>注意： console.log(..)是一个函数log(..)作为一个在值console上的对象属性被访问，与此类似，这里的toFixed(..)是一个可以在值number上被访问的函数。JavaScript number不会被自动地格式化为美元 —— 引擎不知道你的意图，而且也没有通货类型。toFixed(..)让我们指明四舍五入到小数点后多少位，而且它如我们需要的那样产生一个string。</p>
+<p>变量TAX_RATE只是因为惯例才是一个 常量 —— 在这个程序中没有什么特殊的东西可以防止它被改变。但是如果这座城市将它的消费税增至9%，我们仍然可以很容地通过在一个地方将TAX_RATE被赋予的值改为0.09来更新我们的程序，而不是在程序通篇中寻找许多值0.08出现的地方然后更新它们全部。</p>
+<p>在写作本书时，最新版本的JavaScript（通常称为“ES6”）引入了一个声明常量的新方法，用const代替var:</p>
+<pre><code>// 在ES6中：
+const TAX_RATE = 0.08;
+var amount = 99.99;
+// ..
+</code></pre><p>常量就像带有不变的值的变量一样有用，常量还防止在初始设置之后的某些地方意外地改变它的值。如果你试着在第一个声明之后给TAX_RATE赋予一个不同的值，你的程序将会拒绝这个改变（而且在Strict模式下，会产生一个错误 —— 见第二章的“Strict模式”）。</p>
+<p>顺带一提，这种防止编程错误的“保护”与静态类型的类型强制很类似，所以你可以看到为什么在其他语言中的静态类型很吸引人。</p>
+<p>注意： 更多关于如何在你程序的变量中使用不同的值，参见本系列的 类型与文法。</p>
+<p>###练习<br>写一个程序来计算你购买手机的总价。你将不停地购买手机直到你的银行账户上的钱都用光（提示：循环！）。你还将为每个手机购买配件，只要你的花费低于你心理预算。<br>在你计算完购买总价之后，加入税费，然后用合适的格式打印出计算好的购买总价。<br>最后，将总价与你银行账户上的余额作比较，来看看那你是否买的起。<br>你应当为“税率”，“手机价格”，“配件价格”和“花费预算”设置一些常数，也为你的“银行账户余额”设置一个变量。<br>你应当为税费的计算和价格的格式化 —— 使用一个“$”并四舍五入到小数点后两位 —— 定义函数。<br>加分挑战： 试着在这个程序中利用输入，也许是使用在前面的“输入”中讲过的prompt(..)。比如，你可能会提示用户输入它们的银行账户余额。发挥创造力好好玩儿吧！</p>
+<pre><code>const SPENDING_THRESHOLD = 200;
+const TAX_RATE = 0.08;
+const PHONE_PRICE = 99.99;
+const ACCESSORY_PRICE = 9.99;
+var bank_balance = 303.91;
+var amount = 0;
+function calculateTax(amount) {
+    return amount * TAX_RATE;
+}
+function formatAmount(amount) {
+    return &quot;$&quot; + amount.toFixed( 2 );
+}
+// 只要你还有钱就不停地买手机
+while (amount &lt; bank_balance) {
+    // 买个新手机
+    amount = amount + PHONE_PRICE;
+    // 还买得起配件吗？
+    if (amount &lt; SPENDING_THRESHOLD) {
+        amount = amount + ACCESSORY_PRICE;
+    }
+}
+// 也别忘了给政府交钱
+amount = amount + calculateTax( amount );
+console.log(
+    &quot;Your purchase: &quot; + formatAmount( amount )
+);
+// Your purchase: $334.76
+// 你买的起吗？
+if (amount &gt; bank_balance) {
+    console.log(
+        &quot;You can&apos;t afford this purchase. :(&quot;
+    );
+}
+// 你买不起 :(
+
+
+
+在这一部分都是一些很基础的东西，特别是一些循环之类的操作，基本上和我们所学一致，但是js代码中需要注意的是变量是动态变量，我们要掌握其中转换的方式以及js如何接受前端页面中间的数据（很方便
+</code></pre>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/you-not-know-js/">you not know js</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/02/22/up-and-going/" data-title="up and going | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2017/11/21/学习前端的一些资源网站/"  title="学习前端的一些资源网站">
+ <strong>下一篇：</strong><br/> 
+ <span>学习前端的一些资源网站
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2018/02/22/up-and-going/" data-title="up and going" data-url="http://yoursite.com/2018/02/22/up-and-going/"></div>
+</section>
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/微机原理与接口技术/" title="微机原理与接口技术">微机原理与接口技术<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/大数据/" title="大数据">大数据<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/浏览器/" title="浏览器">浏览器<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/you-not-know-js/" title="you not know js">you not know js<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 你好，我来自电子科技大学软件工程学院 <br/>
+			这是我的博客，感谢浏览</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/5671903582" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Williamlalalala" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/chen-hao-wei-16-19" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:1206095865@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Chenhw">Chenhw</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"chenhw"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
