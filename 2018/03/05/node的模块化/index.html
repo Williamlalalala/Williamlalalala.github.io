@@ -4,30 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>配置C语言编译环境 | Chenhw&#39;sBlog</title>
+    <title>node的模块化 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="运行代码是学习C语言最好的方法然后有熟人在准备配置C的环境，那我就来简单的介绍一下如何配置C语言的运行环境 ##C-free C-free是我特喜欢的一个编译器，自带GCC，不用动就好了，千万别点什么网上推荐的通道，去官网下官网下载一路default值过就行了运行的时候点击上面的那个绿色的三角形就可以了推荐！！！！直接创建空白文件，这样会方便很多但是通常情况下没有安装GCC的时候可能会炸 ##co">
-<meta name="keywords" content="编译环境">
+    <meta name="description" content="学了一段时间的node，准备来总结一下学习node的一些知识。JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。nodejs把模块化做到了一定的程度，每一个js文件都是一个模块，整个js的文件分成三个大块，就是 require exports module 主运行函数 接下来我们来说明一下">
+<meta name="keywords" content="node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="配置C语言编译环境">
-<meta property="og:url" content="http://yoursite.com/2018/02/26/配置C语言编译环境/index.html">
+<meta property="og:title" content="node的模块化">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/node的模块化/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="运行代码是学习C语言最好的方法然后有熟人在准备配置C的环境，那我就来简单的介绍一下如何配置C语言的运行环境 ##C-free C-free是我特喜欢的一个编译器，自带GCC，不用动就好了，千万别点什么网上推荐的通道，去官网下官网下载一路default值过就行了运行的时候点击上面的那个绿色的三角形就可以了推荐！！！！直接创建空白文件，这样会方便很多但是通常情况下没有安装GCC的时候可能会炸 ##co">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V12td2HV0hpzfF/*ew8W.B8sb3dEe89cTi8eBbHxtI2DYnJhEat1kThw5c!/b/dJEAAAAAAAAA&bo=gAc4BIAHOAQDCSw!&rf=viewer_4">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V12td2HV0hpzfF/5hI4sE6Nxp0umYbvJwFgaK69x9RkFGiuYZMtqxzk9Og!/b/dFsBAAAAAAAA&bo=gAf3A4AH9wMDKQw!&rf=viewer_4">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V12td2HV0hpzfF/INWblT.icKAU2hl5GFrAhbEfzcboLowBb61LbZzqmdE!/b/dGYBAAAAAAAA&bo=qwSAAgAAAAADBw8!&rf=viewer_4">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V12td2HV0hpzfF/3E7lOJxHo7VDr8B0H5aRu79JAq7Wn65kQ.5fpEveUh8!/b/dJUAAAAAAAAA&bo=wwTbAsME2wIDGTw!&rf=viewer_4">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V12td2HV0hpzfF/QsiL7aH2KSnVilVYsZFr7bb3rkrBTg*bBFmJijCXRm0!/b/dGYBAAAAAAAA&bo=wwOfAsMDnwIDKQw!&rf=viewer_4">
-<meta property="og:updated_time" content="2018-03-01T14:28:23.306Z">
+<meta property="og:description" content="学了一段时间的node，准备来总结一下学习node的一些知识。JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。nodejs把模块化做到了一定的程度，每一个js文件都是一个模块，整个js的文件分成三个大块，就是 require exports module 主运行函数 接下来我们来说明一下">
+<meta property="og:updated_time" content="2018-03-05T13:31:00.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="配置C语言编译环境">
-<meta name="twitter:description" content="运行代码是学习C语言最好的方法然后有熟人在准备配置C的环境，那我就来简单的介绍一下如何配置C语言的运行环境 ##C-free C-free是我特喜欢的一个编译器，自带GCC，不用动就好了，千万别点什么网上推荐的通道，去官网下官网下载一路default值过就行了运行的时候点击上面的那个绿色的三角形就可以了推荐！！！！直接创建空白文件，这样会方便很多但是通常情况下没有安装GCC的时候可能会炸 ##co">
-<meta name="twitter:image" content="http://m.qpic.cn/psb?/V12td2HV0hpzfF/*ew8W.B8sb3dEe89cTi8eBbHxtI2DYnJhEat1kThw5c!/b/dJEAAAAAAAAA&bo=gAc4BIAHOAQDCSw!&rf=viewer_4">
+<meta name="twitter:title" content="node的模块化">
+<meta name="twitter:description" content="学了一段时间的node，准备来总结一下学习node的一些知识。JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。nodejs把模块化做到了一定的程度，每一个js文件都是一个模块，整个js的文件分成三个大块，就是 require exports module 主运行函数 接下来我们来说明一下">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -87,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/02/26/配置C语言编译环境/" title="配置C语言编译环境" itemprop="url">配置C语言编译环境</a>
+      <a href="/2018/03/05/node的模块化/" title="node的模块化" itemprop="url">node的模块化</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2018-02-26T14:34:09.000Z" itemprop="datePublished"> 发表于 2018-02-26</time>
+    <time datetime="2018-03-05T13:27:48.000Z" itemprop="datePublished"> 发表于 2018-03-05</time>
     
   </p>
 </header>
@@ -103,18 +97,60 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">require</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">exports</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">主模块</span></a></li></ol>
 		
 		</div>
 		
-		<p><strong>运行代码是学习C语言最好的方法</strong><br>然后有熟人在准备配置C的环境，那我就来简单的介绍一下如何配置C语言的运行环境</p>
-<p>##C-free</p>
-<p>C-free是我特喜欢的一个编译器，自带GCC，不用动就好了，千万别点什么网上推荐的通道，去官网下<br><a href="http://www.programarts.com/cfree_ch/index.htm" target="_blank" rel="external">官网下载</a><br><img src="http://m.qpic.cn/psb?/V12td2HV0hpzfF/*ew8W.B8sb3dEe89cTi8eBbHxtI2DYnJhEat1kThw5c!/b/dJEAAAAAAAAA&amp;bo=gAc4BIAHOAQDCSw!&amp;rf=viewer_4" alt="下载5.0版的"><br>一路default值过就行了<br>运行的时候点击上面的那个绿色的三角形就可以了<br>推荐！！！！直接创建空白文件，这样会方便很多<br>但是通常情况下没有安装GCC的时候可能会炸</p>
-<p>##codeblocks<br>1、先安装一个<a href="http://tdm-gcc.tdragon.net/download" target="_blank" rel="external">TDM-GCC</a>,这个EXE文件会自动改你的环境变量，运行就行了<br>2、codeblocks同样的操作—-&gt;<a href="http://www.codeblocks.org/downloads/26" target="_blank" rel="external">官网</a><br>一路default，然后到这里选择我选的，运行的时候点击上面的那个绿色的三角形就可以了<br><img src="http://m.qpic.cn/psb?/V12td2HV0hpzfF/5hI4sE6Nxp0umYbvJwFgaK69x9RkFGiuYZMtqxzk9Og!/b/dFsBAAAAAAAA&amp;bo=gAf3A4AH9wMDKQw!&amp;rf=viewer_4" alt="按这个"><br>3、如果在这里只进行了第二步没有进行第一步，就在setting里面打开compiler，然后他会自动进行查找，之后就可以编译成功了<br><img src="http://m.qpic.cn/psb?/V12td2HV0hpzfF/INWblT.icKAU2hl5GFrAhbEfzcboLowBb61LbZzqmdE!/b/dGYBAAAAAAAA&amp;bo=qwSAAgAAAAADBw8!&amp;rf=viewer_4" alt="这里"></p>
-<p>##命令行操作（新手不推荐<br>自己使用命令行进行编写C文件，一个notepad++打败天下无敌手<br>在GCC官网下载GCC，然后<a href="https://williamlalalala.github.io/2017/08/28/pagefirst/" target="_blank" rel="external">根据这里</a>把环境变量增加一个，那个路径是我们下载了GCC之后的bin子目录的路径，紧接着你在使用win+R输入cmd就可以打开命令行，命令行切换目录，如图<br><img src="http://m.qpic.cn/psb?/V12td2HV0hpzfF/3E7lOJxHo7VDr8B0H5aRu79JAq7Wn65kQ.5fpEveUh8!/b/dJUAAAAAAAAA&amp;bo=wwTbAsME2wIDGTw!&amp;rf=viewer_4" alt="这是命令行的简单操作"><br>，再使用</p>
-<pre><code>gcc XXXX.c 
-a.exe
-</code></pre><p>会产生一个EXE可执行文件<br>如图<br><img src="http://m.qpic.cn/psb?/V12td2HV0hpzfF/QsiL7aH2KSnVilVYsZFr7bb3rkrBTg*bBFmJijCXRm0!/b/dGYBAAAAAAAA&amp;bo=wwOfAsMDnwIDKQw!&amp;rf=viewer_4" alt="运行成功"></p>
+		<p>学了一段时间的node，准备来总结一下学习node的一些知识。<br>JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。<br>nodejs把模块化做到了一定的程度，每一个js文件都是一个模块，整个js的文件分成三个大块，就是</p>
+<pre><code>require
+exports
+module
+主运行函数
+</code></pre><p>接下来我们来说明一下这四部分的内容以及在整体我们编写代码中的作用</p>
+<p></p><h2>require</h2><br>require函数用于在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。模块名可使用相对路径（以./开头），或者是绝对路径（以/或C:之类的盘符开头）。另外，模块名中的.js扩展名可以省略。以下是一个例子。<p></p>
+<pre><code>var foo1 = require(&apos;./foo&apos;);
+var foo2 = require(&apos;./foo.js&apos;);
+var foo3 = require(&apos;/home/user/foo&apos;);
+var foo4 = require(&apos;/home/user/foo.js&apos;);
+
+// foo1至foo4中保存的是同一个模块的导出对象。
+</code></pre><p>所以nodejs在包这个物体上的处理是非常强的，一个用户写了一个js文件，我们可以直接把它拿过来使用其中的函数和文件中内置的一些变量</p>
+<p></p><h2>exports</h2><br>exports对象是当前模块的导出对象，用于导出模块公有方法和属性。别的模块通过require函数使用当前模块时得到的就是当前模块的exports对象。以下例子中导出了一个公有方法。<p></p>
+<pre><code>exports.hello = function () {
+    console.log(&apos;Hello World!&apos;);
+};
+</code></pre><p>可以说我们上面require所获取到的js文件里面的东西都一定是在其中exports出来的变量或者函数，这样我们在require了之后可以直接相当于json数据一样获取其中的内容。</p>
+<p></p><h2>module</h2><br>module其实是把exports的数据改编成了函数，如构造函数之类的，如下面这个例子就创建了一个构造函数<br>在 square.js 模块中定义一个 square 方法:<p></p>
+<pre><code>module.exports = (width) =&gt; {
+  return {
+    area: () =&gt; width * width;
+  };
+}
+</code></pre><p>在下面的 area.js 中，使用了 square 模块，它导出一个构造函数：</p>
+<pre><code>const square = require(&apos;./square.js&apos;);
+var mySquare = square(2);
+console.log(`The area of my square is ${mySquare.area()}`);
+</code></pre><p>在这里我们就是用了这个构造函数</p>
+<p></p><h2>主模块</h2><br>其实主模块就很好理解了，主模块就相当于我们C语言里面的一个主函数，是程序的入口，程序一行一行的按照顺序进行<p></p>
+<p>*在这里面如果在require中多次调用了一个js文件，那个返回的变量不会重新创建，在一个程序没有结束之前，那个js文件里面的变量是不会自动清零的，比如下面的这个代码<br>其中counter.js内容如下：</p>
+<pre><code>var i = 0;
+function count() {
+    return ++i;
+}
+exports.count = count;
+</code></pre><p>该模块内部定义了一个私有变量i，并在exports对象导出了一个公有方法count。</p>
+<p>主模块main.js内容如下：</p>
+<pre><code>var counter1 = require(&apos;./util/counter&apos;);
+var    counter2 = require(&apos;./util/counter&apos;);
+console.log(counter1.count());
+console.log(counter2.count());
+console.log(counter2.count());
+</code></pre><p>运行该程序的结果如下：</p>
+<pre><code>$ node main.js
+1
+2
+3
+</code></pre><p>可以看到，counter.js并没有因为被require了两次而初始化两次。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -123,7 +159,7 @@ a.exe
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/编译环境/">编译环境</a>
+  <span></span> <a href="/tags/node/">node</a>
   </div>
 
 </div>
@@ -132,7 +168,7 @@ a.exe
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/02/26/配置C语言编译环境/" data-title="配置C语言编译环境 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/03/05/node的模块化/" data-title="node的模块化 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +181,11 @@ a.exe
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/02/26/unity3D入门（一）/" title="unity3D入门（一）">
-  <strong>上一篇：</strong><br/>
-  <span>
-  unity3D入门（一）</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/02/22/up-and-going/"  title="up and going">
+<a href="/2018/03/01/unity3D入门（二）/"  title="unity3D入门（二）">
  <strong>下一篇：</strong><br/> 
- <span>up and going
+ <span>unity3D入门（二）
 </span>
 </a>
 </div>
@@ -166,7 +194,7 @@ a.exe
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2018/02/26/配置C语言编译环境/" data-title="配置C语言编译环境" data-url="http://yoursite.com/2018/02/26/配置C语言编译环境/"></div>
+	<div class="ds-thread" data-thread-key="2018/03/05/node的模块化/" data-title="node的模块化" data-url="http://yoursite.com/2018/03/05/node的模块化/"></div>
 </section>
 
 
@@ -177,7 +205,7 @@ a.exe
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">require</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">exports</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">主模块</span></a></li></ol>
  
   </div>
 
