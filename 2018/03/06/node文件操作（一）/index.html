@@ -1,0 +1,561 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>node文件操作（一） | Chenhw&#39;sBlog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Chenhw">
+    
+
+    
+    <meta name="description" content="我原来一直想使用js来操作文件，然后在node这边找到了比较还不错的操作 文件拷贝 小文件拷贝在这里，我们调用fs这一模块来实现这一功能    var fs = require(‘fs’);    function copy(src, dst) {        fs.writeFileSync(dst, fs.readFileSync(src));    }    function main(a">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node文件操作（一）">
+<meta property="og:url" content="http://yoursite.com/2018/03/06/node文件操作（一）/index.html">
+<meta property="og:site_name" content="Chenhw&#39;sBlog">
+<meta property="og:description" content="我原来一直想使用js来操作文件，然后在node这边找到了比较还不错的操作 文件拷贝 小文件拷贝在这里，我们调用fs这一模块来实现这一功能    var fs = require(‘fs’);    function copy(src, dst) {        fs.writeFileSync(dst, fs.readFileSync(src));    }    function main(a">
+<meta property="og:updated_time" content="2018-03-06T13:44:58.163Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node文件操作（一）">
+<meta name="twitter:description" content="我原来一直想使用js来操作文件，然后在node这边找到了比较还不错的操作 文件拷贝 小文件拷贝在这里，我们调用fs这一模块来实现这一功能    var fs = require(‘fs’);    function copy(src, dst) {        fs.writeFileSync(dst, fs.readFileSync(src));    }    function main(a">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Chenhw&#39;sBlog" title="Chenhw&#39;sBlog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Chenhw&#39;sBlog">Chenhw&#39;sBlog</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页|Home</a></li>
+					
+						<li><a href="/archives">归档|Archives</a></li>
+					
+						<li><a href="/about">关于|About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/03/06/node文件操作（一）/" title="node文件操作（一）" itemprop="url">node文件操作（一）</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
+		
+  <p class="article-time">
+    <time datetime="2018-03-06T13:44:12.000Z" itemprop="datePublished"> Published 2018-03-06</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">文件拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">小文件拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">大文件拷贝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">一些API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">buffer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">steam</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">File System</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">Path</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<p>我原来一直想使用js来操作文件，然后在node这边找到了比较还不错的操作</p>
+<p></p><h2>文件拷贝</h2><p></p>
+<h3>小文件拷贝</h3><br>在这里，我们调用fs这一模块来实现这一功能<br>    var fs = require(‘fs’);<br><br>    function copy(src, dst) {<br>        fs.writeFileSync(dst, fs.readFileSync(src));<br>    }<br><br>    function main(argv) {<br>        copy(argv[0], argv[1]);<br>    }<br><br>    main(process.argv.slice(2));<br>以上程序使用fs.readFileSync从源路径读取文件内容，并使用fs.writeFileSync将文件内容写入目标路径。<br>*process是一个全局变量，可通过process.argv获得命令行参数。由于argv[0]固定等于NodeJS执行程序的绝对路径，argv[1]固定等于主模块的绝对路径，因此第一个命令行参数从argv[2]这个位置开始。<br><br><h3>大文件拷贝</h3>
+
+<p>上边的程序拷贝一些小文件没啥问题，但这种一次性把所有文件内容都读取到内存中后再一次性写入磁盘的方式不适合拷贝大文件，内存会爆仓。对于大文件，我们只能读一点写一点，直到完成拷贝。因此上边的程序需要改造如下。</p>
+<pre><code>var fs = require(&apos;fs&apos;);
+
+function copy(src, dst) {
+    fs.createReadStream(src).pipe(fs.createWriteStream(dst));
+}
+
+function main(argv) {
+    copy(argv[0], argv[1]);
+}
+
+main(process.argv.slice(2));
+//fs.createReadStream(src).pipe(fs.createWriteStream(des));
+</code></pre><p>我们在这里使用createReadStream的文件流读取文件，并且用pipe方法把两个数据流连接了起来。连接起来后发生的事情，说得抽象点的话，水顺着水管从一个桶流到了另一个桶。</p>
+<p></p><h2>一些API</h2><br>我们在这里简单的介绍一些api，在node的官网api说明的很详细<p></p>
+<h3>buffer</h3><br>buffer在node中是起到一个数组的作用的，我们可以通过索引来获取它内部的值，所以我们肯定是有方法来让buffer和string进行相互变换<br>可以使用指定编码将二进制数据转化为字符串：<br><br>    var str = bin.toString(‘utf-8’); // =&gt; “hello”<br><br>反过来，将字符串转换为指定编码下的二进制数据：<br><br>    var bin = new Buffer(‘hello’, ‘utf-8’); // =&gt; <buffer 65="" 68="" 6c="" 6f=""><br>我们在上面操作大文件的时候有用到slice这个方法，在这里其实slice起到的作用是返回一个指针，这个指针是指向buffer中那个元素。<br>但是适用slice之后返回的同样是一个buffer类型的变量，这样我们就可以继续适用类似索引的方法来修改数据<br>如果想要拷贝一份Buffer，得首先创建一个新的Buffer，并通过.copy方法把原Buffer中的数据复制过去。这个类似于申请一块新的内存，并把已有内存中的数据复制过去。以下是一个例子。<br><br>    var bin = new Buffer([ 0x68, 0x65, 0x6c, 0x6c, 0x6f ]);<br>    var dup = new Buffer(bin.length);<br>    bin.copy(dup);<br>    dup[0] = 0x48;<br>    console.log(bin); // =&gt; <buffer 65="" 68="" 6c="" 6f=""><br>    console.log(dup); // =&gt; <buffer 48="" 65="" 6c="" 6f=""><br>总之，Buffer将JS的数据处理能力从字符串扩展到了任意二进制数据。<br><h3>steam</h3>
+
+<p>当内存中无法一次装下需要处理的数据时，或者一边读取一边处理更加高效时，我们就需要用到数据流。NodeJS中通过各种Stream来提供对数据流的操作。</p>
+<p>以上边的大文件拷贝程序为例，我们可以为数据来源创建一个只读数据流，示例如下：</p>
+<pre><code>var rs = fs.createReadStream(pathname);
+
+rs.on(&apos;data&apos;, function (chunk) {
+    doSomething(chunk);
+});
+
+rs.on(&apos;end&apos;, function () {
+    cleanUp();
+});
+</code></pre><p>上边的代码中data事件会源源不断地被触发，不管doSomething函数是否处理得过来。代码可以继续做如下改造，以解决这个问题。</p>
+<pre><code>var rs = fs.createReadStream(src);
+
+rs.on(&apos;data&apos;, function (chunk) {
+    rs.pause();
+    doSomething(chunk, function () {
+        rs.resume();
+    });
+});
+
+rs.on(&apos;end&apos;, function () {
+    cleanUp();
+});
+</code></pre><p></p><h3>File System</h3><br>NodeJS通过fs内置模块提供对文件的操作。fs模块提供的API基本上可以分为以下三类：<p></p>
+<p>文件属性读写：<br>其中常用的有fs.stat、fs.chmod、fs.chown等等。</p>
+<p>文件内容读写：<br>其中常用的有fs.readFile、fs.readdir、fs.writeFile、fs.mkdir等等。</p>
+<p>底层文件操作：<br>其中常用的有fs.open、fs.read、fs.write、fs.close等等。<br>NodeJS最精华的异步IO模型在fs模块里有着充分的体现，例如上边提到的这些API都通过回调函数传递结果。以fs.readFile为例：</p>
+<pre><code>fs.readFile(pathname, function (err, data) {
+    if (err) {
+        // Deal with error.
+    } else {
+        // Deal with data.
+    }
+});
+</code></pre><p>如上边代码所示，基本上所有fs模块API的回调参数都有两个。第一个参数在有错误发生时等于异常对象，第二个参数始终用于返回API方法执行结果。</p>
+<p>此外，fs模块的所有异步API都有对应的同步版本，用于无法使用异步操作时，或者同步操作更方便时的情况。同步API除了方法名的末尾多了一个Sync之外，异常对象与执行结果的传递方式也有相应变化。同样以fs.readFileSync为例：</p>
+<pre><code>try {
+    var data = fs.readFileSync(pathname);
+    // Deal with data.
+} catch (err) {
+    // Deal with error.
+}
+</code></pre><p></p><h3>Path</h3><br>path.normalize<p></p>
+<p>将传入的路径转换为标准路径，具体讲的话，除了解析路径中的.与..外，还能去掉多余的斜杠。如果有程序需要使用路径作为某些数据的索引，但又允许用户随意输入路径时，就需要使用该方法保证路径的唯一性。以下是一个例子：</p>
+<pre><code>var cache = {};
+
+function store(key, value) {
+    cache[path.normalize(key)] = value;
+}
+
+store(&apos;foo/bar&apos;, 1);
+store(&apos;foo//baz//../bar&apos;, 2);
+console.log(cache);  // =&gt; { &quot;foo/bar&quot;: 2 }
+</code></pre><p>在这里cache就是一个json数据，然后我们使用呢path.normalize(key)，我们只要把“key”放入这个方法作为参数，就可以获得一个处理完善的路径。</p>
+<p>path.join</p>
+<p>将传入的多个路径拼接为标准路径。该方法可避免手工拼接路径字符串的繁琐，并且能在不同系统下正确使用相应的路径分隔符。以下是一个例子：</p>
+<pre><code>path.join(&apos;foo/&apos;, &apos;baz/&apos;, &apos;../bar&apos;); // =&gt; &quot;foo/bar&quot;
+</code></pre><p>path.extname</p>
+<p>当我们需要根据不同文件扩展名做不同操作时，该方法就显得很好用。以下是一个例子：</p>
+<pre><code>path.extname(&apos;foo/bar.js&apos;); // =&gt; &quot;.js&quot;
+</code></pre><p>可以直接把其放入if的判断中然后进行不同的操作</p>
+</buffer></buffer></buffer>  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/node/">node</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://yoursite.com/2018/03/06/node文件操作（一）/" data-title="node文件操作（一） | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2018/03/05/node的模块化/"  title="node的模块化">
+ <strong>下一篇：</strong><br/> 
+ <span>node的模块化
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2018/03/06/node文件操作（一）/" data-title="node文件操作（一）" data-url="http://yoursite.com/2018/03/06/node文件操作（一）/"></div>
+</section>
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">文件拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">小文件拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">大文件拷贝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">一些API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">buffer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">steam</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">File System</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">Path</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/微机原理与接口技术/" title="微机原理与接口技术">微机原理与接口技术<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/浏览器/" title="浏览器">浏览器<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/大数据/" title="大数据">大数据<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/node/" title="node">node<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/U3D/" title="U3D">U3D<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/you-not-know-js/" title="you not know js">you not know js<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/编译环境/" title="编译环境">编译环境<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 你好，我来自电子科技大学软件工程学院 <br/>
+			这是我的博客，感谢浏览</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/5671903582" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Williamlalalala" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/chen-hao-wei-16-19" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:1206095865@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		
+		<a href="/about" target="_blank" title="Chenhw">Chenhw</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"chenhw"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
