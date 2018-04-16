@@ -1,27 +1,27 @@
 
-  
-    <!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html >
 <head>
   <meta charset="UTF-8">
   
-    <title>Chenhw&#39;sBlog</title>
+    <title>python 编写UDP连接 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="8086汇编语言程序设计 ###1、什么叫伪指令？什么叫宏指令？伪指令在什么时候被执行？宏指令在程序中如何调用？伪指令（Pseudo instruction）是用于告诉汇编程序如何进行汇编的指令。它既不控制机器的操作也不被汇编成机器代码，只能为汇编程序所识别并指导汇编如何进行。 将相对于程序或相对于寄存器的地址载入寄存器中。宏是一个以宏名定义的指令序列。一旦把某程序段定义成宏，则可以用宏名代替那段">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chenhw&#39;sBlog">
-<meta property="og:url" content="http://yoursite.com/temporary/8086汇编语言程序设计.html">
+    <meta name="description" content="客户端 from socket import *    #这里是引入socket模块 serverName = &amp;apos;localhost&amp;apos; serverPort = 8000 #设定协议是IPV4，以及UDP连接，TCP是SOCK_STREAM clientSocket = socket(AF_INET, SOCK_DGRAM)   #接受用户数据 message = input(">
+<meta name="keywords" content="计网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 编写UDP连接">
+<meta property="og:url" content="http://yoursite.com/2018/04/16/python-编写UDP连接/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="8086汇编语言程序设计 ###1、什么叫伪指令？什么叫宏指令？伪指令在什么时候被执行？宏指令在程序中如何调用？伪指令（Pseudo instruction）是用于告诉汇编程序如何进行汇编的指令。它既不控制机器的操作也不被汇编成机器代码，只能为汇编程序所识别并指导汇编如何进行。 将相对于程序或相对于寄存器的地址载入寄存器中。宏是一个以宏名定义的指令序列。一旦把某程序段定义成宏，则可以用宏名代替那段">
-<meta property="og:updated_time" content="2017-10-22T14:32:48.167Z">
+<meta property="og:description" content="客户端 from socket import *    #这里是引入socket模块 serverName = &amp;apos;localhost&amp;apos; serverPort = 8000 #设定协议是IPV4，以及UDP连接，TCP是SOCK_STREAM clientSocket = socket(AF_INET, SOCK_DGRAM)   #接受用户数据 message = input(">
+<meta property="og:updated_time" content="2018-04-16T09:07:45.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chenhw&#39;sBlog">
-<meta name="twitter:description" content="8086汇编语言程序设计 ###1、什么叫伪指令？什么叫宏指令？伪指令在什么时候被执行？宏指令在程序中如何调用？伪指令（Pseudo instruction）是用于告诉汇编程序如何进行汇编的指令。它既不控制机器的操作也不被汇编成机器代码，只能为汇编程序所识别并指导汇编如何进行。 将相对于程序或相对于寄存器的地址载入寄存器中。宏是一个以宏名定义的指令序列。一旦把某程序段定义成宏，则可以用宏名代替那段">
+<meta name="twitter:title" content="python 编写UDP连接">
+<meta name="twitter:description" content="客户端 from socket import *    #这里是引入socket模块 serverName = &amp;apos;localhost&amp;apos; serverPort = 8000 #设定协议是IPV4，以及UDP连接，TCP是SOCK_STREAM clientSocket = socket(AF_INET, SOCK_DGRAM)   #接受用户数据 message = input(">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -36,9 +36,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-      <body>
-        <header>
-          
+  <body>
+    <header>
+      
 <div>
 		
 			<div id="imglogo">
@@ -73,35 +73,74 @@
 				</ul>
 			</nav>			
 </div>
-        </header>
-        <div id="container">
-          <div id="main" class="page" itemscope itemprop="blogPost">
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/temporary/8086汇编语言程序设计.html" title="" itemprop="url"></a>
+      <a href="/2018/04/16/python-编写UDP连接/" title="python 编写UDP连接" itemprop="url">python 编写UDP连接</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2018-03-15T18:40:50.175Z" itemprop="datePublished"> Published 2018-03-16</time>
+    <time datetime="2018-04-16T09:03:14.000Z" itemprop="datePublished"> Published 2018-04-16</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<h1 id="8086汇编语言程序设计"><a href="#8086汇编语言程序设计" class="headerlink" title="8086汇编语言程序设计"></a>8086汇编语言程序设计</h1><hr>
-<p>###1、什么叫伪指令？什么叫宏指令？伪指令在什么时候被执行？宏指令在程序中如何调用？<br>伪指令（Pseudo instruction）是用于告诉汇编程序如何进行汇编的指令。它既不控制机器的操作也不被汇编成机器代码，只能为汇编程序所识别并指导汇编如何进行。 将相对于程序或相对于寄存器的地址载入寄存器中。<br>宏是一个以宏名定义的指令序列。一旦把某程序段定义成宏，则可以用宏名代替那段程序。在汇编的时候要对于宏进行宏展开，即把宏名表示的地方替换成为该宏对应的指令序列的目标代码。宏指令可以看成指令语句的扩展，相当于多条语句的集合。<br>伪指令在编译的时候就执行，不进行具体的操作，不占用机器周期。<br>宏指令相当于指令语句的扩展，相当于多条语句的集合，执行到宏指令的地方我们就可以把宏指令进行替换成相应的汇编代码。</p>
-<p>###2、指令OR AX, 1234H OR 0FFH中的两个OR有什么差别？这两个操作分别在什么时候执行？<br>第一个OR是逻辑指令助记符，由CPU执行，第二个OR是逻辑操作符，由汇编程序在汇编是完成该逻辑表达式的计算</p>
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			
+		
+		</div>
+		
+		<p>客户端</p>
+<pre><code>from socket import *    #这里是引入socket模块
+serverName = &apos;localhost&apos;
+serverPort = 8000
+#设定协议是IPV4，以及UDP连接，TCP是SOCK_STREAM
+clientSocket = socket(AF_INET, SOCK_DGRAM)
+
+
+#接受用户数据
+message = input(&apos;Input lowercase sentence:&apos;)
+
+#建立了UDP连接，并且把之前获取的message使用UTF-8的格式传出，打包了两个数据，为IP和port
+clientSocket.sendto(message.encode(&apos;utf-8&apos;), (serverName, serverPort))
+
+#接受通道那边的数据,接受到的数据可以通过数组的形式表现出来
+modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
+print(&apos;From Server:&apos;, modifiedMessage.decode(&apos;utf-8&apos;))
+print(&apos;serverAddress:&apos;, serverAddress[0], serverAddress[1])
+clientSocket.close()
+</code></pre><p>服务端</p>
+<pre><code>from socket import *
+serverPort = 8000
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket.bind((&apos;localhost&apos;, serverPort))
+print(&quot;The server is ready to receive&quot;)
+while 1:    #不断的在监听端口
+    message, clientAddress = serverSocket.recvfrom(2048)
+    modifiedMessage = message.upper()
+    serverSocket.sendto(modifiedMessage, clientAddress)#传出两个参数
+</code></pre><p>运行结果<br>Input lowercase sentence:asdf<br>From Server: ASDF<br>serverAddress: 127.0.0.1 8000</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/计网/">计网</a>
+  </div>
 
 </div>
 
@@ -109,7 +148,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/temporary/8086汇编语言程序设计.html" data-title="Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/04/16/python-编写UDP连接/" data-title="python 编写UDP连接 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -120,16 +159,103 @@
    	       
 	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2018/03/06/node文件操作（一）/"  title="node文件操作（一）">
+ <strong>下一篇：</strong><br/> 
+ <span>node文件操作（一）
+</span>
+</a>
+</div>
+
+</nav>
+
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="temporary/8086汇编语言程序设计.html" data-title="" data-url="http://yoursite.com/temporary/8086汇编语言程序设计.html"></div>
+	<div class="ds-thread" data-thread-key="2018/04/16/python-编写UDP连接/" data-title="python 编写UDP连接" data-url="http://yoursite.com/2018/04/16/python-编写UDP连接/"></div>
 </section>
 
 
 
 </div>  
-        </div>
-        <footer><div id="footer" >
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/微机原理与接口技术/" title="微机原理与接口技术">微机原理与接口技术<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/U3D/" title="U3D">U3D<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/大数据/" title="大数据">大数据<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/node/" title="node">node<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/浏览器/" title="浏览器">浏览器<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/计网/" title="计网">计网<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/you-not-know-js/" title="you not know js">you not know js<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/编译环境/" title="编译环境">编译环境<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -174,7 +300,7 @@
 		</p>
 </div>
 </footer>
-        <script src="/js/jquery-2.0.3.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 <script src="/js/jquery.qrcode-0.12.0.min.js"></script>
@@ -218,8 +344,36 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
 });
 </script>
@@ -354,6 +508,5 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search End -->
 
-      </body>
-     </html>
-     
+  </body>
+</html>
