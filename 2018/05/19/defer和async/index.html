@@ -4,27 +4,27 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>使用js来修改和控制cookie的内容 | Chenhw&#39;sBlog</title>
+    <title>defer和async | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;     function getCookie(c_name)     {             if(document.cookie.length&amp;gt;0)             {                 var c_start=doc">
+    <meta name="description" content="script标签存在两个属性，defer和async，因此script标签的使用分为三种情况： 　　1.&amp;lt;script src=&amp;quot;example.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 　　　没有defer或async属性，浏览器会立即加载并执行相应的脚本。也就是说在渲染script标签之后的文档之前，不等待后续加载的文档元素，读到就开始加载和执行，此举会阻塞后续文">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用js来修改和控制cookie的内容">
-<meta property="og:url" content="http://yoursite.com/2017/11/18/使用js来修改和控制cookie的内容/index.html">
+<meta property="og:title" content="defer和async">
+<meta property="og:url" content="http://yoursite.com/2018/05/19/defer和async/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;     function getCookie(c_name)     {             if(document.cookie.length&amp;gt;0)             {                 var c_start=doc">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&bo=gAcABIAHAAQDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a1.qpic.cn/psb?/V12td2HV2olXaC/OEvYsvyaxrv*BfB2MrLF2kU2cpB.fMNqkUOsuQjKcv4!/b/dPMAAAAAAAAA&bo=gAfMA4AHzAMDACU!&rf=viewer_4">
-<meta property="og:updated_time" content="2017-11-18T20:56:33.980Z">
+<meta property="og:description" content="script标签存在两个属性，defer和async，因此script标签的使用分为三种情况： 　　1.&amp;lt;script src=&amp;quot;example.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 　　　没有defer或async属性，浏览器会立即加载并执行相应的脚本。也就是说在渲染script标签之后的文档之前，不等待后续加载的文档元素，读到就开始加载和执行，此举会阻塞后续文">
+<meta property="og:image" content="http://static.zybuluo.com/chenhw/bzddtlvtn54ucrj629cyh9kc/defer.jpg">
+<meta property="og:image" content="http://static.zybuluo.com/chenhw/zey59oghkyxu19t3gqt9ptz7/async.PNG">
+<meta property="og:updated_time" content="2018-05-19T15:38:41.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用js来修改和控制cookie的内容">
-<meta name="twitter:description" content="&amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;     function getCookie(c_name)     {             if(document.cookie.length&amp;gt;0)             {                 var c_start=doc">
-<meta name="twitter:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&bo=gAcABIAHAAQDACU!&rf=viewer_4">
+<meta name="twitter:title" content="defer和async">
+<meta name="twitter:description" content="script标签存在两个属性，defer和async，因此script标签的使用分为三种情况： 　　1.&amp;lt;script src=&amp;quot;example.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 　　　没有defer或async属性，浏览器会立即加载并执行相应的脚本。也就是说在渲染script标签之后的文档之前，不等待后续加载的文档元素，读到就开始加载和执行，此举会阻塞后续文">
+<meta name="twitter:image" content="http://static.zybuluo.com/chenhw/bzddtlvtn54ucrj629cyh9kc/defer.jpg">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -84,14 +84,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/11/18/使用js来修改和控制cookie的内容/" title="使用js来修改和控制cookie的内容" itemprop="url">使用js来修改和控制cookie的内容</a>
+      <a href="/2018/05/19/defer和async/" title="defer和async" itemprop="url">defer和async</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-11-18T17:42:19.000Z" itemprop="datePublished"> Published 2017-11-18</time>
+    <time datetime="2018-05-19T15:37:21.000Z" itemprop="datePublished"> Published 2018-05-19</time>
     
   </p>
 </header>
@@ -104,58 +104,14 @@
 		
 		</div>
 		
-		<pre><code>&lt;html&gt;
-&lt;head&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-    function getCookie(c_name)
-    {
-            if(document.cookie.length&gt;0)
-            {
-                var c_start=document.cookie.indexOf(c_name+&quot;=&quot;);
-                var c_end;
-                if(c_start!=-1)
-                {
-                    c_start=c_start+c_name.length+1;
-                    c_end=document.cookie.indexOf(&quot;;&quot;,c_start);
-                if(c_end==-1){
-                    c_end=document.cookie.length;
-                }
-                return unescape(document.cookie.substring(c_start,c_end));
-                }
-            }
-            return &quot;&quot;;
-    }
-    function setCookie(c_name,value,expiredays)
-    {
-        var exdate=new Date();
-        exdate.setDate(exdate.getDate()+expiredays);
-        document.cookie=c_name+&quot;=&quot;+escape(value)+((expiredays==null)?&quot;&quot;:&quot;;expires=&quot;+exdate.toGMTString());
-    }
-    function checkCookie()
-    {
-        var username=getCookie(&apos;username&apos;);
-        if(username!=null&amp;&amp;username!=&quot;&quot;)
-        {
-            alert(&apos;Welcome again&apos;+username+&apos;!&apos;);
-        }
-        else
-        {
-            username=prompt(&apos;Please enter yourname:&apos;,&quot;&quot;);
-            if(username!=null&amp;&amp;username!=&quot;&quot;)
-            {
-                setCookie(&apos;username&apos;,username,365);
-            }
-        }
-    }
-    window.onload=function(){
-        checkCookie();
-    }
-&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>这里解释一波，开始的那个function中我使用的checkcookie函数在开始就调用了getcookie函数，如果返回的是空值，那么直接会调用prompt()函数，这个函数和alert是差不多的一个弹出框，但是这里会有一个框和一个提交按钮，在这里输入的值会返回到我们的js中，然后我们把这个值记录下来到下面用到。然后就是setCookie这个函数，我们在这里使用了js自带的一个new Date（）函数，用来获取时间，是为了设置expire的值然后我们把这个时间设为在本地获取的时间加上了356，即为传进来的值，然后整个cookie里的值通过document.cookie进行设置最终的字符串为：<br>     c_name+”=”+escape(value)+((expiredays==null)?””:”;expires=”+exdate.toGMTString());<br>     /<em>即为</em>/username=’chenhw’;expires=’Sat Nov 18 2018 12:39:11 GMT-0800 (太平洋标准时间)’<br>((expiredays==null)?””:”;expires=”这里的语法是如果刚才设置的expiredays（就是你设置的cookie的存在时间）不为空，就执行字符串”;expires”。<br>escape(value)就是把value这个字符串给转换成十六进制的转义序列<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/ZaHSKkgDgllcQJYmCO08fBWtSm9pejmr7f1ZgexLYac!/b/dPIAAAAAAAAA&amp;bo=gAcABIAHAAQDACU!&amp;rf=viewer_4" alt="输入cookie"><br><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/OEvYsvyaxrv*BfB2MrLF2kU2cpB.fMNqkUOsuQjKcv4!/b/dPMAAAAAAAAA&amp;bo=gAfMA4AHzAMDACU!&amp;rf=viewer_4" alt="查看cookie"></p>
+		<p>script标签存在两个属性，defer和async，因此script标签的使用分为三种情况：</p>
+<p>　　1.<code>&lt;script src=&quot;example.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>　　　没有defer或async属性，浏览器会立即加载并执行相应的脚本。也就是说在渲染script标签之后的文档之前，不等待后续加载的文档元素，读到就开始加载和执行，此举会阻塞后续文档的加载；</p>
+<p>　　2.<code>&lt;script async src=&quot;example.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>　　   有了async属性，表示后续文档的加载和渲染与js脚本的加载和执行是并行进行的，即异步执行；</p>
+<p>　　3.<code>&lt;script defer src=&quot;example.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>有了defer属性，加载后续文档的过程和js脚本的加载(此时仅加载不执行)是并行进行的(异步)，js脚本的执行需要等到文档所有元素解析完成之后，DOMContentLoaded事件触发执行之前。<br><img src="http://static.zybuluo.com/chenhw/bzddtlvtn54ucrj629cyh9kc/defer.jpg" alt="defer.jpg-31.4kB"><br>其中蓝色代表js脚本网络加载时间，红色代表js脚本执行时间，绿色代表html解析。</p>
+<p><img src="http://static.zybuluo.com/chenhw/zey59oghkyxu19t3gqt9ptz7/async.PNG" alt="async.PNG-26.7kB"><br>同样的，我在编写Vue的程序时出现了找不到‘#app’的问题，原因是加载的问题，我们可以通过在script的src前面加上async这个attribute来解决这个问题</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -173,7 +129,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/11/18/使用js来修改和控制cookie的内容/" data-title="使用js来修改和控制cookie的内容 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/05/19/defer和async/" data-title="defer和async | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -186,19 +142,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/11/18/关于浏览器的cookie/" title="关于浏览器的cookie">
-  <strong>上一篇：</strong><br/>
-  <span>
-  关于浏览器的cookie</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2017/10/22/8086汇编语言程序设计/"  title="8086汇编语言程序设计">
+<a href="/2018/04/16/python-编写UDP连接/"  title="python 编写UDP连接">
  <strong>下一篇：</strong><br/> 
- <span>8086汇编语言程序设计
+ <span>python 编写UDP连接
 </span>
 </a>
 </div>
@@ -207,7 +155,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/11/18/使用js来修改和控制cookie的内容/" data-title="使用js来修改和控制cookie的内容" data-url="http://yoursite.com/2017/11/18/使用js来修改和控制cookie的内容/"></div>
+	<div class="ds-thread" data-thread-key="2018/05/19/defer和async/" data-title="defer和async" data-url="http://yoursite.com/2018/05/19/defer和async/"></div>
 </section>
 
 
