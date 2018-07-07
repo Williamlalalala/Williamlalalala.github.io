@@ -11,18 +11,18 @@
     
 
     
-    <meta name="description" content="HTML代码设计两层列表 &amp;lt;div id=&amp;quot;div1&amp;quot;&amp;gt;     &amp;lt;ul&amp;gt;         &amp;lt;li&amp;gt;0&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;3&amp;lt;/li&amp;gt;         &amp;lt;li&amp;g">
+    <meta name="description" content="JS又重新引入了元素树的概念。这个的话，在我们实际应用中，用的比较普遍。元素树：仅仅包含元素节点的树结构，不是一颗新树，尽是节点数的子集；treeNode.parentElement 找节点的父元素；treeNode.children返回节点的所有子元素；treeNode.firstElementChild 第一个直接子元素；treeNode.lastElementChild 最后一个直接字元素；">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="dom节点的广度和深度遍历">
 <meta property="og:url" content="http://yoursite.com/2018/07/01/dom节点的广度和深度遍历/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="HTML代码设计两层列表 &amp;lt;div id=&amp;quot;div1&amp;quot;&amp;gt;     &amp;lt;ul&amp;gt;         &amp;lt;li&amp;gt;0&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;3&amp;lt;/li&amp;gt;         &amp;lt;li&amp;g">
+<meta property="og:description" content="JS又重新引入了元素树的概念。这个的话，在我们实际应用中，用的比较普遍。元素树：仅仅包含元素节点的树结构，不是一颗新树，尽是节点数的子集；treeNode.parentElement 找节点的父元素；treeNode.children返回节点的所有子元素；treeNode.firstElementChild 第一个直接子元素；treeNode.lastElementChild 最后一个直接字元素；">
 <meta property="og:image" content="http://static.zybuluo.com/chenhw/2kip595dpzuvlrj1hqjugcf4/image_1chq8q6e3qnamrrl5iad719oe9.png">
-<meta property="og:updated_time" content="2018-07-07T12:10:55.979Z">
+<meta property="og:updated_time" content="2018-07-07T12:27:09.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dom节点的广度和深度遍历">
-<meta name="twitter:description" content="HTML代码设计两层列表 &amp;lt;div id=&amp;quot;div1&amp;quot;&amp;gt;     &amp;lt;ul&amp;gt;         &amp;lt;li&amp;gt;0&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;1&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;2&amp;lt;/li&amp;gt;         &amp;lt;li&amp;gt;3&amp;lt;/li&amp;gt;         &amp;lt;li&amp;g">
+<meta name="twitter:description" content="JS又重新引入了元素树的概念。这个的话，在我们实际应用中，用的比较普遍。元素树：仅仅包含元素节点的树结构，不是一颗新树，尽是节点数的子集；treeNode.parentElement 找节点的父元素；treeNode.children返回节点的所有子元素；treeNode.firstElementChild 第一个直接子元素；treeNode.lastElementChild 最后一个直接字元素；">
 <meta name="twitter:image" content="http://static.zybuluo.com/chenhw/2kip595dpzuvlrj1hqjugcf4/image_1chq8q6e3qnamrrl5iad719oe9.png">
 
     
@@ -103,7 +103,8 @@
 		
 		</div>
 		
-		<p>HTML代码<br>设计两层列表</p>
+		<p>JS又重新引入了元素树的概念。这个的话，在我们实际应用中，用的比较普遍。<br>元素树：仅仅包含元素节点的树结构，不是一颗新树，尽是节点数的子集；<br>treeNode.parentElement 找节点的父元素；<br>treeNode.children返回节点的所有子元素；<br>treeNode.firstElementChild 第一个直接子元素；<br>treeNode.lastElementChild 最后一个直接字元素；<br>treeNode.previousElementSibling 找treeNode的前一个兄弟元素；<br>treeNode.nextElementSibling 找treeNode的下个兄弟元素；</p>
+<p>HTML代码<br>设计两层列表</p>
 <pre><code>&lt;div id=&quot;div1&quot;&gt;
     &lt;ul&gt;
         &lt;li&gt;0&lt;/li&gt;
@@ -125,24 +126,24 @@
 &lt;/div&gt;
 </code></pre><p>js代码</p>
 <pre><code>var div = document.getElementById(&apos;div1&apos;);
-var walker = document.createTreeWalker(div, NodeFilter.SHOW_ELEMENT, null, false);
+var treeNode = document.createTreeWalker(div, NodeFilter.SHOW_ELEMENT, null, false);
 
-//console.log(walker.firstChild().tagName);
-//walker.firstChild();  //转到&lt;div&gt;
-//walker.nextSibling();  //转到&lt;ul&gt;
+//console.log(treeNode.firstChild().tagName);
+//treeNode.firstChild();  //转到&lt;div&gt;
+//treeNode.nextSibling();  //转到&lt;ul&gt;
 
-var node = walker.firstChild();  //转到第一个&lt;li&gt;
+var node = treeNode.firstChild();  //转到第一个&lt;li&gt;
 var nodes = [];
 while (node !== null) {//真正没有节点了，就结束遍历
     nodes.push(node.tagName.toLowerCase());
     console.log(node.tagName.toLowerCase());
     if(node.nextSibling!==null){//如果可以进入一层，就进入
-        node = walker.firstChild();
+        node = treeNode.firstChild();
     }
-    node = walker.nextSibling();//在同一层进行横向遍历
+    node = treeNode.nextSibling();//在同一层进行横向遍历
     if(node === null){//如果为空则则换到下一层
-        walker.parentNode();
-        node = walker.nextSibling();
+        treeNode.parentNode();
+        node = treeNode.nextSibling();
     }
 }
 console.log(nodes);
@@ -226,11 +227,7 @@ console.log(nodes);
 			
 		
 			
-				<li><a href="/tags/大数据/" title="大数据">大数据<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/浏览器/" title="浏览器">浏览器<sup>2</sup></a></li>
+				<li><a href="/tags/U3D/" title="U3D">U3D<sup>2</sup></a></li>
 			
 		
 			
@@ -238,15 +235,19 @@ console.log(nodes);
 			
 		
 			
+				<li><a href="/tags/浏览器/" title="浏览器">浏览器<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/node/" title="node">node<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/U3D/" title="U3D">U3D<sup>2</sup></a></li>
+				<li><a href="/tags/大数据/" title="大数据">大数据<sup>2</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/编译环境/" title="编译环境">编译环境<sup>1</sup></a></li>
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
 			
 		
 			
@@ -254,15 +255,15 @@ console.log(nodes);
 			
 		
 			
-				<li><a href="/tags/you-not-know-js/" title="you not know js">you not know js<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
 			
 		
 			
-				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+				<li><a href="/tags/you-not-know-js/" title="you not know js">you not know js<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/编译环境/" title="编译环境">编译环境<sup>1</sup></a></li>
 			
 		
 		</ul>
