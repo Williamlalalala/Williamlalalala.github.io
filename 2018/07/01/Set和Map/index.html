@@ -1,27 +1,27 @@
 
-  
-    <!DOCTYPE HTML>
+ <!DOCTYPE HTML>
 <html >
 <head>
   <meta charset="UTF-8">
   
-    <title>Chenhw&#39;sBlog</title>
+    <title>Set和Map | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="WEB Storage的一些简单的应用方法var storage = window.localStorage; storage.setItem(&amp;quot;b&amp;quot;,&amp;quot;123456&amp;quot;);//在这里是对于b这个storage中的变量进行赋值操作 storage.getItem(&amp;quot;b&amp;quot;);//这里是对于storage中的b的值进行提取 storage.re">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chenhw&#39;sBlog">
-<meta property="og:url" content="http://yoursite.com/temporary/WEB Storage的一些简单的应用方法.html">
+    <meta name="description" content="set这个类型的集合中的每一个数据都只有一个，有唯一性，创建可以直接使用 new set（）直接写入或者通过数组转换而来。同样的，我们也可以使用set来作为中介来去除多余的数组元素。 let arr = [3, 5, 2, 2, 5, 5]; let unique = [...new Set(arr)]; // [3, 5, 2] 使用 Set 可以很容易地实现并集（Union）、交集（Inter">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Set和Map">
+<meta property="og:url" content="http://yoursite.com/2018/07/01/Set和Map/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="WEB Storage的一些简单的应用方法var storage = window.localStorage; storage.setItem(&amp;quot;b&amp;quot;,&amp;quot;123456&amp;quot;);//在这里是对于b这个storage中的变量进行赋值操作 storage.getItem(&amp;quot;b&amp;quot;);//这里是对于storage中的b的值进行提取 storage.re">
-<meta property="og:updated_time" content="2017-11-19T15:52:08.626Z">
+<meta property="og:description" content="set这个类型的集合中的每一个数据都只有一个，有唯一性，创建可以直接使用 new set（）直接写入或者通过数组转换而来。同样的，我们也可以使用set来作为中介来去除多余的数组元素。 let arr = [3, 5, 2, 2, 5, 5]; let unique = [...new Set(arr)]; // [3, 5, 2] 使用 Set 可以很容易地实现并集（Union）、交集（Inter">
+<meta property="og:updated_time" content="2018-07-08T08:30:25.083Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chenhw&#39;sBlog">
-<meta name="twitter:description" content="WEB Storage的一些简单的应用方法var storage = window.localStorage; storage.setItem(&amp;quot;b&amp;quot;,&amp;quot;123456&amp;quot;);//在这里是对于b这个storage中的变量进行赋值操作 storage.getItem(&amp;quot;b&amp;quot;);//这里是对于storage中的b的值进行提取 storage.re">
+<meta name="twitter:title" content="Set和Map">
+<meta name="twitter:description" content="set这个类型的集合中的每一个数据都只有一个，有唯一性，创建可以直接使用 new set（）直接写入或者通过数组转换而来。同样的，我们也可以使用set来作为中介来去除多余的数组元素。 let arr = [3, 5, 2, 2, 5, 5]; let unique = [...new Set(arr)]; // [3, 5, 2] 使用 Set 可以很容易地实现并集（Union）、交集（Inter">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -36,9 +36,9 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
-      <body>
-        <header>
-          
+  <body>
+    <header>
+      
 <div>
 		
 			<div id="imglogo">
@@ -73,44 +73,75 @@
 				</ul>
 			</nav>			
 </div>
-        </header>
-        <div id="container">
-          <div id="main" class="page" itemscope itemprop="blogPost">
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
   
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/temporary/WEB Storage的一些简单的应用方法.html" title="" itemprop="url"></a>
+      <a href="/2018/07/01/Set和Map/" title="Set和Map" itemprop="url">Set和Map</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2018-04-23T16:55:49.100Z" itemprop="datePublished"> 发表于 2018-04-24</time>
+    <time datetime="2018-07-01T08:29:27.000Z" itemprop="datePublished"> 发表于 2018-07-01</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<h1 id="WEB-Storage的一些简单的应用方法"><a href="#WEB-Storage的一些简单的应用方法" class="headerlink" title="WEB Storage的一些简单的应用方法"></a>WEB Storage的一些简单的应用方法</h1><pre><code>var storage = window.localStorage;
-storage.setItem(&quot;b&quot;,&quot;123456&quot;);//在这里是对于b这个storage中的变量进行赋值操作
-storage.getItem(&quot;b&quot;);//这里是对于storage中的b的值进行提取
-storage.removeItem(&quot;b&quot;);//这里就是对于b进行的一个清空
-</code></pre><p>整体的storage我们可以看出来是和cookie有很多的类似之处的，但是这里没有expire这个量，即认为我们可以永久存放这些变量，至少是长时间的，而且在上一篇也说到了cookie的存储量大概至是在4KB左右，而目前HTML5所支持的local的storage的大小达到了5MB，这个空间存放一些比较基础的东西是已经足够了的。<br>如果是想清除所有的键值对，则需要使用storag.clear()函数。</p>
-<pre><code>function showStorage(){
- for(var i=0;i&lt;storage.length;i++){
-  //key(i)获得相应的键，再用getItem()方法获得对应的值
-  document.write(storage.key(i)+ &quot; : &quot; + storage.getItem(storage.key(i)) + &quot;&lt;br&gt;&quot;);
- }
-}
-</code></pre><p>key(i)是为了获取storage中的变量名，这样就可以看到所有本地储存的内容。</p>
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			
+		
+		</div>
+		
+		<p>set这个类型的集合中的每一个数据都只有一个，有唯一性，创建可以直接使用 new set（）直接写入或者通过数组转换而来。<br>同样的，我们也可以使用set来作为中介来去除多余的数组元素。</p>
+<pre><code>let arr = [3, 5, 2, 2, 5, 5];
+let unique = [...new Set(arr)];
+// [3, 5, 2]
+</code></pre><p>使用 Set 可以很容易地实现并集（Union）、交集（Intersect）和差集（Difference）</p>
+<pre><code>let a = new Set([1, 2, 3]);
+let b = new Set([4, 3, 2]);
+
+// 并集
+let union = new Set([...a, ...b]);
+// Set {1, 2, 3, 4}
+
+// 交集
+let intersect = new Set([...a].filter(x =&gt; b.has(x)));
+// set {2, 3}
+
+// 差集
+let difference = new Set([...a].filter(x =&gt; !b.has(x)));
+// Set {1}
+</code></pre><p>map这个数据结构是作为键值对的情况出现，这样会比object更合适，因为object结构提供的是“字符串-值”的对应，map提供了“值—值”的对应，是一种更完善的 Hash 结构实现。</p>
+<pre><code>const map = new Map([
+  [&apos;name&apos;, &apos;张三&apos;],
+  [&apos;title&apos;, &apos;Author&apos;]
+]);
+
+map.size // 2
+map.has(&apos;name&apos;) // true
+map.get(&apos;name&apos;) // &quot;张三&quot;
+map.has(&apos;title&apos;) // true
+map.get(&apos;title&apos;) // &quot;Author&quot;
+</code></pre><p>map的遍历顺序就是插入的顺序<br>1、size属性返回 Map 结构的成员总数。<br>2、set(key, value)<br>3、get(key)<br>4、has(key)//返回布尔值<br>5、delete(key)//返回布尔值<br>6、clear()//清除成员没有返回</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
 
 </div>
 
@@ -118,7 +149,7 @@ storage.removeItem(&quot;b&quot;);//这里就是对于b进行的一个清空
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/temporary/WEB Storage的一些简单的应用方法.html" data-title="Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/07/01/Set和Map/" data-title="Set和Map | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -129,16 +160,103 @@ storage.removeItem(&quot;b&quot;);//这里就是对于b进行的一个清空
    	       
 	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2018/07/01/dom节点的广度和深度遍历/"  title="dom节点的广度和深度遍历">
+ <strong>下一篇：</strong><br/> 
+ <span>dom节点的广度和深度遍历
+</span>
+</a>
+</div>
+
+</nav>
+
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="temporary/WEB Storage的一些简单的应用方法.html" data-title="" data-url="http://yoursite.com/temporary/WEB Storage的一些简单的应用方法.html"></div>
+	<div class="ds-thread" data-thread-key="2018/07/01/Set和Map/" data-title="Set和Map" data-url="http://yoursite.com/2018/07/01/Set和Map/"></div>
 </section>
 
 
 
 </div>  
-        </div>
-        <footer><div id="footer" >
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ 
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>7</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/微机原理与接口技术/" title="微机原理与接口技术">微机原理与接口技术<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/大数据/" title="大数据">大数据<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Linux/" title="Linux">Linux<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/浏览器/" title="浏览器">浏览器<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/node/" title="node">node<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/U3D/" title="U3D">U3D<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/计网/" title="计网">计网<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/you-not-know-js/" title="you not know js">you not know js<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/编译环境/" title="编译环境">编译环境<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/数据库/" title="数据库">数据库<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -183,7 +301,7 @@ storage.removeItem(&quot;b&quot;);//这里就是对于b进行的一个清空
 		</p>
 </div>
 </footer>
-        <script src="/js/jquery-2.0.3.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 <script src="/js/jquery.qrcode-0.12.0.min.js"></script>
@@ -227,8 +345,36 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
         
     }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
   });
 });
 </script>
@@ -363,6 +509,5 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search End -->
 
-      </body>
-     </html>
-     
+  </body>
+</html>
