@@ -4,24 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>垃圾回收机制 | Chenhw&#39;sBlog</title>
+    <title>Vue的生命周期 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="##引用计数垃圾收集这是最天真的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。 示例 ##标记-清除算法这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。 这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的">
+    <meta name="description" content="每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。 这里是Vue整体的一个生命周期这块是在Vue实例创建之前和创建之后运行的情况，我们进行了事件的初始化和注入这里证明了必须要有el（也就是绑定了的id的数据块）">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="垃圾回收机制">
-<meta property="og:url" content="http://yoursite.com/2018/07/09/垃圾回收机制/index.html">
+<meta property="og:title" content="Vue的生命周期">
+<meta property="og:url" content="http://yoursite.com/2018/07/08/Vue的生命周期/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="##引用计数垃圾收集这是最天真的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。 示例 ##标记-清除算法这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。 这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的">
-<meta property="og:updated_time" content="2018-07-08T17:23:28.692Z">
+<meta property="og:description" content="每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。 这里是Vue整体的一个生命周期这块是在Vue实例创建之前和创建之后运行的情况，我们进行了事件的初始化和注入这里证明了必须要有el（也就是绑定了的id的数据块）">
+<meta property="og:image" content="http://static.zybuluo.com/chenhw/lcy88psj8qdmg7btn7nl11ev/image_1chtqr7laehl1ttk1ve8hk3p0s9.png">
+<meta property="og:image" content="http://static.zybuluo.com/chenhw/enihmk53coj5iyv1js6mggnp/image_1chtr8vsgmud192urd5q0u3oe13.png">
+<meta property="og:image" content="http://static.zybuluo.com/chenhw/zie4i9gg7hcmwyeo3yysao51/image_1chtrgkum1dpm1nm0q77uk910171g.png">
+<meta property="og:image" content="http://static.zybuluo.com/chenhw/p7ro6nblragv4ndylctwru38/image_1chtrr4gajv712vm1h0tm7m1ugl1t.png">
+<meta property="og:updated_time" content="2018-07-08T22:16:58.849Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="垃圾回收机制">
-<meta name="twitter:description" content="##引用计数垃圾收集这是最天真的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。 示例 ##标记-清除算法这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。 这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的">
+<meta name="twitter:title" content="Vue的生命周期">
+<meta name="twitter:description" content="每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。 这里是Vue整体的一个生命周期这块是在Vue实例创建之前和创建之后运行的情况，我们进行了事件的初始化和注入这里证明了必须要有el（也就是绑定了的id的数据块）">
+<meta name="twitter:image" content="http://static.zybuluo.com/chenhw/lcy88psj8qdmg7btn7nl11ev/image_1chtqr7laehl1ttk1ve8hk3p0s9.png">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/07/09/垃圾回收机制/" title="垃圾回收机制" itemprop="url">垃圾回收机制</a>
+      <a href="/2018/07/08/Vue的生命周期/" title="Vue的生命周期" itemprop="url">Vue的生命周期</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2018-07-08T17:18:31.000Z" itemprop="datePublished"> Published 2018-07-09</time>
+    <time datetime="2018-07-07T22:15:41.000Z" itemprop="datePublished"> Published 2018-07-08</time>
     
   </p>
 </header>
@@ -101,13 +106,8 @@
 		
 		</div>
 		
-		<p>##引用计数垃圾收集<br>这是最天真的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。</p>
-<p>示例</p>
-<p>##标记-清除算法<br>这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。</p>
-<p>这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的对象，然后找这些对象引用的对象……从根开始，垃圾回收器将找到所有可以获得的对象和收集所有不能获得的对象。</p>
-<p>这个算法比前一个要好，因为“有零引用的对象”总是不可获得的，但是相反却不一定，参考“循环引用”。</p>
-<p>从2012年起，所有现代浏览器都使用了标记-清除垃圾回收算法。所有对JavaScript垃圾回收算法的改进都是基于标记-清除算法的改进，并没有改进标记-清除算法本身和它对“对象是否不再需要”的简化定义。</p>
-<p>循环引用不再是问题了<br>在上面的示例中，函数调用返回之后，两个对象从全局对象出发无法获取。因此，他们将会被垃圾回收器回收。第二个示例同样，一旦 div 和其事件处理无法从根获取到，他们将会被垃圾回收器回收。<br>限制: 那些无法从根对象查询到的对象都将被清除<br>尽管这是一个限制，但实践中我们很少会碰到类似的情况，所以开发者不太会去关心垃圾回收机制。</p>
+		<p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。</p>
+<p>这里是Vue整体的一个生命周期<br><img src="http://static.zybuluo.com/chenhw/lcy88psj8qdmg7btn7nl11ev/image_1chtqr7laehl1ttk1ve8hk3p0s9.png" alt="image_1chtqr7laehl1ttk1ve8hk3p0s9.png-226kB"><br>这块是在Vue实例创建之前和创建之后运行的情况，我们进行了事件的初始化和注入<br><img src="http://static.zybuluo.com/chenhw/enihmk53coj5iyv1js6mggnp/image_1chtr8vsgmud192urd5q0u3oe13.png" alt="image_1chtr8vsgmud192urd5q0u3oe13.png-21.5kB"><br>这里证明了必须要有el（也就是绑定了的id的数据块）才可以执行，随后会分成是否有template<br>这里发生的事情还是很多的，template对于生命周期并没有决定性影响如果有template就将template作为模板编译成render函数<br>在vue对象中还有一个render函数，它是以createElement作为参数，然后做渲染操作<br>渲染优先级render函数选项 &gt; template选项 &gt; outer HTML.<br><img src="http://static.zybuluo.com/chenhw/zie4i9gg7hcmwyeo3yysao51/image_1chtrgkum1dpm1nm0q77uk910171g.png" alt="image_1chtrgkum1dpm1nm0q77uk910171g.png-47kB"><br>这块是中心块，mount代表着渲染这个过程，在这一步数据会进行替代。<br>beforeMount这一步数据还是js中的虚拟DOM形式存储的<br>mounted这步就已经完成了替换掉了挂在DOM上的元素了<br>在beforeUpdate这块监听到data的变化但是view层并没有被渲染，等到update是渲染后触发的<br><img src="http://static.zybuluo.com/chenhw/p7ro6nblragv4ndylctwru38/image_1chtrr4gajv712vm1h0tm7m1ugl1t.png" alt="image_1chtrr4gajv712vm1h0tm7m1ugl1t.png-49.4kB"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -125,7 +125,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/07/09/垃圾回收机制/" data-title="垃圾回收机制 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/07/08/Vue的生命周期/" data-title="Vue的生命周期 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -138,11 +138,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2018/07/09/垃圾回收机制/" title="垃圾回收机制">
+  <strong>上一篇：</strong><br/>
+  <span>
+  垃圾回收机制</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2018/07/08/Vue的生命周期/"  title="Vue的生命周期">
+<a href="/2018/07/08/fetch用法/"  title="fetch用法">
  <strong>下一篇：</strong><br/> 
- <span>Vue的生命周期
+ <span>fetch用法
 </span>
 </a>
 </div>
@@ -151,7 +159,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2018/07/09/垃圾回收机制/" data-title="垃圾回收机制" data-url="http://yoursite.com/2018/07/09/垃圾回收机制/"></div>
+	<div class="ds-thread" data-thread-key="2018/07/08/Vue的生命周期/" data-title="Vue的生命周期" data-url="http://yoursite.com/2018/07/08/Vue的生命周期/"></div>
 </section>
 
 

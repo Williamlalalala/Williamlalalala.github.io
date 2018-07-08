@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>垃圾回收机制 | Chenhw&#39;sBlog</title>
+    <title>fetch用法 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="##引用计数垃圾收集这是最天真的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。 示例 ##标记-清除算法这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。 这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的">
+    <meta name="description" content="在这里我整理了一下fetch的用法 上传 JSON 数据 var url = &amp;apos;https://example.com/profile&amp;apos;; var data = {username: &amp;apos;example&amp;apos;};  fetch(url, {   method: &amp;apos;POST&amp;apos;, // or &amp;apos;PUT&amp;apos;   body: JSON">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="垃圾回收机制">
-<meta property="og:url" content="http://yoursite.com/2018/07/09/垃圾回收机制/index.html">
+<meta property="og:title" content="fetch用法">
+<meta property="og:url" content="http://yoursite.com/2018/07/08/fetch用法/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="##引用计数垃圾收集这是最天真的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。 示例 ##标记-清除算法这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。 这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的">
-<meta property="og:updated_time" content="2018-07-08T17:23:28.692Z">
+<meta property="og:description" content="在这里我整理了一下fetch的用法 上传 JSON 数据 var url = &amp;apos;https://example.com/profile&amp;apos;; var data = {username: &amp;apos;example&amp;apos;};  fetch(url, {   method: &amp;apos;POST&amp;apos;, // or &amp;apos;PUT&amp;apos;   body: JSON">
+<meta property="og:updated_time" content="2018-07-08T22:17:43.489Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="垃圾回收机制">
-<meta name="twitter:description" content="##引用计数垃圾收集这是最天真的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。 示例 ##标记-清除算法这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。 这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的">
+<meta name="twitter:title" content="fetch用法">
+<meta name="twitter:description" content="在这里我整理了一下fetch的用法 上传 JSON 数据 var url = &amp;apos;https://example.com/profile&amp;apos;; var data = {username: &amp;apos;example&amp;apos;};  fetch(url, {   method: &amp;apos;POST&amp;apos;, // or &amp;apos;PUT&amp;apos;   body: JSON">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/07/09/垃圾回收机制/" title="垃圾回收机制" itemprop="url">垃圾回收机制</a>
+      <a href="/2018/07/08/fetch用法/" title="fetch用法" itemprop="url">fetch用法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2018-07-08T17:18:31.000Z" itemprop="datePublished"> Published 2018-07-09</time>
+    <time datetime="2018-07-07T22:15:25.000Z" itemprop="datePublished"> Published 2018-07-08</time>
     
   </p>
 </header>
@@ -101,14 +101,30 @@
 		
 		</div>
 		
-		<p>##引用计数垃圾收集<br>这是最天真的垃圾收集算法。此算法把“对象是否不再需要”简化定义为“对象有没有其他对象引用到它”。如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收。</p>
-<p>示例</p>
-<p>##标记-清除算法<br>这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。</p>
-<p>这个算法假定设置一个叫做根（root）的对象（在Javascript里，根是全局对象）。垃圾回收器将定期从根开始，找所有从根开始引用的对象，然后找这些对象引用的对象……从根开始，垃圾回收器将找到所有可以获得的对象和收集所有不能获得的对象。</p>
-<p>这个算法比前一个要好，因为“有零引用的对象”总是不可获得的，但是相反却不一定，参考“循环引用”。</p>
-<p>从2012年起，所有现代浏览器都使用了标记-清除垃圾回收算法。所有对JavaScript垃圾回收算法的改进都是基于标记-清除算法的改进，并没有改进标记-清除算法本身和它对“对象是否不再需要”的简化定义。</p>
-<p>循环引用不再是问题了<br>在上面的示例中，函数调用返回之后，两个对象从全局对象出发无法获取。因此，他们将会被垃圾回收器回收。第二个示例同样，一旦 div 和其事件处理无法从根获取到，他们将会被垃圾回收器回收。<br>限制: 那些无法从根对象查询到的对象都将被清除<br>尽管这是一个限制，但实践中我们很少会碰到类似的情况，所以开发者不太会去关心垃圾回收机制。</p>
-  
+		<p>在这里我整理了一下fetch的用法</p>
+<p>上传 JSON 数据</p>
+<pre><code>var url = &apos;https://example.com/profile&apos;;
+var data = {username: &apos;example&apos;};
+
+fetch(url, {
+  method: &apos;POST&apos;, // or &apos;PUT&apos;
+  body: JSON.stringify(data), // data can be `string` or {object}!
+  headers: new Headers({
+    &apos;Content-Type&apos;: &apos;application/json&apos;
+  })
+}).then(res =&gt; res.json())
+.catch(error =&gt; console.error(&apos;Error:&apos;, error))
+.then(response =&gt; console.log(&apos;Success:&apos;, response));
+</code></pre><p>上传文件<br>假设对应的HTML代码是这样的 <code>&lt;input type=&quot;file&quot; /&gt;</code></p>
+<pre><code>let formdata = new FormData();//声明一个文件的类型
+let file = new document.querySelector(&quot;input[type = &apos;file&apos;]&quot;);//获取对应的文件信息
+formdata.append(&apos;username&apos;,&apos;aaaa&apos;);
+formdata.append(&apos;file&apos;,file.file[0]);
+fetch(&quot;lalallala&quot;,{//发送包裹的信息
+  method:&apos;PUT&apos;,
+  body:file
+})
+</code></pre>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -125,7 +141,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/07/09/垃圾回收机制/" data-title="垃圾回收机制 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/07/08/fetch用法/" data-title="fetch用法 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -138,11 +154,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2018/07/08/Vue的生命周期/" title="Vue的生命周期">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Vue的生命周期</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2018/07/08/Vue的生命周期/"  title="Vue的生命周期">
+<a href="/2018/07/05/js的promise/"  title="js的promise">
  <strong>下一篇：</strong><br/> 
- <span>Vue的生命周期
+ <span>js的promise
 </span>
 </a>
 </div>
@@ -151,7 +175,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2018/07/09/垃圾回收机制/" data-title="垃圾回收机制" data-url="http://yoursite.com/2018/07/09/垃圾回收机制/"></div>
+	<div class="ds-thread" data-thread-key="2018/07/08/fetch用法/" data-title="fetch用法" data-url="http://yoursite.com/2018/07/08/fetch用法/"></div>
 </section>
 
 
