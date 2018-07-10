@@ -4,35 +4,27 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>简单的hexo和GitHub搭建自己的博客 | Chenhw&#39;sBlog</title>
+    <title>实现一个无限循环的指针加硬币 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧我是使用的hexo和GitHub搭建的 第一步先到网络上下载node.js 和git（使用GitHub必须链接在此）   其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文">
-<meta name="keywords" content="blog">
+    <meta name="description" content="&amp;lt;div class=&amp;quot;big&amp;quot;&amp;gt;     &amp;lt;div class=&amp;quot;small&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;style&amp;gt;         .big{             width: 100px;             height: 100px;             border-r">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="简单的hexo和GitHub搭建自己的博客">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/pagefirst/index.html">
+<meta property="og:title" content="实现一个无限循环的指针加硬币">
+<meta property="og:url" content="http://yoursite.com/2018/07/10/实现一个无限循环的指针加硬币/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧我是使用的hexo和GitHub搭建的 第一步先到网络上下载node.js 和git（使用GitHub必须链接在此）   其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&bo=AgSAAgAAAAADAKE!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/AHebJN8TGu08gOAq4Ac74YZjDio87nydRswXhbFU7NY!/b/dDwBAAAAAAAA&bo=dgKuAnYCrgIDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/hL4IIXSamIdvfC*0frxF*83EwFa0KG0YXsPyjN6Ub3w!/b/dDwBAAAAAAAA&bo=ugSAAgAAAAADABk!&rf=viewer_4">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/0bu7eVjMwY.H*eFDTnDr6dlkWHAZTO2U4IIki5Sm1y8!/b/dD0BAAAAAAAA&bo=9wH8APcB*AADACU!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/A1B.aAhMQFSDcEkwKanvEOz6fliXsjo5WDvRHI2nCxg!/b/dDwBAAAAAAAA&bo=MAWAAq8FvQIDAIc!&rf=viewer_4">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/C55D83YKHkdywlal62S7eyRYHqZUq3oydDpGhsW3wtg!/b/dG0BAAAAAAAA&bo=iAQfA4gEHwMDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/Tv44CQ3.7odcGCZZJddJPnPUn6qRG*JVpsj2DvC1DMM!/b/dOgAAAAAAAAA&bo=8wEuAPMBLgADACU!&rf=viewer_4">
-<meta property="og:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/qytckYWxBVvhU9s*nb0hxNSSgC2xMRcDPe94rtfHLq0!/b/dD0BAAAAAAAA&bo=UgVRA1IFUQMDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a2.qpic.cn/psb?/V12td2HV2olXaC/IjEMV4cjGoSNnPien63MNTn47Mw7u2lDmhg2fb2rCKQ!/b/dDwBAAAAAAAA&bo=dwTTAncE0wIDACU!&rf=viewer_4">
-<meta property="og:image" content="http://a1.qpic.cn/psb?/V12td2HV2olXaC/sJy9X8oMlXhenPYPQ9YjcQGxBNCJhEauywJYR1bad4I!/b/dOcAAAAAAAAA&bo=AgMqAwIDKgMDACU!&rf=viewer_4">
-<meta property="og:updated_time" content="2017-08-28T12:55:15.683Z">
+<meta property="og:description" content="&amp;lt;div class=&amp;quot;big&amp;quot;&amp;gt;     &amp;lt;div class=&amp;quot;small&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;style&amp;gt;         .big{             width: 100px;             height: 100px;             border-r">
+<meta property="og:image" content="http://static.zybuluo.com/chenhw/6qqvztw15gnw4pecn29v5zmo/image_1ci26b6h81d7l1itj1s8v14ua1vp19.png">
+<meta property="og:image" content="http://static.zybuluo.com/chenhw/exv7hzn51eb05iwcghdhgzku/image_1ci26bvl4sb1ou91tce1e74kvkm.png">
+<meta property="og:updated_time" content="2018-07-10T13:40:10.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单的hexo和GitHub搭建自己的博客">
-<meta name="twitter:description" content="hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧我是使用的hexo和GitHub搭建的 第一步先到网络上下载node.js 和git（使用GitHub必须链接在此）   其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文">
-<meta name="twitter:image" content="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&bo=AgSAAgAAAAADAKE!&rf=viewer_4">
+<meta name="twitter:title" content="实现一个无限循环的指针加硬币">
+<meta name="twitter:description" content="&amp;lt;div class=&amp;quot;big&amp;quot;&amp;gt;     &amp;lt;div class=&amp;quot;small&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;style&amp;gt;         .big{             width: 100px;             height: 100px;             border-r">
+<meta name="twitter:image" content="http://static.zybuluo.com/chenhw/6qqvztw15gnw4pecn29v5zmo/image_1ci26b6h81d7l1itj1s8v14ua1vp19.png">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -92,14 +84,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/pagefirst/" title="简单的hexo和GitHub搭建自己的博客" itemprop="url">简单的hexo和GitHub搭建自己的博客</a>
+      <a href="/2018/07/10/实现一个无限循环的指针加硬币/" title="实现一个无限循环的指针加硬币" itemprop="url">实现一个无限循环的指针加硬币</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T07:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2018-07-10T13:39:26.000Z" itemprop="datePublished"> Published 2018-07-10</time>
     
   </p>
 </header>
@@ -112,51 +104,33 @@
 		
 		</div>
 		
-		<p>  hhhhhh，今天终于打好了博客，真心累，虽然我还不知道具体其他的改法，不急，慢慢学吧，那我就先按照打完博客的套路（233333）讲一下怎么做一个自己的博客吧<br>我是使用的hexo和GitHub搭建的</p>
-<p>第一步先到网络上下载<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a> 和<a href="https://git-scm.com/" target="_blank" rel="external">git</a>（使用GitHub必须链接在此）</p>
-<p>  其实下载没什么说的，没有什么限制之类的，基本上是按照它的默认来，建议node.js放到D盘中，先建立一个blog的文件夹，再在里面建一个nodejs的文件夹，然后把node.js放在那里面，以后那就是你博客的根据地了。<br>  下载完git之后打开git.exe可以先放在那里（以防找不到了）</p>
-<p>  然后就是把环境变量改一下具体如下</p>
-<blockquote>
-<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/PAyfdXb0LrWBTDWlXRiLlJzJPUVM9bgEOmHzJS4GrqY!/b/dD0BAAAAAAAA&amp;bo=AgSAAgAAAAADAKE!&amp;rf=viewer_4" alt="enter image description here"><br>进入计算机的系统属性，先点更改设置再点环境变量<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/AHebJN8TGu08gOAq4Ac74YZjDio87nydRswXhbFU7NY!/b/dDwBAAAAAAAA&amp;bo=dgKuAnYCrgIDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/hL4IIXSamIdvfC*0frxF*83EwFa0KG0YXsPyjN6Ub3w!/b/dDwBAAAAAAAA&amp;bo=ugSAAgAAAAADABk!&amp;rf=viewer_4" alt="enter image description here"><br>然后就会看到左边的窗口弹出，找到PATH然后添加你的node.js的路径</p>
-</blockquote>
-<p>  紧接着按win的键+R在其中输入cmd打开命令行</p>
-<blockquote>
-<p><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/0bu7eVjMwY.H*eFDTnDr6dlkWHAZTO2U4IIki5Sm1y8!/b/dD0BAAAAAAAA&amp;bo=9wH8APcB*AADACU!&amp;rf=viewer_4" alt="enter image description here"></p>
-</blockquote>
-<p>先进入你的blog文件夹再进入nodejs的文件夹</p>
-<pre><code>C:\Users\chenhw&gt;D:
-D:\&gt;cd blog
-D:\blog&gt;cd nodejs
-安装hexo
-D:\blog\nodejs&gt;npm install -g hexo
-紧接着创建一个文件夹
-D:\blog\nodejs&gt;mkdir blog
-然后进去
-D:\blog\nodejs&gt;cd blog
-初始化hexo（这一步我用了200多秒）
-D:\blog\nodejs\blog&gt;hexo init 
-紧接着安装依赖包
-D:\blog\nodejs\blog&gt;npm install
-再输入npm install hexo-deployer-git --save
-</code></pre><p>初始的工作我们就进行完了，然后我们现在本地进行部署</p>
-<pre><code>命令行输入
-hexo generate（hexo g也可以）
-hexo server（hexo s也可以）这里是本地部署，部署完别把cdm命令行关掉
-</code></pre><p>紧接着我们就要把网页部署到GitHub上，我们去<a href="https://github.com/" target="_blank" rel="external">GitHub的官网</a>（GitHub那个猫的标超级萌有木有）申请一个账号，</p>
-<blockquote>
-<p><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/A1B.aAhMQFSDcEkwKanvEOz6fliXsjo5WDvRHI2nCxg!/b/dDwBAAAAAAAA&amp;bo=MAWAAq8FvQIDAIc!&amp;rf=viewer_4" alt="Blockquote"><br>新建一个仓库，然后写入名字<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/C55D83YKHkdywlal62S7eyRYHqZUq3oydDpGhsW3wtg!/b/dG0BAAAAAAAA&amp;bo=iAQfA4gEHwMDACU!&amp;rf=viewer_4" alt="enter image description here"><br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/Tv44CQ3.7odcGCZZJddJPnPUn6qRG*JVpsj2DvC1DMM!/b/dOgAAAAAAAAA&amp;bo=8wEuAPMBLgADACU!&amp;rf=viewer_4" alt="enter image description here"><br>紧接着我们create完之后回到主页找到setting<br><img src="http://a3.qpic.cn/psb?/V12td2HV2olXaC/qytckYWxBVvhU9s*nb0hxNSSgC2xMRcDPe94rtfHLq0!/b/dD0BAAAAAAAA&amp;bo=UgVRA1IFUQMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>向下翻翻到GitHub pages的地方选择主题<br><img src="http://a2.qpic.cn/psb?/V12td2HV2olXaC/IjEMV4cjGoSNnPien63MNTn47Mw7u2lDmhg2fb2rCKQ!/b/dDwBAAAAAAAA&amp;bo=dwTTAncE0wIDACU!&amp;rf=viewer_4" alt="enter image description here"><br>然后紧接着我们再在GitHub里把ssh设置好，这里现在GitHub中进行操作，<a href="http://jingyan.baidu.com/article/dca1fa6f756777f1a44052e3.html" target="_blank" rel="external">具体操作在这</a></p>
-<p>紧接着我们打开没有关掉的git的命令行进行操作就可以了</p>
-<p><img src="http://a1.qpic.cn/psb?/V12td2HV2olXaC/sJy9X8oMlXhenPYPQ9YjcQGxBNCJhEauywJYR1bad4I!/b/dOcAAAAAAAAA&amp;bo=AgMqAwIDKgMDACU!&amp;rf=viewer_4" alt="enter image description here"><br>这边创建ssh的部分就算完成了</p>
-</blockquote>
-<p>接下来要配置Deployment<br>在_config.yml文件中，找到Deployment，然后按照如下修改（因为yml文件对于格式的要求特别高，所以要在deploy下面的每个属性前加两个空格，冒号后加一个空格）：</p>
-<pre><code>deploy:
-type: git
-repo: git@github.com:Williamlalalala/Williamlalalala.github.io.git
-branch: master
-</code></pre><p>我们再回到cmd命令行，输入</p>
-<pre><code>hexo g
-hexo d
-</code></pre><p>就可以部署成功了</p>
+		<pre><code>&lt;div class=&quot;big&quot;&gt;
+    &lt;div class=&quot;small&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;style&gt;
+        .big{
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            border: 1px solid black;
+            background-color: aquamarine;
+            animation: spin 1s infinite linear;
+        }
+        .small{
+            width: 50px;
+            height: 50px;
+            border-right: 1px solid black;
+        }
+        @keyframes spin{
+            0%{
+                transform: rotate(0deg) rotateY(0deg) ;
+            }
+            100%{
+                transform: rotate(359deg) rotateY(360deg);
+            }
+        }
+&lt;/style&gt;
+</code></pre><p>在开始的时候分为两块来实现，里面的一块只占其面积的四分之一并放到左上角，实现它的右框的实体化<br>并在大框的时候旋转大框，设置为infinite就可以无限运行，在动态里分别放入2D的旋转和3D的旋转。<br><img src="http://static.zybuluo.com/chenhw/6qqvztw15gnw4pecn29v5zmo/image_1ci26b6h81d7l1itj1s8v14ua1vp19.png" alt="接近开始的时候"><br><img src="http://static.zybuluo.com/chenhw/exv7hzn51eb05iwcghdhgzku/image_1ci26bvl4sb1ou91tce1e74kvkm.png" alt="一段时间之后"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -165,7 +139,7 @@ hexo d
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/blog/">blog</a>
+  <span></span> <a href="/tags/CSS/">CSS</a>
   </div>
 
 </div>
@@ -174,7 +148,7 @@ hexo d
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/08/28/pagefirst/" data-title="简单的hexo和GitHub搭建自己的博客 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/07/10/实现一个无限循环的指针加硬币/" data-title="实现一个无限循环的指针加硬币 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -188,19 +162,27 @@ hexo d
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/08/28/js-dom/" title="JavaScript对于dom节点的基本操作">
+ <a href="/2018/07/10/HTTPS加密/" title="HTTPS加密">
   <strong>上一篇：</strong><br/>
   <span>
-  JavaScript对于dom节点的基本操作</span>
+  HTTPS加密</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2018/07/09/垃圾回收机制/"  title="垃圾回收机制">
+ <strong>下一篇：</strong><br/> 
+ <span>垃圾回收机制
+</span>
+</a>
+</div>
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/08/28/pagefirst/" data-title="简单的hexo和GitHub搭建自己的博客" data-url="http://yoursite.com/2017/08/28/pagefirst/"></div>
+	<div class="ds-thread" data-thread-key="2018/07/10/实现一个无限循环的指针加硬币/" data-title="实现一个无限循环的指针加硬币" data-url="http://yoursite.com/2018/07/10/实现一个无限循环的指针加硬币/"></div>
 </section>
 
 
