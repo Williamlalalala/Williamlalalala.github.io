@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JavaScript对于dom节点的基本操作 | Chenhw&#39;sBlog</title>
+    <title>apply call bind 以及他们的区别 | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
+    <meta name="description" content="call：和apply接近。区别为call是接受多个参数形成的列表，而apply接受的是一个包含多个参数的数组。（个人感觉call其实是通过对于“父构造函数”call一下，然后就可以实现类似继承的效果） function Product(name, price) {   this.name = name;   this.price = price; }  function Food(name,">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对于dom节点的基本操作">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/js-dom/index.html">
+<meta property="og:title" content="apply call bind 以及他们的区别">
+<meta property="og:url" content="http://yoursite.com/2018/09/09/apply-call-bind-以及他们的区别/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
-<meta property="og:updated_time" content="2017-09-17T08:38:54.407Z">
+<meta property="og:description" content="call：和apply接近。区别为call是接受多个参数形成的列表，而apply接受的是一个包含多个参数的数组。（个人感觉call其实是通过对于“父构造函数”call一下，然后就可以实现类似继承的效果） function Product(name, price) {   this.name = name;   this.price = price; }  function Food(name,">
+<meta property="og:updated_time" content="2018-09-09T06:46:03.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对于dom节点的基本操作">
-<meta name="twitter:description" content="一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：  更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容； 遍历：遍历该DOM节点下的子节点，以便进行进一步操作； 添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点； 删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。在操作一个DOM节点前，我">
+<meta name="twitter:title" content="apply call bind 以及他们的区别">
+<meta name="twitter:description" content="call：和apply接近。区别为call是接受多个参数形成的列表，而apply接受的是一个包含多个参数的数组。（个人感觉call其实是通过对于“父构造函数”call一下，然后就可以实现类似继承的效果） function Product(name, price) {   this.name = name;   this.price = price; }  function Food(name,">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/08/28/js-dom/" title="JavaScript对于dom节点的基本操作" itemprop="url">JavaScript对于dom节点的基本操作</a>
+      <a href="/2018/09/09/apply-call-bind-以及他们的区别/" title="apply call bind 以及他们的区别" itemprop="url">apply call bind 以及他们的区别</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2017-08-28T07:32:44.000Z" itemprop="datePublished"> Published 2017-08-28</time>
+    <time datetime="2018-09-09T06:45:13.000Z" itemprop="datePublished"> Published 2018-09-09</time>
     
   </p>
 </header>
@@ -101,53 +101,49 @@
 		
 		</div>
 		
-		<p>一：始终记住DOM是一个树形结构。操作一个DOM节点实际上就是这么几个操作：</p>
-<blockquote>
-<p>更新：更新该DOM节点的内容，相当于更新了该DOM节点表示的HTML的内容；</p>
-<p>遍历：遍历该DOM节点下的子节点，以便进行进一步操作；</p>
-<p>添加：在该DOM节点下新增一个子节点，相当于动态增加了一个HTML节点；</p>
-<p>删除：将该节点从HTML中删除，相当于删掉了该DOM节点的内容以及它包含的所有子节点。<br>在操作一个DOM节点前，我们需要通过各种方式先拿到这个DOM节点</p>
-</blockquote>
-<pre><code>最常用的方法是document.getElementById()【返回一个节点】和document.getElementsByTagName()【返回一组节点】， 以及CSS选择器document.getElementsByClassName()【返回一组节点】
-</code></pre><p>可以先对于节点进行取，然后再通过class或tagname去取其中的节点组</p>
-<p>二：更新DOM 通过修改innerHTML属性，这个方式非常强大，不但可以修改一个DOM节点的文本内容 ，还可以直接通过HTML片段修改DOM节点内部的子树。内部要改字符串的可以使用单引号括起来。 可以使用</p>
-<pre><code>var p = document.getElementById(&apos;p-id&apos;); p.style.color = &apos;#ff0000&apos;;来改变当前节点的CSS值。
-</code></pre><p>ps：如果有连接符则把连接符后的第一个字母大写</p>
-<p>三：插入DOM 静态插入节点：</p>
-<pre><code>var js = document.getElementById(&apos;js&apos;);
+		<hr>
+<p>call：和apply接近。区别为call是接受多个参数形成的列表，而apply接受的是一个包含多个参数的数组。（个人感觉call其实是通过对于“父构造函数”call一下，然后就可以实现类似继承的效果）</p>
+<pre><code>function Product(name, price) {
+  this.name = name;
+  this.price = price;
+}
 
-list = document.getElementById(&apos;list&apos;);
+function Food(name, price) {
+  Product.call(this, name, price);
+  this.category = &apos;food&apos;;
+}
 
-list.appendChild(js); 此操作会把id为js的位置换到list这个节点后的最后一个 动态插入节点：
+console.log(new Food(&apos;cheese&apos;, 5).name);
+// expected output: &quot;cheese&quot;
+console.log(new Food(&apos;cheese&apos;, 5).price);
+// expected output: &quot;5&quot;
+</code></pre><p>apply：在调用一个存在的函数时，你可以为其指定一个 this 对象。 this 指当前对象，也就是正在调用这个函数的对象。 使用 apply， 你可以只写一次这个方法然后在另一个对象中继承它，而不用在新对象中重复写该方法。</p>
+<p>apply 与 call() 非常相似，不同之处在于提供参数的方式。apply 使用参数数组而不是一组参数列表。apply 可以使用数组字面量（array literal），如 fun.apply(this, [‘eat’, ‘bananas’])，或数组对象， 如  fun.apply(this, new Array(‘eat’, ‘bananas’))。</p>
+<p>你也可以使用 arguments对象作为 argsArray 参数。 arguments 是一个函数的局部变量。 它可以被用作被调用对象的所有未指定的参数。 这样，你在使用apply函数的时候就不需要知道被调用对象的所有参数。 你可以使用arguments来把所有的参数传递给被调用对象。 被调用对象接下来就负责处理这些参数。</p>
+<pre><code>var array = [&apos;a&apos;, &apos;b&apos;];
+var elements = [0, 1, 2];
+array.push.apply(array, elements);
+console.info(array); // [&quot;a&quot;, &quot;b&quot;, 0, 1, 2]
+</code></pre><p>bind：bind() 函数会创建一个新绑定函数，绑定函数与被调函数具有相同的函数体（在 ECMAScript 5 中）。调用绑定函数通常会导致执行包装函数。<br>绑定函数具有以下内部属性：</p>
+<p>[[BoundTargetFunction]] - 包装的函数对象<br>[[BoundThis]] - 在调用包装函数时始终作为this值传递的值。<br>[[BoundArguments]] - 一个值列表，其元素用作对包装函数的任何调用的第一个参数。<br>[[Call]] - 执行与此对象关联的代码。通过函数调用表达式调用。内部方法的参数是一个this值和一个包含通过调用表达式传递给函数的参数的列表。<br>当调用绑定函数时，它调用[[BoundTargetFunction]]上的内部方法[[Call]]，后跟参数Call(boundThis, args)。其中，bound这是[[BoundThis]]，args是[[BoundArguments]]，后跟函数调用传递的参数。</p>
+<p>绑定函数也可以使用new运算符构造：这样做就好像已经构造了目标函数一样。提供的this值将被忽略，而前置参数将提供给模拟函数。</p>
+<pre><code>this.x = 9; 
+var module = {
+  x: 81,
+  getX: function() { return this.x; }
+};
 
-var list = document.getElementById(&apos;list&apos;); new= document.createElement(&apos;p&apos;);/*创造一个新的节点*/
+module.getX(); // 返回 81
 
-new.id = &apos;hhhhh&apos;;/*给这个节点赋值*/
+var retrieveX = module.getX;
+retrieveX(); // 返回 9, 在这种情况下，&quot;this&quot;指向全局作用域
 
-new.innerText = &apos;hhhh&apos;;/*给这个节点它的内部text*/
-
-list.appendChild(new);/*同样的操作把此id的节点放入list的最后*/
-</code></pre><p>同样的可以动态加入新的CSS类：</p>
-<pre><code>var d = document.createElement(&apos;style&apos;);
-
-d.setAttribute(&apos;type&apos;, &apos;text/css&apos;);
-
-d.innerHTML = &apos;p { color: red }&apos;;
-
-document.getElementsByTagName(&apos;head&apos;)[0].appendChild(d);/*会把这个节点放入head的最后的地方*/
-
-如果想要在指定的地方进行操作则有：
-
-ref = document.getElementById(&apos;front&apos;)； list.insertBefore(new, ref);/*此操作会把new节点放入ref的前面*/
-</code></pre><p>四：删除DOM 要删除一个节点，首先要获得该节点本身以及它的父节点，然后，调用父节点的removeChild把自己删掉 // 拿到待删除节点:</p>
-<pre><code>var self = document.getElementById(&apos;to-be-removed&apos;); // 拿到父节点:
-
-var parent = self.parentElement; // 删除:
-
-var removed = parent.removeChild(self);
-
-removed === self; // true 个人建议删除节点从后向前删除，因为删除之后数组会向前进位，所以会改变其位置 
-</code></pre>  
+// 创建一个新函数，将&quot;this&quot;绑定到module对象
+// 新手可能会被全局的x变量和module里的属性x所迷惑
+var boundGetX = retrieveX.bind(module);
+boundGetX(); // 返回 81
+</code></pre><p>我们可以看见在绑定了之后this的作用域发生了改变，在之前this的作用域就是指向本身的这个区域</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -164,7 +160,7 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2017/08/28/js-dom/" data-title="JavaScript对于dom节点的基本操作 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/09/09/apply-call-bind-以及他们的区别/" data-title="apply call bind 以及他们的区别 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -177,20 +173,20 @@ removed === self; // true 个人建议删除节点从后向前删除，因为删
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2017/08/28/pagefirst/" title="简单的hexo和GitHub搭建自己的博客">
-  <strong>上一篇：</strong><br/>
-  <span>
-  简单的hexo和GitHub搭建自己的博客</span>
+
+<div class="next">
+<a href="/2018/07/10/HTTPS加密/"  title="HTTPS加密">
+ <strong>下一篇：</strong><br/> 
+ <span>HTTPS加密
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2017/08/28/js-dom/" data-title="JavaScript对于dom节点的基本操作" data-url="http://yoursite.com/2017/08/28/js-dom/"></div>
+	<div class="ds-thread" data-thread-key="2018/09/09/apply-call-bind-以及他们的区别/" data-title="apply call bind 以及他们的区别" data-url="http://yoursite.com/2018/09/09/apply-call-bind-以及他们的区别/"></div>
 </section>
 
 
