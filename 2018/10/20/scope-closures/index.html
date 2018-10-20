@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>node的模块化 | Chenhw&#39;sBlog</title>
+    <title>scope&amp;closures | Chenhw&#39;sBlog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Chenhw">
     
 
     
-    <meta name="description" content="学了一段时间的node，准备来总结一下学习node的一些知识。JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。nodejs把模块化做到了一定的程度，每一个js文件都是一个模块，整个js的文件分成三个大块，就是 require exports module 主运行函数 接下来我们来说明一下">
-<meta name="keywords" content="node">
+    <meta name="description" content="今天我们来看一下作用域和闭包这块的内容，这边主要是包含了一些对于编译器的一些理论和对于词法分析器的一个重点了解因为内容很多所以我就简化介绍一下 ##编译器 ###1、分词/词法分析：将一连串字符打断成（对于语言来说）有意义的片段，称为 token（记号）。举例来说，考虑这段程序：var a = 2;。这段程序很可能会被打断成如下 token：var，a，=，2，和 ;。空格也许会被保留为一个 to">
+<meta name="keywords" content="YOU_DONT_KOWN_JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node的模块化">
-<meta property="og:url" content="http://yoursite.com/2018/03/05/node的模块化/index.html">
+<meta property="og:title" content="scope&amp;closures">
+<meta property="og:url" content="http://yoursite.com/2018/10/20/scope-closures/index.html">
 <meta property="og:site_name" content="Chenhw&#39;sBlog">
-<meta property="og:description" content="学了一段时间的node，准备来总结一下学习node的一些知识。JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。nodejs把模块化做到了一定的程度，每一个js文件都是一个模块，整个js的文件分成三个大块，就是 require exports module 主运行函数 接下来我们来说明一下">
-<meta property="og:updated_time" content="2018-03-05T13:31:00.910Z">
+<meta property="og:description" content="今天我们来看一下作用域和闭包这块的内容，这边主要是包含了一些对于编译器的一些理论和对于词法分析器的一个重点了解因为内容很多所以我就简化介绍一下 ##编译器 ###1、分词/词法分析：将一连串字符打断成（对于语言来说）有意义的片段，称为 token（记号）。举例来说，考虑这段程序：var a = 2;。这段程序很可能会被打断成如下 token：var，a，=，2，和 ;。空格也许会被保留为一个 to">
+<meta property="og:updated_time" content="2018-10-20T15:58:02.693Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node的模块化">
-<meta name="twitter:description" content="学了一段时间的node，准备来总结一下学习node的一些知识。JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。nodejs把模块化做到了一定的程度，每一个js文件都是一个模块，整个js的文件分成三个大块，就是 require exports module 主运行函数 接下来我们来说明一下">
+<meta name="twitter:title" content="scope&amp;closures">
+<meta name="twitter:description" content="今天我们来看一下作用域和闭包这块的内容，这边主要是包含了一些对于编译器的一些理论和对于词法分析器的一个重点了解因为内容很多所以我就简化介绍一下 ##编译器 ###1、分词/词法分析：将一连串字符打断成（对于语言来说）有意义的片段，称为 token（记号）。举例来说，考虑这段程序：var a = 2;。这段程序很可能会被打断成如下 token：var，a，=，2，和 ;。空格也许会被保留为一个 to">
 
     
     <link rel="alternative" href="/atom.xml" title="Chenhw&#39;sBlog" type="application/atom+xml">
@@ -81,14 +81,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/03/05/node的模块化/" title="node的模块化" itemprop="url">node的模块化</a>
+      <a href="/2018/10/20/scope-closures/" title="scope&amp;closures" itemprop="url">scope&amp;closures</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Chenhw" target="_blank" itemprop="author">Chenhw</a>
 		
   <p class="article-time">
-    <time datetime="2018-03-05T13:27:48.000Z" itemprop="datePublished"> Published 2018-03-05</time>
+    <time datetime="2018-10-20T15:57:21.000Z" itemprop="datePublished"> Published 2018-10-20</time>
     
   </p>
 </header>
@@ -97,60 +97,65 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">require</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">exports</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">主模块</span></a></li></ol>
+			
 		
 		</div>
 		
-		<p>学了一段时间的node，准备来总结一下学习node的一些知识。<br>JS是脚本语言，脚本语言都需要一个解析器才能运行。对于写在HTML页面里的JS，浏览器充当了解析器的角色。而对于需要独立运行的JS，NodeJS就是一个解析器。<br>nodejs把模块化做到了一定的程度，每一个js文件都是一个模块，整个js的文件分成三个大块，就是</p>
-<pre><code>require
-exports
-module
-主运行函数
-</code></pre><p>接下来我们来说明一下这四部分的内容以及在整体我们编写代码中的作用</p>
-<p></p><h2>require</h2><br>require函数用于在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。模块名可使用相对路径（以./开头），或者是绝对路径（以/或C:之类的盘符开头）。另外，模块名中的.js扩展名可以省略。以下是一个例子。<p></p>
-<pre><code>var foo1 = require(&apos;./foo&apos;);
-var foo2 = require(&apos;./foo.js&apos;);
-var foo3 = require(&apos;/home/user/foo&apos;);
-var foo4 = require(&apos;/home/user/foo.js&apos;);
+		<p>今天我们来看一下作用域和闭包这块的内容，这边主要是包含了一些对于编译器的一些理论和对于词法分析器的一个重点了解<br>因为内容很多所以我就简化介绍一下</p>
+<p>##编译器</p>
+<p>###1、分词/词法分析：<br>将一连串字符打断成（对于语言来说）有意义的片段，称为 token（记号）。举例来说，考虑这段程序：var a = 2;。这段程序很可能会被打断成如下 token：var，a，=，2，和 ;。空格也许会被保留为一个 token，这要看它是否是有意义的。</p>
+<p><strong>注意：</strong> 分词和词法分析之间的区别是微妙和学术上的，其中心在于这些 token 是否以 无状态 或 有状态 的方式被识别。简而言之，如果分词器去调用有状态的解析规则来弄清a是否应当被考虑为一个不同的 token，还是只是其他 token 的一部分，那么这就是 词法分析。</p>
+<p>###2、解析：<br>将一个 token 的流（数组）转换为一个嵌套元素的树，它综合地表示了程序的语法结构。这棵树称为“抽象语法树”（AST —— Abstract Syntax Tree）。</p>
+<p>var a = 2; 的树也许开始于称为 VariableDeclaration（变量声明）顶层节点，带有一个称为 Identifier（标识符）的子节点（它的值为 a），和另一个称为 AssignmentExpression（赋值表达式）的子节点，而这个子节点本身带有一个称为 NumericLiteral（数字字面量）的子节点（它的值为2）。</p>
+<p>###3、代码生成：<br>这个处理将抽象语法树转换为可执行的代码。这一部分将根据语言，它的目标平台等因素有很大的不同。</p>
+<p>所以，与其深陷细节，我们不如笼统地说，有一种方法将我们上面描述的 var a = 2; 的抽象语法树转换为机器指令，来实际上 创建 一个称为 a 的变量（包括分配内存等等），然后在 a 中存入一个值。</p>
+<p><strong>注意：</strong> 引擎如何管理系统资源的细节远比我们要挖掘的东西深刻，所以我们将理所当然地认为引擎有能力按其需要创建和存储变量。</p>
+<p>##作用域<br><strong>引擎：</strong>负责从始至终的编译和执行我们的 JavaScript 程序。</p>
+<p><strong>编译器：</strong>引擎 的朋友之一；处理所有的解析和代码生成的重活儿（见前一节）。</p>
+<p><strong>作用域：</strong>引擎 的另一个朋友；收集并维护一张所有被声明的标识符（变量）的列表，并对当前执行中的代码如何访问这些变量强制实施一组严格的规则。</p>
+<p>在我们这个例子中，引擎 将会对变量 a 实施一个“LHS”查询。另一种类型的查询称为“RHS”。</p>
+<pre><code>console.log( a );
+</code></pre><p>这个指向 a 的引用是一个 RHS 引用，因为这里没有东西被赋值给 a。而是我们在查询 a 并取得它的值，这样这个值可以被传递进 console.log(..)。</p>
+<p>作为对比：</p>
+<pre><code>a = 2;
+</code></pre><p>这里指向 a 的引用是一个 LHS 引用，因为我们实际上不关心当前的值是什么，我们只是想找到这个变量，将它作为 = 2 赋值操作的目标。</p>
+<p>###引擎/作用域对话</p>
+<pre><code>function foo(a) {
+    console.log( a ); // 2
+}
 
-// foo1至foo4中保存的是同一个模块的导出对象。
-</code></pre><p>所以nodejs在包这个物体上的处理是非常强的，一个用户写了一个js文件，我们可以直接把它拿过来使用其中的函数和文件中内置的一些变量</p>
-<p></p><h2>exports</h2><br>exports对象是当前模块的导出对象，用于导出模块公有方法和属性。别的模块通过require函数使用当前模块时得到的就是当前模块的exports对象。以下例子中导出了一个公有方法。<p></p>
-<pre><code>exports.hello = function () {
-    console.log(&apos;Hello World!&apos;);
-};
-</code></pre><p>可以说我们上面require所获取到的js文件里面的东西都一定是在其中exports出来的变量或者函数，这样我们在require了之后可以直接相当于json数据一样获取其中的内容。</p>
-<p></p><h2>module</h2><br>module其实是把exports的数据改编成了函数，如构造函数之类的，如下面这个例子就创建了一个构造函数<br>在 square.js 模块中定义一个 square 方法:<p></p>
-<pre><code>module.exports = (width) =&gt; {
-  return {
-    area: () =&gt; width * width;
-  };
+foo( 2 );
+</code></pre><p>让我们将上面的（处理这个代码段的）交互想象为一场对话。这场对话将会有点儿像这样进行：</p>
+<blockquote>
+<p>引擎：嘿 作用域，我有一个 foo 的 RHS 引用。听说过它吗？</p>
+<p>作用域；啊，是的，听说过。编译器 刚在一秒钟之前声明了它。它是一个函数。给你。</p>
+<p>引擎：太棒了，谢谢！好的，我要执行 foo 了。</p>
+<p>引擎：嘿，作用域，我得到了一个 a 的 LHS 引用，听说过它吗？</p>
+<p>作用域：啊，是的，听说过。编译器 刚才将它声明为 foo 的一个正式参数了。给你。</p>
+<p>引擎：一如既往的给力，作用域。再次感谢你。现在，该把 2 赋值给 a 了。</p>
+<p>引擎：嘿，作用域，很抱歉又一次打扰你。我需要 RHS 查询 console。听说过它吗？</p>
+<p>作用域：没关系，引擎，这是我一天到晚的工作。是的，我得到 console 了。它是一个内建对象。给你。</p>
+<p>引擎：完美。查找 log(..)。好的，很好，它是一个函数。</p>
+<p>引擎：嘿，作用域。你能帮我查一下 a 的 RHS 引用吗？我想我记得它，但只是想再次确认一下。</p>
+<p>作用域：你是对的，引擎。同一个家伙，没变。给你。</p>
+<p>引擎：酷。传递 a 的值，也就是 2，给 log(..)。</p>
+</blockquote>
+<p>###小测验<br>检查你到目前为止的理解。确保你扮演 引擎，并与 作用域 “对话”：</p>
+<pre><code>function foo(a) {
+    var b = a;
+    return a + b;
 }
-</code></pre><p>在下面的 area.js 中，使用了 square 模块，它导出一个构造函数：</p>
-<pre><code>const square = require(&apos;./square.js&apos;);
-var mySquare = square(2);
-console.log(`The area of my square is ${mySquare.area()}`);
-</code></pre><p>在这里我们就是用了这个构造函数</p>
-<p></p><h2>主模块</h2><br>其实主模块就很好理解了，主模块就相当于我们C语言里面的一个主函数，是程序的入口，程序一行一行的按照顺序进行<p></p>
-<p>*在这里面如果在require中多次调用了一个js文件，那个返回的变量不会重新创建，在一个程序没有结束之前，那个js文件里面的变量是不会自动清零的，比如下面的这个代码<br>其中counter.js内容如下：</p>
-<pre><code>var i = 0;
-function count() {
-    return ++i;
-}
-exports.count = count;
-</code></pre><p>该模块内部定义了一个私有变量i，并在exports对象导出了一个公有方法count。</p>
-<p>主模块main.js内容如下：</p>
-<pre><code>var counter1 = require(&apos;./util/counter&apos;);
-var    counter2 = require(&apos;./util/counter&apos;);
-console.log(counter1.count());
-console.log(counter2.count());
-console.log(counter2.count());
-</code></pre><p>运行该程序的结果如下：</p>
-<pre><code>$ node main.js
-1
-2
-3
-</code></pre><p>可以看到，counter.js并没有因为被require了两次而初始化两次。</p>
+
+var c = foo( 2 );
+</code></pre><p>1、找到所有的 LHS 查询（有3处！）。</p>
+<p>2、找到所有的 RHS 查询（有4处！）。</p>
+<p>##复习<br>作用域是一组规则，它决定了一个变量（标识符）在哪里和如何被查找。这种查询也许是为了向这个变量赋值，这时变量是一个 LHS（左手边）引用，或者是为取得它的值，这时变量是一个 RHS（右手边）引用。</p>
+<p>LHS 引用得自赋值操作。作用域 相关的赋值可以通过 = 操作符发生，也可以通过向函数参数传递（赋予）参数值发生。</p>
+<p>JavaScript 引擎 在执行代码之前首先会编译它，因此，它将 var a = 2; 这样的语句分割为两个分离的步骤：</p>
+<p>1、首先，var a 在当前 作用域 中声明。这是在最开始，代码执行之前实施的。</p>
+<p>2、稍后，a = 2 查找这个变量（LHS 引用），并且如果找到就向它赋值。</p>
+<p>LHS 和 RHS 引用查询都从当前执行中的 作用域 开始，如果有需要（也就是，它们在这里没能找到它们要找的东西），它们会在嵌套的 作用域 中一路向上，一次一个作用域（层）地查找这个标识符，直到它们到达全局作用域（顶层）并停止，既可能找到也可能没找到。</p>
+<p>未被满足的 RHS 引用会导致 ReferenceError 被抛出。未被满足的 LHS 引用会导致一个自动的，隐含地创建的同名全局变量（如果不是“Strict模式”[^note-strictmode]），或者一个 ReferenceError（如果是“Strict模式”[^note-strictmode]）。<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="external">strict mode</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -159,7 +164,7 @@ console.log(counter2.count());
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/node/">node</a>
+  <span></span> <a href="/tags/YOU-DONT-KOWN-JS/">YOU_DONT_KOWN_JS</a>
   </div>
 
 </div>
@@ -168,7 +173,7 @@ console.log(counter2.count());
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/03/05/node的模块化/" data-title="node的模块化 | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
+	  <div data-url="http://yoursite.com/2018/10/20/scope-closures/" data-title="scope&amp;closures | Chenhw&#39;sBlog" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -181,19 +186,11 @@ console.log(counter2.count());
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2018/03/06/node文件操作（一）/" title="node文件操作（一）">
-  <strong>上一篇：</strong><br/>
-  <span>
-  node文件操作（一）</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2018/03/01/unity3D入门（二）/"  title="unity3D入门（二）">
+<a href="/2018/09/09/apply-call-bind-以及他们的区别/"  title="apply call bind 以及他们的区别">
  <strong>下一篇：</strong><br/> 
- <span>unity3D入门（二）
+ <span>apply call bind 以及他们的区别
 </span>
 </a>
 </div>
@@ -202,7 +199,7 @@ console.log(counter2.count());
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2018/03/05/node的模块化/" data-title="node的模块化" data-url="http://yoursite.com/2018/03/05/node的模块化/"></div>
+	<div class="ds-thread" data-thread-key="2018/10/20/scope-closures/" data-title="scope&closures" data-url="http://yoursite.com/2018/10/20/scope-closures/"></div>
 </section>
 
 
@@ -213,7 +210,7 @@ console.log(counter2.count());
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">require</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">exports</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">主模块</span></a></li></ol>
+ 
  
   </div>
 
